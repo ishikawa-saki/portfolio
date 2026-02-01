@@ -245,16 +245,89 @@ a {
     aspect-ratio: 3/2;
   }
 }
+
+  /* ================= HEADER ================= */
+
+.site-header{
+  padding: 4vh var(--container-padding);
+  width: 100%;
+}
+
+.header-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-nav a{
+  margin-left: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.header-nav a:hover{
+  opacity: 1;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  padding: 8vh var(--container-padding) 4vh;
+  text-align: center;
+}
+
+.footer-heading{
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+
+.contact-ja{
+  display: block;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-top: 0.5rem;
+}
+
+.footer-copyright{
+  margin-top: 4vh;
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="header-logo">
-    <a href="index.html">ISHIKAWA SAKI</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/index.html" class="logo">
+      ISHIKAWA SAKI
+    </a>
+
+    <nav class="header-nav">
+      <a href="/works.html">WORKS</a>
+      <a href="/fashion.html">FASHION / BEAUTY</a>
+      <a href="/science.html">SCIENCE FICTION</a>
+      <a href="/film.html">FILM / TV</a>
+    </nav>
   </div>
 </header>
+
 
 <main class="works-page">
 
@@ -315,9 +388,21 @@ a {
 
 </main>
 
-<footer class="footer">
-  &copy; ISHIKAWA SAKI. ALL RIGHTS RESERVED.
+<footer class="site-footer">
+
+  <div class="footer-contact">
+    <a href="https://tally.so/r/vGPVJX" target="_blank">
+      <span class="footer-heading">Project Inquiries</span>
+      <span class="contact-ja">プロジェクトに関するお問い合わせ</span>
+    </a>
+  </div>
+
+  <div class="footer-copyright">
+    © 2026 Saki Ishikawa. All Rights Reserved.
+  </div>
+
 </footer>
+
 
 </body>
 </html>
