@@ -42,6 +42,38 @@ a {
   color: inherit;
 }
 
+/* ===== HEADER (HERO CONSISTENT) ===== */
+
+.header{
+  position: relative;
+  width: 100%;
+  padding: 50px var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.header-logo{
+  font-family: var(--font-body);
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header-nav ul{
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.header-nav a{
+  font-family: var(--font-body);
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
 
 
 /* ===== Works Page Layout ===== */
@@ -224,41 +256,7 @@ a {
   }
 }
 
-/* ===== WORKS HEADER FINAL ===== */
 
-.site-header{
-  position: relative;
-  width: 100%;
-  padding: 50px var(--container-padding);
-}
-
-.header-inner{
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo{
-  font-family: var(--font-body);
-  font-size: .85rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-.header-nav{
-  display: flex;
-  gap: 40px;
-}
-
-.header-nav a{
-  font-family: var(--font-body);
-  font-size: .85rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-}
 
 /* ================= FOOTER ================= */
 
@@ -291,20 +289,17 @@ a {
 
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/index.html" class="logo">
-      ISHIKAWA SAKI
-    </a>
-
-    <nav class="header-nav">
-      <a href="/works.html">WORKS</a>
-      <a href="/fashion.html">FASHION / BEAUTY</a>
-      <a href="/science.html">SCIENCE FICTION</a>
-      <a href="/film.html">FILM / TV</a>
-    </nav>
-  </div>
+<header class="header">
+  <div class="header-logo">ISHIKAWA SAKI</div>
+  <nav class="header-nav">
+    <ul>
+      <li><a href="/works.html">WORKS</a></li>
+      <li><a href="/index.html#about">ABOUT</a></li>
+      <li><a href="https://tally.so/r/vGPVJX" target="_blank">CONTACT</a></li>
+    </ul>
+  </nav>
 </header>
+
 
 
 <main class="works-page">
