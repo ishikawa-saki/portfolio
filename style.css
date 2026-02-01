@@ -50,3 +50,26 @@ img{
   margin:6vh auto 12vh;
   padding:0 40px;
 }
+
+/* ===== Mobile Optimization ===== */
+@media (max-width: 768px) {
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  .page-section {
+    padding: 8vh 6vw;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+}
+
