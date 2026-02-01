@@ -1,0 +1,28 @@
+/* ===== BASE ===== */
+
+body{
+  margin:0;
+  font-family: "Cormorant Garamond", serif;
+  background:#ffffff;
+  color:#111;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ===== SCIENCE ===== */
+
+.science-section{
+  max-width:1100px;
+  margin:0 auto;
+  padding:6vh 40px;
+}
+
+.science-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
