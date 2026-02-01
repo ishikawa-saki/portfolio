@@ -28,3 +28,16 @@ img{
   grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
+/* SCIENCE grid fix */
+
+.works-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.works-grid img{
+  width:100%;
+  height:auto;
+  display:block;
+}
