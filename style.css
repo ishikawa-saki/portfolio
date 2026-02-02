@@ -103,3 +103,26 @@ img{
 .sub-page .page-section{
   padding-top:40px;
 }
+
+/* ===== Mobile Fix ===== */
+@media (max-width: 768px){
+
+  .hero{
+    min-height:auto;
+    padding:120px var(--container-padding) 0;
+  }
+
+  .hero-container{
+    display:block;
+  }
+
+  .hero-visual{
+    position:relative;   /* ← absoluteやめる */
+    top:auto;
+    right:auto;
+    width:100%;
+    height:60vh;         /* スマホ用高さ */
+    margin-top:40px;
+  }
+
+}
