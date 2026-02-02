@@ -10,6 +10,11 @@
 .header-nav ul{display:flex;gap:40px;list-style:none}
 .header-nav a{font-family:var(--font-body);font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
 
+.sub-page .header{
+  position:relative;
+  padding:40px var(--container-padding);
+}
+
 /* ===== BASE ===== */
 
 body{
