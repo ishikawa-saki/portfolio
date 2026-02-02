@@ -1,3 +1,15 @@
+.header{position:absolute;top:0;left:0;width:100%;padding:50px var(--container-padding);display:flex;justify-content:space-between;align-items:center;z-index:10}
+.header-logo{
+  font-family:var(--font-body);   /* ナビと統一 */
+  font-size:.85rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-weight:400;
+}
+
+.header-nav ul{display:flex;gap:40px;list-style:none}
+.header-nav a{font-family:var(--font-body);font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
+
 /* ===== BASE ===== */
 
 body{
