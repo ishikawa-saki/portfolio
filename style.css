@@ -1,3 +1,9 @@
+:root{
+--c-base:#F2F5F9;--c-dark:#111418;--c-text-main:#0B0D10;--c-text-sub:#6C717A;
+--font-display:'Playfair Display',serif;--font-body:'Cormorant Garamond',serif;--font-jp:'Noto Serif JP',serif;
+--container-padding:max(6vw,40px)
+}
+
 .header{position:absolute;top:0;left:0;width:100%;padding:50px var(--container-padding);display:flex;justify-content:space-between;align-items:center;z-index:10}
 .header-logo{
   font-family:var(--font-body);   /* ナビと統一 */
