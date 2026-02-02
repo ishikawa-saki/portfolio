@@ -1,3 +1,8 @@
+/* ===== RESET (must) ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+a{color:inherit;text-decoration:none}
+a:visited{color:inherit}
+
 :root{
 --c-base:#F2F5F9;--c-dark:#111418;--c-text-main:#0B0D10;--c-text-sub:#6C717A;
 --font-display:'Playfair Display',serif;--font-body:'Cormorant Garamond',serif;--font-jp:'Noto Serif JP',serif;
@@ -13,7 +18,7 @@
   font-weight:400;
 }
 
-.header-nav ul{display:flex;gap:40px;list-style:none}
+.header-nav ul{display:flex;gap:40px;list-style:none;margin:0;padding:0}
 .header-nav a{font-family:var(--font-body);font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
 
 .sub-page .header{
