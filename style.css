@@ -81,34 +81,17 @@ img{
 
 /* ===== Mobile Optimization ===== */
 @media (max-width: 768px) {
+  .works-grid{ grid-template-columns: 1fr; }
 
-  .works-grid {
-    grid-template-columns: 1fr;
-  }
+  /* header is .header-nav (not .nav) */
+  .header-nav ul{ gap:16px; }
+  .header-nav a{ font-size:14px; }
 
-  .nav {
-    gap: 16px;
-    font-size: 14px;
-  }
-
-  .page-section {
-    padding: 8vh 6vw;
-  }
-
-.page-title {
-  font-size: 22px;
+  .page-section{ padding: 8vh 6vw; }
+  .page-title{ font-size:22px; }
 }
 
- 
-/* ===== Sub Page Header Fix ===== */
-
-.sub-page .hero-header {
-  position: relative;
-  background-color: #1C2128;
+/* ===== Sub Page Spacing (PC + Mobile) ===== */
+.sub-page .page-section{
+  padding-top:40px;
 }
-
-.sub-page .page-section {
-  padding-top: 18vh;
-  margin-top:40px;
-}
-
