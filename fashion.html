@@ -77,13 +77,15 @@ a{
 }
 
 
+
 h1{
   font-family:'Playfair Display',serif;
   font-weight:400;
-  letter-spacing:.12em;
-  font-size:clamp(1.8rem,3vw,2.4rem);
-  margin:6vh 0 4vh;
+  letter-spacing:.08em;
+  font-size:clamp(2.5rem,6vw,4rem);
+  margin-bottom:6vh;
 }
+
 
 .grid{
   max-width:1200px;
@@ -94,18 +96,17 @@ h1{
 }
 
 .image-frame{
-  aspect-ratio:4/5;
+  aspect-ratio:3/4;   /* スマート縦長 */
   overflow:hidden;
 }
 
-
-.image-frame img,
-.image-frame video{
+.image-frame img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
 }
+
 
 /* ===== Back Link ===== */
 .back{
