@@ -89,12 +89,13 @@ h1{
 
 
 .grid{
-  max-width:1100px;   /* ここが重要 */
-  margin:0 auto 10vh;
+  max-width:1100px;
+  margin:0 auto 5vh;   /* ← ここを縮める */
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
+
 
 /* ===== TOC 2:3 Test ===== */
 
@@ -128,9 +129,10 @@ h1{
 
 .ny-series{
   max-width:1100px;
-  margin:12vh auto;
+  margin:6vh auto 12vh;
   padding:0 var(--container-padding);
 }
+
 
 .ny-header h2{
   font-family:'Cormorant Garamond',serif;
