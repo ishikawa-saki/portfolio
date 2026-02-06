@@ -157,7 +157,9 @@ h1{
   font-size:1rem;
   line-height:1.8;
   margin-bottom:4vh;
+  color:#6C717A;   /* ← クレジットと同色 */
 }
+
 
 .ny-credit{
   font-family:'Cormorant Garamond',serif;
@@ -169,29 +171,51 @@ h1{
 
 .ny-grid{
   display:grid;
-  grid-template-columns:repeat(12,1fr);
+  grid-template-columns:repeat(6,1fr);
   gap:20px;
+  max-width:1100px;
+  margin:0 auto 12vh;
 }
 
-  .ny-top{
-  display:grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap:40px;
-  align-items:stretch;
-  margin-bottom:8vh;
+/* 縦2枚（6分割のうち3ずつ） */
+.ny-grid img.vertical{
+  grid-column:span 3;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  width:100%;
 }
+
+/* 横3枚（6分割のうち2ずつ） */
+.ny-grid img.horizontal{
+  grid-column:span 2;
+  aspect-ratio:3/2;
+  object-fit:cover;
+  width:100%;
+}
+
+
+.ny-top{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+  align-items:start;
+  margin-bottom:6vh;
+}
+
 
 .ny-image{
-  height:100%;
+  aspect-ratio:2/3;
+  overflow:hidden;
 }
 
 .ny-image img{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 30%;
+  object-position:center;
   display:block;
 }
+
 
 /* 画像共通 */
 .ny-grid img{
@@ -269,32 +293,35 @@ h1{
 
 <div class="ny-top">
 
-  <div class="ny-description">
+ <div class="ny-description">
 
-    <p class="jp">
-    コンセプトは「影を纏う」。<br>
-    ボディペイントをハイファッションへ昇華させ、身体を彩ることの本質を問う。<br>
-    肌に落ちる影と、肉体の稜線。色彩を排したミニマリズムが、身体そのものの造形美を浮き彫りにする。
-    </p>
+  <p class="jp">
+  コンセプトは「影を纏う」。<br>
+  ボディペイントをハイファッションへ昇華させ、身体を彩ることの本質を問う。<br>
+  肌に落ちる影と、肉体の稜線。色彩を排したミニマリズムが、<br>
+  身体そのものの造形美を浮き彫りにする。
+  </p>
 
-    <p class="en">
-    Concept: "To Wear the Shadow."<br>
-    Elevating body paint to the realm of high fashion, questioning the essence of adorning the human form.<br>
-    Minimalism through the interplay of shadows and the body's natural contours, stripped of all color.<br>
-    Revealing the flesh itself as the ultimate sculptural beauty.
-    </p>
+  <p class="en">
+  Concept: "To Wear the Shadow."<br>
+  Elevating body paint to the realm of high fashion,<br>
+  questioning the essence of adorning the human form.<br>
+  Minimalism through the interplay of shadows and the body's natural contours,<br>
+  stripped of all color. Revealing the flesh itself as the ultimate sculptural beauty.
+  </p>
 
-    <div class="ny-credit">
-      PHOTOGRAPHY: JULIA COMITA<br>
-      SCULPTURE ART: ISHIKAWA SAKI<br>
-      CREATIVE DIRECTION: LISA JARVIS<br>
-      HAIR: YUHI KIM<br>
-      MODEL: EHREN DORSEY @NY MODELS<br>
-      PHOTOGRAPHY ASSISTANT: IAN JONES<br>
-      PRODUCTION: NUMI PRASARN
-    </div>
-
+  <div class="ny-credit">
+    PHOTOGRAPHY: JULIA COMITA<br>
+    SCULPTURE ART: ISHIKAWA SAKI<br>
+    CREATIVE DIRECTION: LISA JARVIS<br>
+    HAIR: YUHI KIM<br>
+    MODEL: EHREN DORSEY @NY MODELS<br>
+    PHOTOGRAPHY ASSISTANT: IAN JONES<br>
+    PRODUCTION: NUMI PRASARN
   </div>
+
+</div>
+
 
   <div class="ny-image">
     <img src="images/fashion/NY_01.jpg" alt="">
@@ -303,17 +330,19 @@ h1{
 </div>
 
   <!-- 画像 -->
-  <div class="ny-grid">
+ <div class="ny-grid">
 
-    <!-- 上段：縦4枚 -->
-    <img src="images/fashion/NY_02.jpg" class="vertical" alt="">
-    <img src="images/fashion/NY_03.jpg" class="vertical" alt="">
-    <img src="images/fashion/NY_06.jpg" class="horizontal" alt="">
-    <img src="images/fashion/NY_05.jpg" class="horizontal" alt="">
-    <!-- 下段：横3枚 -->
-    <img src="images/fashion/NY_07.jpg" class="horizontal" alt="">
+  <!-- 上段：縦2枚 -->
+  <img src="images/fashion/NY_02.jpg" class="vertical" alt="">
+  <img src="images/fashion/NY_03.jpg" class="vertical" alt="">
 
-  </div>
+  <!-- 下段：横3枚 -->
+  <img src="images/fashion/NY_04.jpg" class="horizontal" alt="">
+  <img src="images/fashion/NY_05.jpg" class="horizontal" alt="">
+  <img src="images/fashion/NY_06.jpg" class="horizontal" alt="">
+
+</div>
+
 
 </section>
 
