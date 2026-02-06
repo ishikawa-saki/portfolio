@@ -815,7 +815,38 @@ background:rgba(233,236,241,.9);
   padding:0 40px;     /* 横の呼吸 */
 }
 
+/* ヘッダーを救出するコード */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 50px var(--container-padding); /* ここで左右に心地よい余白を作る */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
 
+.header-nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.header-nav a {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.header-logo {
+  font-family: var(--font-body);
+  font-size: .85rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
 </style>
 </head>
 
