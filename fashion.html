@@ -120,7 +120,6 @@ h1{
 }
 
 .ny-header h2{
-  .ny-header h2{
   font-family:'Cormorant Garamond',serif;
   font-size:1.2rem;
   letter-spacing:.12em;
@@ -132,28 +131,26 @@ h1{
 }
 
 .ny-description .jp{
-  font-family:var(--font-jp);
+  font-family:'Noto Serif JP',serif;
   font-size:.9rem;
   line-height:2;
   margin-bottom:3vh;
 }
 
 .ny-description .en{
-  font-family:var(--font-body);
+  font-family:'Cormorant Garamond',serif;
   font-size:1rem;
   line-height:1.8;
   margin-bottom:4vh;
 }
 
 .ny-credit{
-  font-family:var(--font-body);
+  font-family:'Cormorant Garamond',serif;
   font-size:.8rem;
   letter-spacing:.08em;
   opacity:.7;
   line-height:1.8;
 }
-
-/* ===== GRID ===== */
 
 .ny-grid{
   display:grid;
@@ -161,18 +158,23 @@ h1{
   gap:20px;
 }
 
+/* 画像共通 */
+.ny-grid img{
+  width:100%;
+  display:block;
+  object-fit:cover;
+}
+
 /* 上段：縦4枚 */
 .ny-grid img.vertical{
-  grid-column:span 3;   /* 12 ÷ 4 */
+  grid-column:span 3;
   aspect-ratio:4/5;
-  object-fit:cover;
 }
 
 /* 下段：横3枚 */
 .ny-grid img.horizontal{
-  grid-column:span 4;   /* 12 ÷ 3 */
+  grid-column:span 4;
   aspect-ratio:3/2;
-  object-fit:cover;
 }
 
 /* ===== Mobile ===== */
