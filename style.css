@@ -1,128 +1,113 @@
-/* ===== RESET (must) ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-a{color:inherit;text-decoration:none}
-a:visited{color:inherit}
+/* ===== RESET & BASE ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+a { color: inherit; text-decoration: none; }
 
-:root{
---c-base:#F2F5F9;--c-dark:#111418;--c-text-main:#0B0D10;--c-text-sub:#6C717A;
---font-display:'Playfair Display',serif;--font-body:'Cormorant Garamond',serif;--font-jp:'Noto Serif JP',serif;
---container-padding:max(6vw,40px)
+:root {
+  --c-bg: #F2F5F9;
+  --c-text: #111418;
+  --font-display: 'Playfair Display', serif;
+  --font-en: 'Cormorant Garamond', serif;
+  --font-jp: 'Noto Serif JP', serif;
+  --container-width: 1100px;
 }
 
-.header{
-  position:relative;
-  width:100%;
-  padding:50px var(--container-padding);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-jp);
+  line-height: 1.8;
 }
 
-.header-logo{
-  font-family:var(--font-body);   /* ナビと統一 */
-  font-size:.85rem;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  font-weight:400;
+/* 共通の「入れ物」 */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.header-nav ul{display:flex;gap:40px;list-style:none;margin:0;padding:0}
-.header-nav a{font-family:var(--font-body);font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
+img { width: 100%; height: auto; display: block; }
+.en-text { font-family: var(--font-en); }
 
-.sub-page .header{
-  position:relative;
-  padding:40px var(--container-padding);
+/* HEADER */
+.header { padding: 50px 40px; display: flex; justify-content: space-between; align-items: center; }
+.header-logo { font-family: var(--font-en); font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.header-nav ul { display: flex; gap: 40px; list-style: none; }
+.header-nav a { font-family: var(--font-en); font-size: 0.85rem; text-transform: uppercase; }
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 60px 0;
 }
 
-/* ===== BASE ===== */
-
-body{
-  margin:0;
-  font-family: "Cormorant Garamond", serif;
-  background:#ffffff;
-  color:#111;
-
-
+/* ==========================================================================
+   SERIES BLOCK (これをコピーして増やしていく)
+   ========================================================================== */
+.series-block {
+  margin-bottom: 120px; /* シリーズごとの間隔 */
 }
 
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
+/* PC：上段（左：解説 / 右：代表画像） */
+.series-hero {
+  display: flex;
+  gap: 50px;
+  align-items: stretch;
+  margin-bottom: 30px;
 }
 
-/* ===== SCIENCE ===== */
-
-.science-section{
-  max-width:1100px;
-  margin:0 auto;
-  padding:6vh 40px;
+.series-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
 }
 
-.science-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-/* SCIENCE grid fix */
-
-.works-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  max-width:1100px;
-  margin:0 auto;
+.series-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
-
-.works-grid img{
-  width:100%;
-  max-width:100%;
-  height:auto;
+.series-description {
+  font-size: 0.9rem;
+  margin-bottom: 30px;
 }
 
-.expanded-section{
-  max-width:1100px;
-  margin:6vh auto 12vh;
-  padding:0 40px;
+.series-credits {
+  font-size: 0.8rem;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  line-height: 2;
 }
 
-/* ===== Mobile Optimization ===== */
+.series-main-img {
+  flex: 1.2;
+}
+
+.series-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 下段：画像グリッド */
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Back Link */
+.back-nav { text-align: center; margin: 80px 0; }
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .works-grid{ grid-template-columns: 1fr; }
-
-  /* header is .header-nav (not .nav) */
-  .header-nav ul{ gap:16px; }
-  .header-nav a{ font-size:14px; }
-
-  .page-section{ padding: 8vh 6vw; }
-  .page-title{ font-size:22px; }
-}
-
-/* ===== Sub Page Spacing (PC + Mobile) ===== */
-.sub-page .page-section{
-  padding-top:40px;
-}
-
-/* ===== Mobile Fix ===== */
-@media (max-width: 768px){
-
-  .hero{
-    min-height:auto;
-    padding:120px var(--container-padding) 0;
-  }
-
-  .hero-container{
-    display:block;
-  }
-
-  .hero-visual{
-    position:relative;   /* ← absoluteやめる */
-    top:auto;
-    right:auto;
-    width:100%;
-    height:60vh;         /* スマホ用高さ */
-    margin-top:40px;
-  }
-
+  .container { padding: 0 20px; }
+  .header { padding: 30px 20px; flex-direction: column; gap: 20px; }
+  .series-hero { flex-direction: column; }
+  .series-main-img { order: -1; }
+  .series-grid { grid-template-columns: 1fr; }
 }
