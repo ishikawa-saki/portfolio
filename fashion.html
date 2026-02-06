@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -111,40 +112,46 @@ h1{
   font-size:.9rem;
 }
 
-/* ===== NY TOP (Text + Hero Image) ===== */
+/* ===== NY SERIES ===== */
 
-.ny-top{
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:40px;
-  align-items:stretch;
+.ny-series{
+  max-width:1100px;
+  margin:12vh auto;
+  padding:0 var(--container-padding);
+}
+
+.ny-header h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;
+  letter-spacing:.12em;
+  margin-bottom:4vh;
+}
+
+.ny-description{
   margin-bottom:8vh;
 }
 
-.ny-top-left{
-  min-width:0;
+.ny-description .jp{
+  font-family:'Noto Serif JP',serif;
+  font-size:.9rem;
+  line-height:2;
+  margin-bottom:3vh;
 }
 
-.ny-top-right{
-  min-width:0;
+.ny-description .en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;
+  line-height:1.8;
+  margin-bottom:4vh;
 }
 
-.ny-hero-image{
-  width:100%;
-  height:100%;
-  overflow:hidden;
+.ny-credit{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.8rem;
+  letter-spacing:.08em;
+  opacity:.7;
+  line-height:1.8;
 }
-
-.ny-hero-image img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center 30%;
-  border-radius:0; /* 必要なら消してOK */
-}
-
-/* ===== Existing NY GRID (below) ===== */
 
 .ny-grid{
   display:grid;
@@ -152,17 +159,20 @@ h1{
   gap:20px;
 }
 
+/* 画像共通 */
 .ny-grid img{
   width:100%;
   display:block;
   object-fit:cover;
 }
 
+/* 上段：縦4枚 */
 .ny-grid img.vertical{
   grid-column:span 3;
   aspect-ratio:4/5;
 }
 
+/* 下段：横3枚 */
 .ny-grid img.horizontal{
   grid-column:span 4;
   aspect-ratio:3/2;
@@ -170,20 +180,6 @@ h1{
 
 /* ===== Mobile ===== */
 @media (max-width:768px){
-
-  .ny-top{
-    grid-template-columns:1fr;
-    gap:24px;
-  }
-
-  .ny-hero-image{
-    height:auto;
-  }
-
-  .ny-hero-image img{
-    height:auto;
-  }
-
   .ny-grid{
     grid-template-columns:1fr;
   }
@@ -193,6 +189,7 @@ h1{
     aspect-ratio:auto;
   }
 }
+
 
 </style>
 </head>
@@ -233,58 +230,55 @@ h1{
 
 <section class="ny-series">
 
-  <div class="ny-top">
-    <div class="ny-top-left">
-      <div class="ny-header">
-        <h2>VEOIR MAGAZINE (NY / Paris) – Feature</h2>
-      </div>
-
-      <div class="ny-description">
-        <p class="jp">
-        コンセプトは「影を纏う」。<br>
-        ボディペイントをハイファッションへ昇華させ、身体を彩ることの本質を問う。<br>
-        肌に落ちる影と、肉体の稜線。色彩を排したミニマリズムが、身体そのものの造形美を浮き彫りにする。
-        </p>
-
-        <p class="en">
-        Concept: "To Wear the Shadow."<br>
-        Elevating body paint to the realm of high fashion, questioning the essence of adorning the human form.<br>
-        Minimalism through the interplay of shadows and the body's natural contours, stripped of all color.<br>
-        Revealing the flesh itself as the ultimate sculptural beauty.
-        </p>
-
-        <div class="ny-credit">
-          PHOTOGRAPHY: JULIA COMITA<br>
-          SCULPTURE ART: ISHIKAWA SAKI<br>
-          CREATIVE DIRECTION: LISA JARVIS<br>
-          HAIR: YUHI KIM<br>
-          MODEL: EHREN DORSEY @NY MODELS<br>
-          PHOTOGRAPHY ASSISTANT: IAN JONES<br>
-          PRODUCTION: NUMI PRASARN
-        </div>
-      </div>
-    </div>
-
-    <div class="ny-top-right">
-      <div class="ny-hero-image">
-        <img src="images/fashion/NY_01.jpg" alt="">
-      </div>
-    </div>
+  <div class="ny-header">
+    <h2>VEOIR MAGAZINE (NY / Paris) – Feature</h2>
   </div>
 
-  <!-- 残りの画像（NY_01はここでは重複させない） -->
+  <!-- 説明＋クレジットを先に -->
+  <div class="ny-description">
+
+    <p class="jp">
+    コンセプトは「影を纏う」。<br>
+    ボディペイントをハイファッションへ昇華させ、身体を彩ることの本質を問う。<br>
+    肌に落ちる影と、肉体の稜線。色彩を排したミニマリズムが、身体そのものの造形美を浮き彫りにする。
+    </p>
+
+    <p class="en">
+    Concept: "To Wear the Shadow."<br>
+    Elevating body paint to the realm of high fashion, questioning the essence of adorning the human form.<br>
+    Minimalism through the interplay of shadows and the body's natural contours, stripped of all color.<br>
+    Revealing the flesh itself as the ultimate sculptural beauty.
+    </p>
+
+    <div class="ny-credit">
+      PHOTOGRAPHY: JULIA COMITA<br>
+      SCULPTURE ART: ISHIKAWA SAKI<br>
+      CREATIVE DIRECTION: LISA JARVIS<br>
+      HAIR: YUHI KIM<br>
+      MODEL: EHREN DORSEY @NY MODELS<br>
+      PHOTOGRAPHY ASSISTANT: IAN JONES<br>
+      PRODUCTION: NUMI PRASARN
+    </div>
+
+  </div>
+
+  <!-- 画像 -->
   <div class="ny-grid">
+
+    <!-- 上段：縦4枚 -->
+    <img src="images/fashion/NY_01.jpg" class="vertical" alt="">
     <img src="images/fashion/NY_02.jpg" class="vertical" alt="">
     <img src="images/fashion/NY_03.jpg" class="vertical" alt="">
     <img src="images/fashion/NY_04.jpg" class="vertical" alt="">
 
+    <!-- 下段：横3枚 -->
     <img src="images/fashion/NY_05.jpg" class="horizontal" alt="">
     <img src="images/fashion/NY_06.jpg" class="horizontal" alt="">
     <img src="images/fashion/NY_07.jpg" class="horizontal" alt="">
+
   </div>
 
 </section>
-
 
 <div class="back">
   
