@@ -71,29 +71,33 @@ a{
 
 /* ===== Page Layout ===== */
 .container{
-  padding:10vh var(--container-padding) 15vh;
+  padding:6vh var(--container-padding) 12vh;
   max-width:1400px;
   margin:0 auto;
 }
 
+
 h1{
   font-family:'Playfair Display',serif;
   font-weight:400;
-  letter-spacing:.08em;
-  font-size:clamp(2.5rem,6vw,4rem);
-  margin-bottom:6vh;
+  letter-spacing:.12em;
+  font-size:clamp(1.8rem,3vw,2.4rem);
+  margin:6vh 0 4vh;
 }
 
 .grid{
+  max-width:1200px;
+  margin:0 auto 10vh;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:3vw;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
 }
 
 .image-frame{
-  aspect-ratio:3/4;
+  aspect-ratio:4/5;
   overflow:hidden;
 }
+
 
 .image-frame img,
 .image-frame video{
