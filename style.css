@@ -1,130 +1,19 @@
-
-/* ===== RESET (must) ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-a{color:inherit;text-decoration:none}
-a:visited{color:inherit}
-
-:root{
---c-base:#F2F5F9;--c-dark:#111418;--c-text-main:#0B0D10;--c-text-sub:#6C717A;
---font-display:'Playfair Display',serif;--font-body:'Cormorant Garamond',serif;--font-jp:'Noto Serif JP',serif;
---container-padding:max(6vw,40px)
+/* デザインの「素材（色・フォント・余白の基準）」だけを定義 */
+:root {
+  --c-base: #F2F5F9;
+  --c-text-main: #111418;
+  --c-text-sub: #6C717A;
+  --font-jp: 'Noto Serif JP', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-display: 'Playfair Display', serif;
+  --container-padding: max(6vw, 40px);
 }
 
-.header{
-  position:relative;
-  width:100%;
-  padding:50px var(--container-padding);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+/* ページ全体の基本設定（これ以上は書かない） */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background: var(--c-base); 
+  color: var(--c-text-main); 
+  font-family: var(--font-jp); 
+  -webkit-font-smoothing: antialiased;
 }
-
-.header-logo{
-  font-family:var(--font-body);   /* ナビと統一 */
-  font-size:.85rem;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  font-weight:400;
-}
-
-.header-nav ul{display:flex;gap:40px;list-style:none;margin:0;padding:0}
-.header-nav a{font-family:var(--font-body);font-size:.85rem;letter-spacing:.15em;text-transform:uppercase}
-
-.sub-page .header{
-  position:relative;
-  padding:40px var(--container-padding);
-}
-
-/* ===== BASE ===== */
-
-body{
-  margin:0;
-  font-family: "Cormorant Garamond", serif;
-  background:#ffffff;
-  color:#111;
-
-
-}
-
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-/* ===== SCIENCE ===== */
-
-.science-section{
-  max-width:1100px;
-  margin:0 auto;
-  padding:6vh 40px;
-}
-
-.science-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-/* SCIENCE grid fix */
-
-.works-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  max-width:1100px;
-  margin:0 auto;
-}
-
-
-.works-grid img{
-  width:100%;
-  max-width:100%;
-  height:auto;
-}
-
-.expanded-section{
-  max-width:1100px;
-  margin:6vh auto 12vh;
-  padding:0 40px;
-}
-
-/* ===== Mobile Optimization ===== */
-@media (max-width: 768px) {
-  .works-grid{ grid-template-columns: 1fr; }
-
-  /* header is .header-nav (not .nav) */
-  .header-nav ul{ gap:16px; }
-  .header-nav a{ font-size:14px; }
-
-  .page-section{ padding: 8vh 6vw; }
-  .page-title{ font-size:22px; }
-}
-
-/* ===== Sub Page Spacing (PC + Mobile) ===== */
-.sub-page .page-section{
-  padding-top:40px;
-}
-
-/* ===== Mobile Fix ===== */
-@media (max-width: 768px){
-
-  .hero{
-    min-height:auto;
-    padding:120px var(--container-padding) 0;
-  }
-
-  .hero-container{
-    display:block;
-  }
-
-  .hero-visual{
-    position:relative;   /* ← absoluteやめる */
-    top:auto;
-    right:auto;
-    width:100%;
-    height:60vh;         /* スマホ用高さ */
-    margin-top:40px;
-  }
-
-}
-
