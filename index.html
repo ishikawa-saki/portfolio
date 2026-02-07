@@ -59,19 +59,22 @@ a:hover{opacity:.6}
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  justify-content:center;   /* ← 戻す */
+  justify-content:flex-start;  /* ← centerではない */
   padding:140px var(--container-padding) 0;
   position:relative;
 }
 
 
+
 .hero-container{
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  align-items:end;   /* ← ここを end に戻す */
+  align-items:end;   /* ← end */
   position:relative;
   z-index:2;
+  margin-top:8vh;    /* ← これが重要 */
 }
+
 
 
 
