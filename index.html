@@ -146,7 +146,18 @@ display:block;
 #about{
 padding-left:var(--container-padding);
 padding-right:var(--container-padding)}
+position:relative;
+}
 
+  #about::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:1px;
+  background:rgba(17,20,24,.05);  /* 極薄 */
+  margin:10vh 0 0;               /* 余白多め */
+}
+  
 /* ===== Archive inside About ===== */
 
 .about-archive{
