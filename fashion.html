@@ -243,25 +243,33 @@ h1{
   margin-bottom:4vh;
 }
 
+/* 4分割 横1段 */
+
 .icarus-grid{
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;
-  gap:36px;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
 }
 
-/* 上段メイン */
+/* 写真 */
 
-.icarus-main{
-  display:flex;
-  flex-direction:column;
-}
-
-.icarus-main img{
+.icarus-grid img{
   width:100%;
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
 }
+
+/* 動画 */
+
+.icarus-grid video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+/* クレジット（写真の下に出すなら残す） */
 
 .icarus-credit{
   font-family:'Cormorant Garamond',serif;
@@ -272,30 +280,12 @@ h1{
   margin-top:1.5vh;
 }
 
-/* 動画 */
-
-.icarus-video video{
-  width:100%;
-  aspect-ratio:9/16;
-  object-fit:cover;
-  display:block;
-}
-
-/* 下段サブ写真 */
-
-.icarus-subphoto img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
-
 /* ===== Mobile ===== */
 
 @media (max-width:768px){
 
   .icarus-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 
 }
@@ -393,16 +383,16 @@ h1{
   
 
 </div>
-</section> 
-  <section class="icarus-series">
+</section>
+
+<section class="icarus-series">
 
   <h2 class="icarus-title">ICARUS</h2>
   <div class="icarus-sub">TOKYO FASHION EDGE vol.72 掲載</div>
 
   <div class="icarus-grid">
 
-    <!-- 上段 -->
-    <div class="icarus-main">
+    <div class="icarus-item">
       <img src="images/fashion/icarus_01.jpg" alt="">
       <div class="icarus-credit">
         HAIR: KENTA UENISHI<br>
@@ -412,20 +402,15 @@ h1{
       </div>
     </div>
 
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
-    </div>
+    <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
 
-    <!-- 下段 -->
-    <div class="icarus-subphoto">
-      <img src="images/fashion/icarus_02.jpg" alt="">
-    </div>
+    <img src="images/fashion/icarus_02.jpg" alt="">
 
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
-    </div>
+    <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
 
   </div>
+
+
 
 
 </section>
