@@ -218,7 +218,7 @@ h1{
   }
 } 
   
-/* ===== ICARUS GRID CLEAN ===== */
+/* ===== ICARUS BALANCED ===== */
 
 .icarus-series{
   max-width:1100px;
@@ -226,52 +226,56 @@ h1{
   padding:0 var(--container-padding);
 }
 
-.icarus-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.2rem;
-  letter-spacing:.12em;
-  margin-bottom:1vh;
-}
-
-.icarus-sub{
-  font-family:'Cormorant Garamond',serif;
-  font-size:.85rem;
-  letter-spacing:.08em;
-  opacity:.7;
-  margin-bottom:3vh;
-}
-
-/* ★ 4分割で安定させる */
 .icarus-grid{
-  max-width:950px;          /* ← デカくしない */
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  grid-template-columns:repeat(8,1fr);
+  gap:20px;
+  margin-top:3vh;
 }
 
-/* すべて同じ高さにする */
-.icarus-grid > *{
-  aspect-ratio:2/3;
-  overflow:hidden;
+/* メイン写真 */
+.icarus-item{
+  grid-column:span 3;
 }
 
-/* 画像・動画共通 */
-.icarus-grid img,
-.icarus-grid video{
+.icarus-item img{
   width:100%;
-  height:100%;
+  aspect-ratio:2/3;
   object-fit:cover;
   display:block;
 }
 
-/* クレジット */
 .icarus-credit{
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
-  margin-top:1.2vh;
+  margin-top:1vh;
+}
+
+/* 動画 */
+.icarus-video{
+  grid-column:span 2;
+}
+
+.icarus-video video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+/* サブ写真 */
+.icarus-subphoto{
+  grid-column:span 1;
+}
+
+.icarus-subphoto img{
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  display:block;
 }
 
 /* ===== Mobile ===== */
@@ -282,8 +286,13 @@ h1{
     grid-template-columns:repeat(2,1fr);
   }
 
-}
+  .icarus-item,
+  .icarus-video,
+  .icarus-subphoto{
+    grid-column:span 2 !important;
+  }
 
+}
 
 
 
