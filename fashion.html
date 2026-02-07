@@ -91,11 +91,12 @@ h1{
 
 .grid{
   max-width:1100px;
-  margin:0 auto 4vh;   /* ← ここを縮める */
+  margin:0 auto 8vh;   /* ← 4vh → 8vh に増やす */
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
+
 
 
 /* ===== TOC 2:3 Test ===== */
@@ -132,7 +133,10 @@ h1{
   max-width:1100px;
   margin:6vh auto 10vh;
   padding:0 var(--container-padding);
+  border-top:1px solid #6C717A;  /* ← 区切り線 */
+  padding-top:5vh;               /* ← 線とコンテンツの距離 */
 }
+
 
 /* 上段：文字＋メイン */
 
