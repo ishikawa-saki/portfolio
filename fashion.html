@@ -233,12 +233,13 @@ h1{
 }
 
 .icarus-series{
-  max-width:none;                     /* ← 制限解除 */
+  max-width:none;
   margin:12vh auto 10vh;
-  padding:0 calc(var(--container-padding) - 80px); /* ← 左右を使う */
+  padding:0 calc(var(--container-padding) - 140px);  /* ← さらに使う */
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
+
 
 
 .icarus-title{
@@ -260,14 +261,10 @@ h1{
 
 .icarus-grid{
   display:grid;
-  grid-template-columns:repeat(4, 1fr); /* ← 1段で横並び */
-  column-gap:16px;                       /* ← 横の余白を締める */
-  row-gap:0;                              /* ← 1段なので縦の余白は無し */
-  align-items:start;
+  grid-template-columns:repeat(4, 1fr);
+  column-gap:10px;   /* ← かなり詰める */
+  row-gap:0;
 }
-
-
-
 
 /* 上段メイン */
 .icarus-main{
@@ -277,7 +274,7 @@ h1{
 
 .icarus-main img,
 .icarus-subphoto img{
-  width:96%;
+  width:98%;   /* ← ほぼセルいっぱい */
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
@@ -293,21 +290,22 @@ h1{
 }
 
 .icarus-video video{
-  width:72%;
+  width:80%;
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
 }
 
+
 .icarus-credit{
-  width:72%;            /* ← videoと同じ幅 */
+  width:80%;
   margin-top:1.4vh;
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
-  text-align:left;      /* ← 左辺を揃える */
+  text-align:left;
 }
 
 
