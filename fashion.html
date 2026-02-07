@@ -233,12 +233,13 @@ h1{
 }
 
 .icarus-series{
-  max-width:none;                      /* ← 制限解除 */
+  max-width:none;
   margin:12vh auto 10vh;
-  padding:0 var(--container-padding);  /* ← ページ余白をそのまま使う */
+  padding:0 calc(var(--container-padding) - 30px);  /* ← 少しだけ横に広げる */
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
+
 
 
 
@@ -261,9 +262,9 @@ h1{
 
 .icarus-grid{
   display:grid;
-  grid-template-columns:1.1fr 0.8fr;  /* ← 写真を少し広く */
-  column-gap:18px;                   /* ← 横を締める */
-  row-gap:16px;                      /* ← 縦も少し締める */
+  grid-template-columns:1fr 0.9fr;  /* ← 元の比率 */
+  column-gap:16px;                /* ← 余白だけ締める */
+  row-gap:14px;
 }
 
 
