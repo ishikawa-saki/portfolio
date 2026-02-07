@@ -42,91 +42,46 @@ body{background:var(--c-base);color:var(--c-text-main);font-family:var(--font-jp
 a{text-decoration:none;color:inherit;transition:.3s}
 a:hover{opacity:.6}
 
-
+/* ===== HERO CLEAN RESET ===== */
 
 .hero{
-  min-height:92vh;   /* 少しだけ下げる */
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;   /* ← centerやめる */
-  padding:120px var(--container-padding) 0;  /* 少し詰める */
-  position:relative;
+  padding:120px var(--container-padding) 0;
 }
 
-.hero-container{display:grid;grid-template-columns:repeat(12,1fr);align-items:end;position:relative;z-index:2}
-.hero-main-copy{grid-column:1/10}
-.hero-name{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:.05em;text-transform:uppercase}
-.hero-name-ja{
-display:block;
-margin-top:14px;
-font-family:var(--font-jp);
-font-size:1rem;          /* Archiveと同じ基準 */
-letter-spacing:.12em;
-color:var(--c-text-sub);
+.hero-container{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  align-items:end;
+  gap:4vw;
 }
 
-.hero-sub-copy{grid-column:1/6;margin-top:40px}
-.hero-tags{
-font-family:var(--font-body);
-font-size:1rem;
-letter-spacing:.12em;
-opacity:.6;
+.hero-main-copy{
+  grid-column:auto;
 }
 
+.hero-sub-copy{
+  margin-top:40px;
+}
 
-
-.hero-copy-en{margin-top:36px;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
-.hero-copy-ja{margin-top:10px;font-family:var(--font-jp);font-size:.8rem;line-height:2.1;letter-spacing:.08em;color:var(--c-text-sub);max-width:520px}
-
-  /* ===== HERO MOBILE DEFAULT ===== */
 .hero-visual{
   position:relative;
-  width:100%;
-  height:auto;      /* ← 固定しない */
-  margin-top:40px;
-  overflow:hidden;
 }
 
 .hero img{
-  width:96%;   /* ← ここだけ変更 */
+  width:100%;
   height:auto;
   display:block;
-  margin:0 auto;
 }
 
-
-/* ===== HERO PC ONLY ===== */
-@media (min-width:901px){
-
-  .hero-visual{
-    position:absolute;
-    top:10vh;
-    right:5vw;
-    width:56vw;
-    height:auto;   /* 固定しない */
-  }
-
-}
-
-/* ===== HERO MOBILE SAFE FIX ===== */
-@media screen and (max-width: 900px){
-
-  .hero{
-    min-height:auto !important;
-    padding:120px var(--container-padding) 0 !important;
-  }
+/* ===== HERO MOBILE ===== */
+@media (max-width:900px){
 
   .hero-container{
-    display:block !important;
+    grid-template-columns:1fr;
   }
 
   .hero-visual{
-    position:relative !important;
-    top:auto !important;
-    right:auto !important;
-    width:100% !important;
-    height:auto !important;   /* ← ここも固定しない */
-    margin-top:40px !important;
+    margin-top:40px;
   }
 
 }
