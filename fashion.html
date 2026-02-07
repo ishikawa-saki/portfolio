@@ -218,18 +218,18 @@ h1{
   }
 } 
   
-/* ===== ICARUS GRID REFINED ===== */
+/* ===== ICARUS GRID BALANCED ===== */
 
 .icarus-grid{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:24px;
+  grid-template-columns:repeat(8,1fr);
+  gap:20px;
   margin-top:2vh;
 }
 
-/* 1枚目（メイン写真） */
+/* メイン写真 */
 .icarus-main{
-  grid-column:span 2;
+  grid-column:span 3;
 }
 
 .icarus-main img{
@@ -241,7 +241,7 @@ h1{
 
 /* 1本目動画 */
 .icarus-video:nth-of-type(1){
-  grid-column:span 1;
+  grid-column:span 2;
 }
 
 .icarus-video video{
@@ -281,7 +281,6 @@ h1{
     grid-column:span 2 !important;
   }
 }
-
 
 
 
