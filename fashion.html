@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -218,27 +221,43 @@ h1{
   }
 } 
   
-/* ===== ICARUS CLEAN ===== */
+/* ===== ICARUS ===== */
 
 .icarus-series{
-  max-width:950px;
+  max-width:1100px;
   margin:8vh auto 10vh;
   padding:0 var(--container-padding);
 }
 
+.icarus-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;
+  letter-spacing:.12em;
+  margin-bottom:1vh;
+}
+
+.icarus-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.85rem;
+  letter-spacing:.08em;
+  opacity:.7;
+  margin-bottom:4vh;
+}
+
 .icarus-grid{
   display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:32px;   /* 余白を少し増やす */
-  row-gap:28px;  /* 縦の間を詰める */
+  grid-template-columns:1.2fr 0.8fr;
+  gap:36px;
 }
 
+/* 上段メイン */
 
-.icarus-item{
-  grid-column:span 3;
+.icarus-main{
+  display:flex;
+  flex-direction:column;
 }
 
-.icarus-item img{
+.icarus-main img{
   width:100%;
   aspect-ratio:2/3;
   object-fit:cover;
@@ -251,12 +270,10 @@ h1{
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
-  margin-top:1vh;
+  margin-top:1.5vh;
 }
 
-.icarus-video{
-  grid-column:span 2;
-}
+/* 動画 */
 
 .icarus-video video{
   width:100%;
@@ -265,9 +282,7 @@ h1{
   display:block;
 }
 
-.icarus-subphoto{
-  grid-column:span 1;
-}
+/* 下段サブ写真 */
 
 .icarus-subphoto img{
   width:100%;
@@ -276,20 +291,15 @@ h1{
   display:block;
 }
 
+/* ===== Mobile ===== */
+
 @media (max-width:768px){
 
   .icarus-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .icarus-item,
-  .icarus-video,
-  .icarus-subphoto{
-    grid-column:span 2 !important;
+    grid-template-columns:1fr;
   }
 
 }
-
 
 
 
@@ -384,16 +394,16 @@ h1{
   
 
 </div>
-</section>
-
-<section class="icarus-series">
+</section> 
+  <section class="icarus-series">
 
   <h2 class="icarus-title">ICARUS</h2>
   <div class="icarus-sub">TOKYO FASHION EDGE vol.72 掲載</div>
 
   <div class="icarus-grid">
 
-    <div class="icarus-item">
+    <!-- 上段 -->
+    <div class="icarus-main">
       <img src="images/fashion/icarus_01.jpg" alt="">
       <div class="icarus-credit">
         HAIR: KENTA UENISHI<br>
@@ -407,6 +417,7 @@ h1{
       <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
     </div>
 
+    <!-- 下段 -->
     <div class="icarus-subphoto">
       <img src="images/fashion/icarus_02.jpg" alt="">
     </div>
@@ -417,8 +428,8 @@ h1{
 
   </div>
 
-</section>
 
+</section>
 
 <div class="back">
   
