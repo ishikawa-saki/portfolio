@@ -272,12 +272,6 @@ h1{
   margin-right:6px;   /* ← ここで詰め具合を調整 */
 }
 
-/* 中央（動画1と写真2）の間は今のまま */
-.icarus-grid > div:nth-child(2){
-  margin-right:18px;  /* ← 今の中央感を維持 */
-}
-
-
 /* 上段メイン */
 .icarus-main{
   display:flex;
@@ -300,16 +294,14 @@ h1{
 }
 
 .icarus-video video{
-  width:85%;
+  width:92%;     /* ← 85 → 92 にアップ */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
 }
 
-
-
 .icarus-credit{
-  width:85%;
+  width:92%;
   margin-top:1vh;
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
@@ -318,7 +310,6 @@ h1{
   line-height:1.6;
   text-align:left;
 }
-
 
 
 @media (max-width:768px){
@@ -424,31 +415,21 @@ h1{
 
 </div>
 </section> 
- <section class="icarus-series">
+<section class="icarus-series">
 
   <h2 class="icarus-title">ICARUS</h2>
   <div class="icarus-sub">TOKYO FASHION EDGE vol.72 掲載</div>
 
   <div class="icarus-grid">
 
-    <!-- 上段：写真1（クレジットは消す） -->
+    <!-- 写真1 -->
     <div class="icarus-main">
       <img src="images/fashion/icarus_01.jpg" alt="">
     </div>
 
-    <!-- 上段：動画1 -->
+    <!-- 動画1（クレジットはここ） -->
     <div class="icarus-video">
       <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
-    </div>
-
-    <!-- 下段：写真2 -->
-    <div class="icarus-subphoto">
-      <img src="images/fashion/icarus_02.jpg" alt="">
-    </div>
-
-    <!-- 下段：動画2（クレジットはここ） -->
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
 
       <div class="icarus-credit">
         HAIR: KENTA UENISHI<br>
@@ -458,9 +439,20 @@ h1{
       </div>
     </div>
 
+    <!-- 写真2 -->
+    <div class="icarus-subphoto">
+      <img src="images/fashion/icarus_02.jpg" alt="">
+    </div>
+
+    <!-- 動画2 -->
+    <div class="icarus-video">
+      <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
+    </div>
+
   </div>
 
 </section>
+
 
 
 <div class="back">
