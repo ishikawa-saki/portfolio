@@ -233,15 +233,12 @@ h1{
 }
 
 .icarus-series{
-  max-width:1100px;                 /* ← ここで“あのサイズ感”に戻す */
+  max-width:none;                     /* ← 制限解除 */
   margin:12vh auto 10vh;
-  padding:0 var(--container-padding);
+  padding:0 calc(var(--container-padding) - 80px); /* ← 左右を使う */
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
-
-
-
 
 
 .icarus-title{
