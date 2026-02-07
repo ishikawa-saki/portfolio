@@ -224,10 +224,11 @@ h1{
 /* ===== ICARUS ===== */
 
 .icarus-series{
-  max-width:1100px;
+  max-width:980px;   /* ← 少し締める */
   margin:8vh auto 10vh;
   padding:0 var(--container-padding);
 }
+
 
 .icarus-title{
   font-family:'Cormorant Garamond',serif;
@@ -257,13 +258,6 @@ h1{
   flex-direction:column;
 }
 
-.icarus-main img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
-
 .icarus-credit{
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
@@ -273,23 +267,16 @@ h1{
   margin-top:1.5vh;
 }
 
-/* 動画 */
-
+.icarus-main img,
+.icarus-subphoto img,
 .icarus-video video{
   width:100%;
-  aspect-ratio:9/16;
   object-fit:cover;
   display:block;
+  transform:scale(0.94);
+  margin:0 auto;
 }
 
-/* 下段サブ写真 */
-
-.icarus-subphoto img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
 
 /* ===== Mobile ===== */
 
@@ -418,15 +405,21 @@ h1{
     </div>
 
     <!-- 下段 -->
-    <div class="icarus-subphoto">
-      <img src="images/fashion/icarus_02.jpg" alt="">
-    </div>
+  <div class="icarus-subphoto">
+  <img src="images/fashion/icarus_02.jpg" alt="">
+</div>
 
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
-    </div>
+<div class="icarus-video">
+  <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
 
+  <div class="icarus-credit">
+    HAIR: KENTA UENISHI<br>
+    PHOTOGRAPHY: YUSUKE MATSUYAMA<br>
+    MAKEUP: DAICHI MISAKI<br>
+    COSTUME DESIGN & VIDEO ART: ISHIKAWA SAKI
   </div>
+</div>
+
 
 
 </section>
