@@ -254,7 +254,8 @@ h1{
 .icarus-grid{
   display:grid;
   grid-template-columns:1fr 0.9fr;
-  gap:28px;
+  column-gap:24px;   /* 横の余白 */
+  row-gap:16px;      /* ← 写真同士の縦余白を詰める */
 }
 
 
@@ -280,11 +281,13 @@ h1{
 }
 
 .icarus-video video{
-  width:100%;
+  width:92%;                /* ← 写真より少しだけ小さく */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
+  margin:0 auto;
 }
+
 
 
 .icarus-subphoto img{
@@ -295,15 +298,16 @@ h1{
 }
 
 
-/* ✅ クレジットは動画2の下に置く（幅を動画の縮小率に合わせる） */
 .icarus-credit{
-  width:calc(100% * var(--icarus-scale));
-  margin-top:2vh;
+  width:92%;
+  margin-top:1.6vh;
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
+}
+
 }
 
 /* ===== Mobile ===== */
