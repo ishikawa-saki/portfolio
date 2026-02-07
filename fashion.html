@@ -223,12 +223,15 @@ h1{
   
 /* ===== ICARUS ===== */
 
+:root{
+  --icarus-scale:0.90;   /* ← ここを 0.92 / 0.88 などにして微調整 */
+}
+
 .icarus-series{
-  max-width:980px;   /* ← 少し締める */
+  max-width:980px;          /* ← 1100pxより少し締める */
   margin:8vh auto 10vh;
   padding:0 var(--container-padding);
 }
-
 
 .icarus-title{
   font-family:'Cormorant Garamond',serif;
@@ -252,40 +255,63 @@ h1{
 }
 
 /* 上段メイン */
-
 .icarus-main{
   display:flex;
   flex-direction:column;
 }
 
+/* ✅ 縦比率は“残す” */
+.icarus-main img{
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  display:block;
+  transform:scale(var(--icarus-scale));
+  margin:0 auto;
+}
+
+/* 動画：クレジットを“動画幅基準”で揃えるため wrapper を flex に */
+.icarus-video{
+  display:flex;
+  flex-direction:column;
+  align-items:center;  /* ← video(縮小)と credit の左端を揃えるため */
+}
+
+.icarus-video video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+  transform:scale(var(--icarus-scale));
+  margin:0 auto;
+}
+
+/* 下段サブ写真 */
+.icarus-subphoto img{
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  display:block;
+  transform:scale(var(--icarus-scale));
+  margin:0 auto;
+}
+
+/* ✅ クレジットは動画2の下に置く（幅を動画の縮小率に合わせる） */
 .icarus-credit{
+  width:calc(100% * var(--icarus-scale));
+  margin-top:2vh;
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
-  margin-top:1.5vh;
 }
-
-.icarus-main img,
-.icarus-subphoto img,
-.icarus-video video{
-  width:100%;
-  object-fit:cover;
-  display:block;
-  transform:scale(0.94);
-  margin:0 auto;
-}
-
 
 /* ===== Mobile ===== */
-
 @media (max-width:768px){
-
   .icarus-grid{
     grid-template-columns:1fr;
   }
-
 }
 
 
@@ -382,16 +408,32 @@ h1{
 
 </div>
 </section> 
-  <section class="icarus-series">
+ <section class="icarus-series">
 
   <h2 class="icarus-title">ICARUS</h2>
   <div class="icarus-sub">TOKYO FASHION EDGE vol.72 掲載</div>
 
   <div class="icarus-grid">
 
-    <!-- 上段 -->
+    <!-- 上段：写真1（クレジットは消す） -->
     <div class="icarus-main">
       <img src="images/fashion/icarus_01.jpg" alt="">
+    </div>
+
+    <!-- 上段：動画1 -->
+    <div class="icarus-video">
+      <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <!-- 下段：写真2 -->
+    <div class="icarus-subphoto">
+      <img src="images/fashion/icarus_02.jpg" alt="">
+    </div>
+
+    <!-- 下段：動画2（クレジットはここ） -->
+    <div class="icarus-video">
+      <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
+
       <div class="icarus-credit">
         HAIR: KENTA UENISHI<br>
         PHOTOGRAPHY: YUSUKE MATSUYAMA<br>
@@ -400,29 +442,10 @@ h1{
       </div>
     </div>
 
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
-    </div>
-
-    <!-- 下段 -->
-  <div class="icarus-subphoto">
-  <img src="images/fashion/icarus_02.jpg" alt="">
-</div>
-
-<div class="icarus-video">
-  <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
-
-  <div class="icarus-credit">
-    HAIR: KENTA UENISHI<br>
-    PHOTOGRAPHY: YUSUKE MATSUYAMA<br>
-    MAKEUP: DAICHI MISAKI<br>
-    COSTUME DESIGN & VIDEO ART: ISHIKAWA SAKI
   </div>
-</div>
-
-
 
 </section>
+
 
 <div class="back">
   
