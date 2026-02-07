@@ -261,9 +261,10 @@ h1{
 .icarus-grid{
   display:grid;
   grid-template-columns:1fr 0.9fr;
-  column-gap:24px;   /* 横の余白 */
-  row-gap:16px;      /* ← 写真同士の縦余白を詰める */
+  column-gap:26px;   /* 横少し増やす */
+  row-gap:22px;      /* ← 写真同士を少し広げる */
 }
+
 
 
 /* 上段メイン */
@@ -272,12 +273,15 @@ h1{
   flex-direction:column;
 }
 
-.icarus-main img{
-  width:100%;
+.icarus-main img,
+.icarus-subphoto img{
+  width:96%;           /* ← 4%小さく */
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
+  margin:0 auto;
 }
+
 
 
 /* 動画：クレジットを“動画幅基準”で揃えるため wrapper を flex に */
@@ -287,34 +291,33 @@ h1{
   align-items:center;  /* ← video(縮小)と credit の左端を揃えるため */
 }
 
+.icarus-video{
+  display:flex;
+  flex-direction:column;
+  align-items:center;   /* ← 中央揃えで基準統一 */
+}
+
 .icarus-video video{
-  width:72%;              /* ← ここが効く */
+  width:76%;            /* ← 72→76で写真との差を少し縮める */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
-  margin:0 auto;
 }
 
 
-
-
-.icarus-subphoto img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
 
 
 .icarus-credit{
-  width:92%;
+  width:76%;          /* ← 動画と同じ */
   margin-top:1.6vh;
   font-family:'Cormorant Garamond',serif;
   font-size:.75rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
+  text-align:left;
 }
+
 
 }
 
