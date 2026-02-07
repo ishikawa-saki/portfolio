@@ -234,8 +234,10 @@ h1{
 
 .icarus-series{
   max-width:880px;
-  margin:6vh auto 8vh;
+  margin:12vh auto 10vh;   /* ← 上を広めに */
   padding:0 var(--container-padding);
+  border-top:1px solid #E2E6ED;  /* ← 薄い線 */
+  padding-top:7vh;               /* ← 線との距離 */
 }
 
 
@@ -286,13 +288,13 @@ h1{
 }
 
 .icarus-video video{
-  width:92%;
+  width:82%;              /* ← ここが効く */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
   margin:0 auto;
-  max-height:65vh;   /* ← 縦を少し削る */
 }
+
 
 
 
