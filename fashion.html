@@ -322,57 +322,49 @@ h1{
   }
 }
 
-/* ===== GERMANY ===== */
+/* ===== GERMANY RESET ===== */
 
 .germany-series{
-  max-width:none;   /* ← イカロスと同じ広い幅 */
-  margin:14vh auto 12vh;
-  padding:0 calc(var(--container-padding) - 140px);
+  max-width:none !important;
+  width:100% !important;
+  padding:0 calc(var(--container-padding) - 140px) !important;
+  margin:14vh auto 12vh !important;
   border-top:1px solid #E2E6ED;
-  padding-top:7vh;
+  padding-top:7vh !important;
 }
 
-/* ===== 上段：縦3枚 + 動画 ===== */
-
+/* 上段：縦3枚 + 動画 */
 .germany-row--top{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr 0.8fr;  /* 動画やや小さめ */
-  gap:18px;    /* ← 少し詰める */
-  align-items:start;
-  margin-bottom:7vh;
+  display:grid !important;
+  grid-template-columns:1fr 1fr 1fr 0.7fr !important;
+  gap:20px !important;
+  margin-bottom:7vh !important;
 }
 
-.germany-row--top img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
-
+.germany-row--top img,
 .germany-row--top video{
-  width:100%;
-  aspect-ratio:9/16;
-  object-fit:cover;
-  display:block;
+  width:100% !important;
+  aspect-ratio:2/3 !important;
+  object-fit:cover !important;
+  display:block !important;
 }
 
-/* ===== 下段：横5:4単独 ===== */
+/* 動画は縦比率 */
+.germany-row--top video{
+  aspect-ratio:9/16 !important;
+}
 
+/* 下段：横1枚 */
 .germany-row--bottom{
-  max-width:70%;   /* ← 少し抑えて“余白を作る” */
+  width:70% !important;
 }
 
 .germany-row--bottom img{
-  width:100%;
-  aspect-ratio:5/4;
-  object-fit:cover;
-  display:block;
+  width:100% !important;
+  aspect-ratio:5/4 !important;
+  object-fit:cover !important;
+  display:block !important;
 }
-
-.germany-row--bottom video{
-  display:none;   /* ← 今回は動画を上段に統合しているため無効 */
-}
-
 
 .germany-credit{
   margin-top:4vh;
