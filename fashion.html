@@ -325,56 +325,51 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1250px;                /* ← NYと同等スケールに拡張 */
+  max-width:1200px;         /* NYと同等のスケール */
   margin:12vh auto 10vh;
   padding:0 var(--container-padding);
   border-top:1px solid #E2E6ED;
   padding-top:8vh;
 }
 
-/* ===== 上段：2:3 ×3枚（大きく） ===== */
-
-.germany-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:24px;
-  margin-bottom:7vh;
+/* 上段：縦写真3枚 */
+.germany-row--top{
+  display:flex;
+  gap:20px;
+  margin-bottom:6vh;
 }
 
-.germany-grid img{
-  width:100%;
+.germany-row--top img{
+  width:33.333%;
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
 }
 
-/* ===== 下段：動画を主役にする ===== */
-
-.germany-top{
+/* 下段：横写真 + 動画 */
+.germany-row--bottom{
   display:grid;
-  grid-template-columns:1.2fr 2fr;   /* ← 動画を大きく */
+  grid-template-columns:1.8fr 2.2fr;  /* 動画を大きめに */
   gap:40px;
   align-items:start;
 }
 
-/* 横写真（弱める） */
-.germany-main img{
-  width:75%;                        /* ← 存在を弱める */
+.germany-row--bottom img{
+  width:100%;
   aspect-ratio:5/4;
   object-fit:cover;
   display:block;
+  opacity:0.85;        /* 横写真を弱める */
 }
 
-/* 動画（目立たせる） */
-.germany-video video{
+.germany-row--bottom video{
   width:100%;
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
 }
 
-
-
+  
 .germany-credit{
   margin-top:4vh;
   font-family:'Cormorant Garamond',serif;
@@ -484,24 +479,17 @@ h1{
     Hair Show – Hamburg, Germany
   </h2>
 
-  <!-- 上段：縦3枚 -->
-  <div class="germany-grid">
-    <img src="images/fashion/red_01.jpg" alt="">
+  <!-- 上段：縦写真3枚の横並び -->
+  <div class="germany-row germany-row--top">
     <img src="images/fashion/germany_02.jpg" alt="">
     <img src="images/fashion/germany_03.jpg" alt="">
+    <img src="images/fashion/germany_04.jpg" alt="">
   </div>
 
-  <!-- 下段：横＋動画 -->
-  <div class="germany-top">
-
-    <div class="germany-main">
-      <img src="images/fashion/germany_04.jpg" alt="">
-    </div>
-
-    <div class="germany-video">
-      <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
-    </div>
-
+  <!-- 下段：5:4横写真 + 動画 -->
+  <div class="germany-row germany-row--bottom">
+    <img src="images/fashion/red_01.jpg" alt="">
+    <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
   </div>
 
   <div class="germany-credit">
@@ -511,6 +499,7 @@ h1{
   </div>
 
 </section>
+
 
 
 <section class="icarus-series">
