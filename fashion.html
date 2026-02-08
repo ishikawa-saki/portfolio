@@ -325,20 +325,20 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1100px;          /* ← NYと同じ幅に */
+  max-width:1250px;                /* ← NYと同等スケールに拡張 */
   margin:12vh auto 10vh;
-  padding:0 var(--container-padding);  /* ← 他セクションと統一 */
+  padding:0 var(--container-padding);
   border-top:1px solid #E2E6ED;
   padding-top:8vh;
 }
 
-/* ===== 上段：2:3 ×3枚 ===== */
+/* ===== 上段：2:3 ×3枚（大きく） ===== */
 
 .germany-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:20px;
-  margin-bottom:6vh;
+  gap:24px;
+  margin-bottom:7vh;
 }
 
 .germany-grid img{
@@ -348,24 +348,26 @@ h1{
   display:block;
 }
 
-/* ===== 下段：横5:4 + 小さめ動画 ===== */
+/* ===== 下段：動画を主役にする ===== */
 
 .germany-top{
   display:grid;
-  grid-template-columns:3fr 1.2fr;  /* ← 動画小さめ */
-  gap:32px;
+  grid-template-columns:1.2fr 2fr;   /* ← 動画を大きく */
+  gap:40px;
   align-items:start;
 }
 
+/* 横写真（弱める） */
 .germany-main img{
-  width:100%;
+  width:75%;                        /* ← 存在を弱める */
   aspect-ratio:5/4;
   object-fit:cover;
   display:block;
 }
 
+/* 動画（目立たせる） */
 .germany-video video{
-  width:85%;            /* ← 少し小さく */
+  width:100%;
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
