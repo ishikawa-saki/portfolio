@@ -141,28 +141,35 @@ max-width:none;
   display:block;
 }
 
+.about-text-en,
+.about-text-ja{
+  max-width:1000px;     /* ← 広げる */
+}
+
 .about-text-en{
   font-family:var(--font-body);
-  font-size:1.1rem;
+  font-size:1.15rem;    /* 少しだけ強く */
   line-height:1.9;
-  max-width:880px;   /* ← 760 → 880 */
 }
 
 .about-text-ja{
-  margin-top:28px;
+  margin-top:32px;
   font-family:var(--font-jp);
-  font-size:.85rem;
+  font-size:.88rem;
   line-height:2.2;
   letter-spacing:.08em;
   color:var(--c-text-sub);
-  max-width:880px;   /* ← 760 → 880 */
 }
+
 
 #about{
   padding-left:var(--container-padding);
   padding-right:var(--container-padding);
   position:relative;
+  max-width:1200px;     /* ← ここ重要 */
+  margin:0 auto;        /* ← 中央に“塊”として置く */
 }
+
 
 #about::after{
   content:"";
