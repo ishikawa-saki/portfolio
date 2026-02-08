@@ -325,51 +325,54 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  width:100%;                     /* ← 最大幅制限をやめる */
-  max-width:none;                 /* ← これが重要 */
-  margin:12vh 0 10vh;             /* ← 中央寄せ解除 */
-  padding:0 6vw;                  /* ← 他セクションと同じ余白 */
-  border-top:1px solid #E2E6ED;
-  padding-top:8vh;
-}
-
-/* 上段：縦写真3枚 */
-.germany-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:28px;                       /* ← イカロスと同等スケール */
-  margin-bottom:7vh;
-}
-
-.germany-grid img{
   width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
+  max-width:1350px;         /* ← NYセクションと同じ最大幅 */
+  margin:12vh auto 8vh;
+  padding:0 var(--container-padding);
+  border-top:1px solid #E2E6ED;
+  padding-top:7vh;
 }
 
-/* 下段：横写真＋動画（動画は主役にしない） */
-.germany-top{
-  display:grid;
-  grid-template-columns:2fr 1fr;  /* ← 動画を小さく */
-  gap:40px;
-  align-items:start;
+/* ===== 上段: 3枚の縦写真を横並びで大きく ===== */
+
+.germany-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列 */
+  gap:24px;               /* 十分な余白 */
+  margin-bottom:6vh;
 }
 
-/* 横写真（主役にしない） */
-.germany-main img{
-  width:85%;
-  aspect-ratio:5/4;
-  object-fit:cover;
-  display:block;
+.germany-grid img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 2/3;      /* 縦写真 */
+  display: block;
 }
 
-/* 動画（控えめ） */
-.germany-video video{
-  width:75%;                      /* ← 大きすぎ問題を解消 */
-  aspect-ratio:9/16;
-  object-fit:cover;
-  display:block;
+/* ===== 下段: 横写真 + 動画 ===== */
+
+.germany-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* 左小さめ・右動画大きめ */
+  gap:32px;
+  align-items: start;
+}
+
+/* 横写真（控えめ） */
+.germany-main img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 5/4;
+  opacity: 0.85;           /* 主張を抑える */
+  display: block;
+}
+
+/* 動画（少し大きく・動画主張） */
+.germany-video video {
+  width: 100%;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  display: block;
 }
 
   
