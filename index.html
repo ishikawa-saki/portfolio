@@ -129,11 +129,11 @@ max-width:none;
 
 
 .section-label{
-  font-family:var(--font-display);   /* ← displayに変更 */
-  color:var(--c-text-main);          /* ← 少し強くする */
+  font-family:var(--font-body);   /* ← 本文と同じ */
+  color:var(--c-text-sub);
   text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:1.3rem;                  /* ← 少しだけ大きく */
+  letter-spacing:.14em;
+  font-size:1rem;
   margin-bottom:28px;
   display:block;
 }
@@ -161,11 +161,9 @@ max-width:none;
 
 
 #about{
-  padding-left:var(--container-padding);
-  padding-right:var(--container-padding);
+  max-width:760px;                 /* 本文幅と揃える */
+  margin:0 0 0 var(--container-padding);  /* 左に固定 */
   position:relative;
-  max-width:1200px;     /* ← ここ重要 */
-  margin:0 auto;        /* ← 中央に“塊”として置く */
 }
 
 
