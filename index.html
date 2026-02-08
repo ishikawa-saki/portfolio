@@ -137,16 +137,16 @@ opacity:.6;
   position:relative;
 }
 
-/* ラベル：本文フォント寄り＋少しだけ存在感 */
 .section-label{
   font-family:var(--font-body);
-  color:var(--c-text-sub);
+  color:var(--c-text-main);   /* ← 英文と同色 */
   text-transform:uppercase;
   letter-spacing:.14em;
-  font-size:1.1rem;     /* ← 1.0 → 1.1 で“弱すぎ”解消 */
-  margin-bottom:28px;
-  display:block;        /* ← これはそのまま残す */
+  font-size:1.2rem;           /* ← ほんの少し強く */
+  margin-bottom:32px;
+  display:block;
 }
+
 
 /* 本文：幅は広げすぎると“右スカスカ”が逆に目立つので程よく */
 .about-text-en,
