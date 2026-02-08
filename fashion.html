@@ -337,12 +337,15 @@ h1{
   grid-template-columns:38% 22% 30%;
   gap:3%;
   align-items:start;
+
+  /* ↓ 行の高さをメイン比率に固定 */
+  aspect-ratio: 38 / 50; /* 3:4に近い比率 */
 }
 
 /* MAIN */
 .germany-main img{
   width:100%;
-  aspect-ratio:3/4;
+  height:100%;
   object-fit:cover;
   display:block;
 }
@@ -350,7 +353,7 @@ h1{
 /* VIDEO */
 .germany-video video{
   width:100%;
-  aspect-ratio:9/16;
+  height:100%;
   object-fit:cover;
   display:block;
 }
@@ -360,14 +363,12 @@ h1{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
-
-  /* ↓ ここがポイント */
   height:100%;
 }
 
 .germany-grid img{
   width:100%;
-  aspect-ratio:2/3;
+  height:100%;
   object-fit:cover;
   display:block;
 }
