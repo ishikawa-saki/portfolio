@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -15,6 +12,7 @@
 <style>
 :root{
   --container-padding:max(6vw,40px);
+  --section-width:1100px;
 }
 
 /* ===== Base ===== */
@@ -25,27 +23,22 @@ body{
   color:#111418;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
+a{ text-decoration:none; color:inherit; }
 
-/* ===== HEADER (WORKSと統一) ===== */
+/* ===== HEADER ===== */
 .header{
-  position: relative;
-  width: 100%;
-  padding: 50px 0;
+  width:100%;
+  padding:50px 0;
 }
 
 .header-inner{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 var(--container-padding);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-
 
 .header-logo{
   font-family:'Cormorant Garamond',serif;
@@ -77,8 +70,6 @@ a{
   margin:0 auto;
 }
 
-
-
 h1{
   font-family:'Playfair Display',serif;
   font-weight:400;
@@ -87,22 +78,17 @@ h1{
   margin:4vh 0 4vh;
 }
 
-
-
+/* ===== Top Grid ===== */
 .grid{
-  max-width:1100px;
-  margin:0 auto 8vh;   /* ← 4vh → 8vh に増やす */
+  max-width:var(--section-width);
+  margin:0 auto 8vh;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
 
-
-
-/* ===== TOC 2:3 Test ===== */
-
 .image-frame{
-  aspect-ratio:2/3;   /* ← 2:3 縦長 */
+  aspect-ratio:2/3;
   overflow:hidden;
 }
 
@@ -114,42 +100,39 @@ h1{
   display:block;
 }
 
-
-
-
 /* ===== Back Link ===== */
 .back{
   text-align:center;
-  margin-bottom:8vh;
+  margin-top:10vh;
   font-family:'Cormorant Garamond',serif;
   letter-spacing:.2em;
   text-transform:uppercase;
   font-size:.9rem;
 }
 
-/* ===== NY SERIES ===== */
+/* =========================
+   NY / GERMANY / ICARUS 統一
+========================= */
 
-.ny-series{
-  max-width:1100px;
-  margin:10vh auto 12vh;   /* ← 上下の余白を増やす */
+.ny-series,
+.germany-series,
+.icarus-series{
+  max-width:var(--section-width);
+  margin:12vh auto 12vh;
   padding:0 var(--container-padding);
   border-top:1px solid #E2E6ED;
-  padding-top:7vh;         /* ← 線とNYの距離を広げる */
+  padding-top:7vh;
 }
 
-
-
-/* 上段：文字＋メイン */
-
+/* ===== NY SERIES ===== */
 .ny-top{
   display:grid;
-  grid-template-columns:0.7fr 1.3fr;  /* ← 数字を逆にする */
+  grid-template-columns:0.7fr 1.3fr;
   gap:48px;
   align-items:start;
-  margin-bottom:3vh;
+  margin-bottom:4vh;
 }
 
-  
 .ny-title{
   font-family:'Cormorant Garamond',serif;
   font-size:1.2rem;
@@ -157,9 +140,7 @@ h1{
   margin-bottom:3vh;
 }
 
-.ny-description{
-  margin:0;
-}
+.ny-description{ margin:0; }
 
 .ny-description .jp{
   font-family:'Noto Serif JP',serif;
@@ -184,8 +165,6 @@ h1{
   line-height:1.6;
 }
 
-/* メイン画像 */
-
 .ny-image{
   aspect-ratio:2/3;
   overflow:hidden;
@@ -197,8 +176,6 @@ h1{
   object-fit:cover;
   display:block;
 }
-
-/* 下段：サブ4枚 */
 
 .ny-grid{
   display:grid;
@@ -213,34 +190,55 @@ h1{
   display:block;
 }
 
-/* ===== Mobile ===== */
+/* ===== GERMANY ===== */
 
-@media (max-width:768px){
+/* 上段：縦3枚 */
+.germany-row--top{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-bottom:6vh;
+}
 
-  .ny-top{
-    grid-template-columns:1fr;
-  }
+.germany-row--top img{
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  display:block;
+}
 
-  .ny-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-} 
-  
+/* 下段：横 + 動画 */
+.germany-row--bottom{
+  display:grid;
+  grid-template-columns:1fr 0.8fr;
+  gap:32px;
+  align-items:start;
+}
+
+.germany-row--bottom img{
+  width:100%;
+  aspect-ratio:5/4;
+  object-fit:cover;
+  display:block;
+}
+
+.germany-row--bottom video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+.germany-credit{
+  margin-top:4vh;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.8rem;
+  letter-spacing:.06em;
+  opacity:.7;
+  line-height:1.6;
+}
+
 /* ===== ICARUS ===== */
-
-:root{
-  --icarus-scale:0.92;   /* ← ここを 0.92 / 0.88 などにして微調整 */
-}
-
-.icarus-series{
-  max-width:1100px;
-  margin:12vh auto 10vh;
-  padding:0 var(--container-padding);
-  border-top:1px solid #E2E6ED;
-  padding-top:7vh;
-}
-
-
 
 .icarus-title{
   font-family:'Cormorant Garamond',serif;
@@ -248,7 +246,6 @@ h1{
   letter-spacing:.12em;
   margin-bottom:.4vh;
 }
-
 
 .icarus-sub{
   font-family:'Cormorant Garamond',serif;
@@ -258,22 +255,21 @@ h1{
   margin-bottom:3vh;
 }
 
-
 .icarus-grid{
   display:grid;
   grid-template-columns:1.2fr 0.8fr 1.2fr 0.8fr;
   column-gap:12px;
+  row-gap:16px;
   align-items:start;
 }
 
-  /* 写真と動画の間だけ余白を作る */
 .icarus-grid > div:nth-child(1),
 .icarus-grid > div:nth-child(3){
-  margin-right:6px;   /* ← ここで詰め具合を調整 */
+  margin-right:6px;
 }
 
-/* 上段メイン */
-.icarus-main{
+.icarus-main,
+.icarus-subphoto{
   display:flex;
   flex-direction:column;
 }
@@ -286,17 +282,15 @@ h1{
   display:block;
 }
 
-
 .icarus-video{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  justify-content:space-between;   /* ← これが効く */
+  justify-content:space-between;
 }
 
-
 .icarus-video video{
-  width:92%;     /* ← 85 → 92 にアップ */
+  width:92%;
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
@@ -313,68 +307,16 @@ h1{
   text-align:left;
 }
 
-
+/* ===== Mobile ===== */
 @media (max-width:768px){
-  .icarus-grid{
-    grid-template-columns:repeat(2, 1fr); /* スマホは2列 */
-    row-gap:16px;
-    column-gap:16px;
-  }
+  .ny-top{ grid-template-columns:1fr; }
+  .ny-grid{ grid-template-columns:repeat(2,1fr); }
+  .germany-row--top{ grid-template-columns:repeat(2,1fr); }
+  .germany-row--bottom{ grid-template-columns:1fr; }
+  .icarus-grid{ grid-template-columns:repeat(2,1fr); column-gap:16px; }
+  .icarus-video video{ width:100%; }
+  .icarus-credit{ width:100%; }
 }
-
-.germany-series{
-  max-width:1100px;
-  margin:14vh auto 12vh;
-  padding:0 var(--container-padding);
-  border-top:1px solid #E2E6ED;
-  padding-top:7vh;
-}
-
-
-.germany-row--top{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr 0.7fr;
-  gap:18px;
-  margin-bottom:6vh;
-}
-
-.germany-row--top img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
-
-.germany-row--top video{
-  width:100%;
-  aspect-ratio:9/16;
-  object-fit:cover;
-  display:block;
-}
-
-.germany-row--bottom{
-  width:70%;
-}
-
-.germany-row--bottom img{
-  width:100%;
-  aspect-ratio:5/4;
-  object-fit:cover;
-  display:block;
-}
-
-  
-.germany-credit{
-  margin-top:4vh;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.8rem;
-  letter-spacing:.06em;
-  opacity:.7;
-  line-height:1.6;
-}
-
-
-
 </style>
 </head>
 
@@ -393,154 +335,122 @@ h1{
   </div>
 </header>
 
-
 <div class="container">
 
-<h1>FASHION / BEAUTY</h1>
+  <h1>FASHION / BEAUTY</h1>
 
-<div class="grid">
-
-  <div class="image-frame"><img src="images/fashion/nawa_01.jpg" alt=""></div>
-  <div class="image-frame"><img src="images/fashion/NY_01.jpg" alt=""></div>
-  <div class="image-frame"><img src="images/fashion/icarus_01.jpg" alt=""></div>
-  <div class="image-frame"><img src="images/fashion/light_01.jpg" alt=""></div>
-  
-  <div class="image-frame"><img src="images/fashion/red_01.jpg" alt=""></div>
-
-</div>
-
-<section class="ny-series">
-
-<div class="ny-top">
-
-  <div class="ny-image">
-    <img src="images/fashion/NY_01.jpg" alt="">
+  <div class="grid">
+    <div class="image-frame"><img src="images/fashion/nawa_01.jpg" alt=""></div>
+    <div class="image-frame"><img src="images/fashion/NY_01.jpg" alt=""></div>
+    <div class="image-frame"><img src="images/fashion/icarus_01.jpg" alt=""></div>
+    <div class="image-frame"><img src="images/fashion/light_01.jpg" alt=""></div>
+    <div class="image-frame"><img src="images/fashion/red_01.jpg" alt=""></div>
   </div>
 
-  <div class="ny-left">
-
-    <h2 class="ny-title">VEOIR MAGAZINE (NY / Paris) – Feature</h2>
-
-    <div class="ny-description">
-
-      <p class="jp">
-      コンセプトは「影を纏う」。<br>
-      ボディペイントをハイファッションへ昇華させ、身体を彩ることの本質を問う。<br>
-      肌に落ちる幾何学の影と 肉体の有機的な稜線の対比。<br>
-      色彩を排したミニマリズムが、身体そのものの造形美を浮き彫りにする。
-      </p>
-
-      <p class="en">
-      Concept: "To Wear the Shadow."<br>
-      Elevating body paint to the realm of high fashion,<br>
-      questioning the essence of adorning the human form.<br>
-      Minimalism through the interplay of shadows and the body's natural contours,stripped of all color. <br>
-      Revealing the flesh itself as the ultimate sculptural beauty.
-      </p>
-
-      <div class="ny-credit">
-        PHOTOGRAPHY: JULIA COMITA<br>
-        CONCEPT & SCULPTURE: ISHIKAWA SAKI<br>
-        CREATIVE DIRECTION: LISA JARVIS<br>
-        HAIR: YUHI KIM<br>
-        MODEL: EHREN DORSEY @NY MODELS<br>
-        PHOTOGRAPHY ASSISTANT: IAN JONES<br>
-        PRODUCTION: NUMI PRASARN
+  <section class="ny-series">
+    <div class="ny-top">
+      <div class="ny-image">
+        <img src="images/fashion/NY_01.jpg" alt="">
       </div>
 
-    </div>
+      <div class="ny-left">
+        <h2 class="ny-title">VEOIR MAGAZINE (NY / Paris) – Feature</h2>
 
-  </div>
+        <div class="ny-description">
+          <p class="jp">
+          コンセプトは「影を纏う」。<br>
+          ボディペイントをハイファッションへ昇華させ、身体を彩ることの本質を問う。<br>
+          肌に落ちる幾何学の影と 肉体の有機的な稜線の対比。<br>
+          色彩を排したミニマリズムが、身体そのものの造形美を浮き彫りにする。
+          </p>
 
-</div>
+          <p class="en">
+          Concept: "To Wear the Shadow."<br>
+          Elevating body paint to the realm of high fashion,<br>
+          questioning the essence of adorning the human form.<br>
+          Minimalism through the interplay of shadows and the body's natural contours,stripped of all color. <br>
+          Revealing the flesh itself as the ultimate sculptural beauty.
+          </p>
 
-
-  <!-- 画像 -->
- <div class="ny-grid">
-
-  <!-- 上段：縦2枚 -->
-  <img src="images/fashion/NY_02.jpg" class="vertical" alt="">
-  <img src="images/fashion/NY_03.jpg" class="vertical" alt="">
-  <img src="images/fashion/NY_06.jpg" class="horizontal" alt="">
-  <img src="images/fashion/NY_05.jpg" class="horizontal" alt="">
-  
-
-</div>
-  </section>  <!-- ★ これを追加：NYセクションを閉じる -->
-  </div> 
-  
-<section class="germany-series">
-
-  <h2>
-    ICD 100th Anniversary World Congress 2025<br>
-    Hair Show – Hamburg, Germany
-  </h2>
-
-  <!-- 上段：縦写真3枚の横並び -->
-  <div class="germany-row germany-row--top">
-    <img src="images/fashion/germany_02.jpg" alt="">
-    <img src="images/fashion/red_01.jpg" alt="">
-    <img src="images/fashion/germany_03.jpg" alt="">
-  </div>
-
-  <!-- 下段：5:4横写真 + 動画 -->
-  <div class="germany-row germany-row--bottom">
-    <img src="images/fashion/germany_04.jpg" alt="">
-    <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
-  </div>
-
-  <div class="germany-credit">
-    HAIR: HIROAKI KINOSHITA<br>
-    COSTUMES: ISHIKAWA SAKI<br>
-    COSTUME FINISHING: YUKINO IKEDA
-  </div>
-
-</section>
-
-  
-<section class="icarus-series">
-
-  <h2 class="icarus-title">ICARUS</h2>
-  <div class="icarus-sub">TOKYO FASHION EDGE vol.72 掲載</div>
-
-  <div class="icarus-grid">
-
-    <!-- 写真1 -->
-    <div class="icarus-main">
-      <img src="images/fashion/icarus_01.jpg" alt="">
-    </div>
-
-    <!-- 動画1（クレジットはここ） -->
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
-
-      <div class="icarus-credit">
-        HAIR: KENTA UENISHI<br>
-        PHOTOGRAPHY: YUSUKE MATSUYAMA<br>
-        MAKEUP: DAICHI MISAKI<br>
-        COSTUME DESIGN & VIDEO ART: ISHIKAWA SAKI
+          <div class="ny-credit">
+            PHOTOGRAPHY: JULIA COMITA<br>
+            CONCEPT & SCULPTURE: ISHIKAWA SAKI<br>
+            CREATIVE DIRECTION: LISA JARVIS<br>
+            HAIR: YUHI KIM<br>
+            MODEL: EHREN DORSEY @NY MODELS<br>
+            PHOTOGRAPHY ASSISTANT: IAN JONES<br>
+            PRODUCTION: NUMI PRASARN
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- 写真2 -->
-    <div class="icarus-subphoto">
-      <img src="images/fashion/icarus_02.jpg" alt="">
+    <div class="ny-grid">
+      <img src="images/fashion/NY_02.jpg" alt="">
+      <img src="images/fashion/NY_03.jpg" alt="">
+      <img src="images/fashion/NY_06.jpg" alt="">
+      <img src="images/fashion/NY_05.jpg" alt="">
+    </div>
+  </section>
+
+  <section class="germany-series">
+    <h2>
+      ICD 100th Anniversary World Congress 2025<br>
+      Hair Show – Hamburg, Germany
+    </h2>
+
+    <div class="germany-row germany-row--top">
+      <img src="images/fashion/germany_02.jpg" alt="">
+      <img src="images/fashion/red_01.jpg" alt="">
+      <img src="images/fashion/germany_03.jpg" alt="">
     </div>
 
-    <!-- 動画2 -->
-    <div class="icarus-video">
-      <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
+    <div class="germany-row germany-row--bottom">
+      <img src="images/fashion/germany_04.jpg" alt="">
+      <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
     </div>
 
+    <div class="germany-credit">
+      HAIR: HIROAKI KINOSHITA<br>
+      COSTUMES: ISHIKAWA SAKI<br>
+      COSTUME FINISHING: YUKINO IKEDA
+    </div>
+  </section>
+
+  <section class="icarus-series">
+    <h2 class="icarus-title">ICARUS</h2>
+    <div class="icarus-sub">TOKYO FASHION EDGE vol.72 掲載</div>
+
+    <div class="icarus-grid">
+      <div class="icarus-main">
+        <img src="images/fashion/icarus_01.jpg" alt="">
+      </div>
+
+      <div class="icarus-video">
+        <video src="images/fashion/icarus_video1.mp4" autoplay muted loop playsinline></video>
+
+        <div class="icarus-credit">
+          HAIR: KENTA UENISHI<br>
+          PHOTOGRAPHY: YUSUKE MATSUYAMA<br>
+          MAKEUP: DAICHI MISAKI<br>
+          COSTUME DESIGN & VIDEO ART: ISHIKAWA SAKI
+        </div>
+      </div>
+
+      <div class="icarus-subphoto">
+        <img src="images/fashion/icarus_02.jpg" alt="">
+      </div>
+
+      <div class="icarus-video">
+        <video src="images/fashion/icarus_video2.mp4" autoplay muted loop playsinline></video>
+      </div>
+    </div>
+  </section>
+
+  <div class="back">
+    <a href="/index.html">Back to Home</a>
   </div>
 
-</section>
-
-
-
-<div class="back">
-  
-  <a href="/index.html">Back to Home</a>
 </div>
 
 </body>
