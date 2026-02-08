@@ -333,10 +333,9 @@ h1{
   padding-top:6vh;
 }
 
-/* 通常フローを使う */
 .germany-top{
   position:relative;
-  height:720px;   /* ← ブロックを“面”として固定 */
+  height:680px;   /* 少し短く */
 }
 
 /* メイン */
@@ -344,7 +343,8 @@ h1{
   position:absolute;
   left:0;
   top:0;
-  width:42%;
+  width:44%;
+  z-index:1;
 }
 
 .germany-main img{
@@ -357,9 +357,10 @@ h1{
 /* 動画 */
 .germany-video{
   position:absolute;
-  right:10%;
-  top:6%;
-  width:22%;
+  right:12%;
+  top:4%;
+  width:20%;
+  z-index:2;   /* メインより前 */
 }
 
 .germany-video video{
@@ -369,15 +370,16 @@ h1{
   display:block;
 }
 
-/* サブ群 */
+/* サブ */
 .germany-grid{
   position:absolute;
   right:0;
   bottom:0;
-  width:36%;
+  width:30%;        /* ← 小さくして衝突回避 */
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
+  gap:12px;
+  z-index:1;
 }
 
 .germany-grid img{
@@ -386,6 +388,7 @@ h1{
   object-fit:cover;
   display:block;
 }
+
 
 
 
