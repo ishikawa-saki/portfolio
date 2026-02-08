@@ -191,44 +191,43 @@ opacity:.6;
   margin:10vh 0 0;
 }
 
-/* ===== ARCHIVE INLINE (STRUCTURED VERSION) ===== */
+/* ===== ARCHIVE INLINE (REFINED SCALE VERSION) ===== */
 
 .about-archive-inline{
   margin-top:5vh;
-  padding:18px 24px;                 /* ← 余白で塊にする */
-  border:1px solid rgba(17,20,24,.06);
-  background:rgba(255,255,255,.4);   /* 極薄の面 */
-  display:inline-block;              /* ← 塊として扱う */
   font-family:var(--font-body);
-  font-size:1rem;
-  letter-spacing:.04em;
+  font-size:1.08rem;        /* ← 1rem → 1.08 */
+  letter-spacing:.05em;
   line-height:1.9;
+  color:var(--c-text-main);
 }
 
+/* ARCHIVE */
 .archive-label{
   text-transform:uppercase;
-  letter-spacing:.14em;
-  color:rgba(17,20,24,.85);
+  letter-spacing:.18em;
+  font-weight:500;          /* ← 少しだけ芯を出す */
 }
 
+/* 主要実績 */
 .archive-label-ja{
   font-family:var(--font-jp);
-  margin-left:8px;
-  font-size:.88em;
-  letter-spacing:.06em;
-  color:rgba(17,20,24,.85);
+  margin-left:10px;
+  font-size:.95em;
+  letter-spacing:.08em;
+  color:var(--c-text-main);  /* ← ARCHIVEと同色 */
 }
 
 /* EN / JP */
 .about-archive-inline a{
   margin:0 18px;
-  font-size:.95rem;
+  font-size:.98rem;          /* ← 少しだけ強く */
   letter-spacing:.08em;
   font-weight:500;
-  color:rgba(17,20,24,.85);
+  color:var(--c-text-main);
   text-decoration:none;
   position:relative;
-  padding-bottom:4px;
+  padding-bottom:3px;
 }
 
 .about-archive-inline a::after{
@@ -236,15 +235,14 @@ opacity:.6;
   position:absolute;
   left:0;
   bottom:0;
-  width:70%;
+  width:60%;
   height:1px;
-  background:rgba(17,20,24,.35);
+  background:rgba(17,20,24,.4);
   transition:.3s ease;
 }
 
 .about-archive-inline a:hover::after{
   width:100%;
-  background:rgba(17,20,24,.75);
 }
 
 
