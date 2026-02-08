@@ -325,31 +325,22 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1500px;           /* 横の余白を減らしてスケールを出す */
-  margin:7vh auto 5vh;        /* ブロックを短く */
-  padding:0 2vw;
+  max-width:1350px;
+  margin:8vh auto 6vh;
+  padding:0 4vw;
   border-top:1px solid #E2E6ED;
-  padding-top:4vh;
+  padding-top:5vh;
+}
 
-  /* ここが肝：このブロック自体を“横1行グリッド”にする */
+/* 上段：メイン＋動画 */
+.germany-top{
   display:grid;
-  grid-template-columns:
-    minmax(260px, 1fr)        /* MAIN */
-    minmax(170px, 0.55fr)     /* VIDEO */
-    minmax(120px, 0.35fr)     /* SUB 1 */
-    minmax(120px, 0.35fr)     /* SUB 2 */
-    minmax(120px, 0.35fr);    /* SUB 3（04含む） */
-  gap:16px;
+  grid-template-columns:1.25fr 0.75fr;
+  gap:28px;
   align-items:start;
+  margin-bottom:3vh;   /* 縦を短く */
 }
 
-/* 既存の“上下ブロック”を解体して、子要素を germany-series の列に載せる */
-.germany-top,
-.germany-grid{
-  display:contents;
-}
-
-/* MAIN */
 .germany-main img{
   width:100%;
   aspect-ratio:3/4;
@@ -357,24 +348,25 @@ h1{
   display:block;
 }
 
-/* VIDEO（サイズ感はここで固定して“大きくならない”ようにする） */
 .germany-video video{
   width:100%;
-  max-width:230px;            /* ← これで「巨大化」しない */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
-  justify-self:start;         /* 左寄せで余計なセンター感を消す */
 }
 
-/* SUB（小さく・同列・縦に伸ばさない） */
+/* 下段：横に詰める */
+.germany-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;             /* ← 詰める */
+}
+
 .germany-grid img{
   width:100%;
-  max-width:190px;            /* ← サブが巨大にならない */
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
-  justify-self:start;
 }
 
 
