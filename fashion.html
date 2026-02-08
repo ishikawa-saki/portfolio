@@ -336,7 +336,7 @@ h1{
   display:grid;
   grid-template-columns:38% 22% 30%;
   gap:3%;
-  align-items:start;   /* 上揃え */
+  align-items:start;
 }
 
 /* MAIN */
@@ -355,21 +355,20 @@ h1{
   display:block;
 }
 
-/* SUB */
+/* SUB：縦に3枚並べる */
 .germany-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-rows:repeat(3, 1fr);
   gap:12px;
-  align-content:start;   /* ← 上から詰める */
+  height:100%;              /* ← メインと同じ高さにする */
 }
 
 .germany-grid img{
   width:100%;
-  aspect-ratio:2/3;
+  height:100%;
   object-fit:cover;
   display:block;
 }
-
 
 
 
