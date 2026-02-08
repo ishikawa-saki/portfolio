@@ -191,18 +191,20 @@ opacity:.6;
   margin:10vh 0 0;
 }
 
-/* ===== ARCHIVE INLINE (STRONG LABEL + CLEAR LINKS) ===== */
+/* ===== ARCHIVE INLINE (STRUCTURED VERSION) ===== */
 
 .about-archive-inline{
-  margin-top:4vh;
+  margin-top:5vh;
+  padding:18px 24px;                 /* ← 余白で塊にする */
+  border:1px solid rgba(17,20,24,.06);
+  background:rgba(255,255,255,.4);   /* 極薄の面 */
+  display:inline-block;              /* ← 塊として扱う */
   font-family:var(--font-body);
   font-size:1rem;
-  letter-spacing:.04em;          /* ← 少し締めて視認性UP */
+  letter-spacing:.04em;
   line-height:1.9;
-  color:var(--c-text-sub);
 }
 
-/* ARCHIVE / 主要実績 を同じ“濃さ”に揃える */
 .archive-label{
   text-transform:uppercase;
   letter-spacing:.14em;
@@ -214,39 +216,36 @@ opacity:.6;
   margin-left:8px;
   font-size:.88em;
   letter-spacing:.06em;
-  color:rgba(17,20,24,.85);      /* ← ARCHIVE と同色 */
-  opacity:1;                      /* ← 薄くしない */
+  color:rgba(17,20,24,.85);
 }
 
-/* EN / JP は弱めない（現状の強さを維持） */
+/* EN / JP */
 .about-archive-inline a{
-  margin:0 18px;                  /* ← クリックしやすく自然に離す */
+  margin:0 18px;
   font-size:.95rem;
   letter-spacing:.08em;
   font-weight:500;
-  color:rgba(17,20,24,.8);
+  color:rgba(17,20,24,.85);
   text-decoration:none;
   position:relative;
-  padding-bottom:6px;
+  padding-bottom:4px;
 }
 
-/* “気づかれない”問題は、下線を常時表示で解決 */
 .about-archive-inline a::after{
   content:"";
   position:absolute;
   left:0;
   bottom:0;
-  width:70%;                      /* ← 下線を短めにして上品に */
+  width:70%;
   height:1px;
   background:rgba(17,20,24,.35);
-  transition:width .25s ease, background .25s ease;
+  transition:.3s ease;
 }
 
 .about-archive-inline a:hover::after{
   width:100%;
   background:rgba(17,20,24,.75);
 }
-
 
 
 .footer{padding:20vh var(--container-padding) 8vh;background:#1F1F1F;color:#E9ECF1}
