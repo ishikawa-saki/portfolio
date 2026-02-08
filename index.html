@@ -168,13 +168,18 @@ opacity:.6;
 }
 
 .about-text-ja{
-  margin-top:36px;
+  margin-top:28px;
   font-family:var(--font-jp);
-  font-size:.9rem;      /* ← .88 → .90 で見た目の弱さ解消 */
-  line-height:2.35;     /* ← 2.2 → 2.35 で“押し込め感”を消す */
+  font-size:.9rem;
+  line-height:2.35;
   letter-spacing:.08em;
   color:var(--c-text-sub);
+  max-width:880px;
+
+  word-break: keep-all;      /* ← これ追加 */
+  overflow-wrap: normal;     /* ← これ追加 */
 }
+
 
 /* 下の薄い区切り線 */
 #about::after{
