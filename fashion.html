@@ -325,48 +325,32 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1450px;
+  max-width:1400px;
   margin:9vh auto 7vh;
-  padding:0 5vw;
+  padding:0 6vw;
   border-top:1px solid #E2E6ED;
   padding-top:5vh;
 }
 
 .germany-top{
   display:grid;
-  grid-template-columns:38% 22% 40%;
-  gap:3%;
-  align-items:start;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
 }
 
-/* MAIN */
-.germany-main img{
-  width:100%;
-  aspect-ratio:3/4;
-  object-fit:cover;
-  display:block;
-}
-
-/* VIDEO */
-.germany-video video{
-  width:100%;
-  aspect-ratio:9/16;
-  object-fit:cover;
-  display:block;
-}
-
-/* SUB：横3枚にする */
-.germany-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:12px;
-}
-
+/* 全部同格 */
+.germany-main img,
+.germany-video video,
 .germany-grid img{
   width:100%;
-  aspect-ratio:2/3;
+  height:100%;
   object-fit:cover;
   display:block;
+}
+
+/* サブはdisplay:contentsで同列化 */
+.germany-grid{
+  display:contents;
 }
 
 
