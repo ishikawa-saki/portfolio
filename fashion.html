@@ -326,24 +326,24 @@ h1{
 
 .germany-series{
   position:relative;
-  max-width:1400px;
-  margin:10vh auto 8vh;
-  padding:0 6vw;
+  max-width:1450px;
+  margin:9vh auto 7vh;
+  padding:0 5vw;
   border-top:1px solid #E2E6ED;
-  padding-top:6vh;
+  padding-top:5vh;
 }
 
 .germany-top{
   position:relative;
-  height:680px;
+  height:650px;        /* ← 全要素この高さに揃う */
 }
 
-/* メイン */
+/* ===== MAIN（少し小さく） ===== */
 .germany-main{
   position:absolute;
   left:0;
   top:0;
-  width:42%;
+  width:38%;           /* 42 → 38 */
 }
 
 .germany-main img{
@@ -353,12 +353,12 @@ h1{
   display:block;
 }
 
-/* 動画 */
+/* ===== VIDEO（少し大きく） ===== */
 .germany-video{
   position:absolute;
-  left:48%;      /* ← 右基準をやめる */
-  top:6%;
-  width:18%;
+  left:44%;            /* MAINの右に自然配置 */
+  top:0;               /* ← 高さ揃え */
+  width:22%;           /* 18 → 22 */
 }
 
 .germany-video video{
@@ -368,15 +368,15 @@ h1{
   display:block;
 }
 
-/* サブ */
+/* ===== SUB（サムネ感を脱するサイズ） ===== */
 .germany-grid{
   position:absolute;
-  left:68%;      /* ← 動画の右側に固定 */
-  bottom:0;
-  width:26%;
+  left:68%;            /* VIDEOの右に固定 */
+  top:0;               /* ← 高さ揃え */
+  width:30%;           /* 26 → 30 */
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:14px;
 }
 
 .germany-grid img{
@@ -385,6 +385,7 @@ h1{
   object-fit:cover;
   display:block;
 }
+
 
 
 
