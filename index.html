@@ -376,14 +376,30 @@ letter-spacing:.06em;
 
 
 .about-archive-inline a{
-color:var(--c-text-main);        /* リンクは少しだけ濃く */
-text-decoration:underline;
-text-underline-offset:3px;
+  margin:0 14px;                /* ← EN / JPを自然に離す */
+  font-size:.95rem;
+  letter-spacing:.08em;
+  position:relative;
+  text-decoration:none;         /* ← underline削除 */
+  color:var(--c-text-main);
 }
 
-.about-archive-inline a:hover{
-opacity:.7;
+.about-archive-inline a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height:1px;
+  background:rgba(17,20,24,.35);
+  opacity:0;
+  transition:opacity .3s ease;
 }
+
+.about-archive-inline a:hover::after{
+  opacity:1;
+}
+
 
 /* =========================
    IMAGE FRAME (Global)
