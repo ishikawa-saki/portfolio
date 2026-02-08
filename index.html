@@ -351,36 +351,12 @@ margin-top:8vh;
 opacity:.8;
 }
 
-.about-archive-inline{
-margin-top:4vh;                  /* 本文から一呼吸 */
-font-family:var(--font-body);
-font-size:1rem;                  /* 少しだけ大きく */
-letter-spacing:.05em;            /* 読みやすく調整 */
-color:var(--c-text-sub);
-line-height:1.9;
-}
-
-.archive-label{
-text-transform:uppercase;
-letter-spacing:.14em;            /* 広げすぎない */
-}
-
-.archive-label-ja{
-font-family:var(--font-jp);
-margin-left:8px;
-opacity:.9;
-font-size:.85em;      /* もう一段だけ小さく */
-letter-spacing:.06em;
-}
-
-
-
 .about-archive-inline a{
-  margin:0 14px;                /* ← EN / JPを自然に離す */
+  margin:0 14px;
   font-size:.95rem;
   letter-spacing:.08em;
   position:relative;
-  text-decoration:none;         /* ← underline削除 */
+  text-decoration:none;
   color:var(--c-text-main);
 }
 
@@ -391,15 +367,13 @@ letter-spacing:.06em;
   bottom:-2px;
   width:100%;
   height:1px;
-  background:rgba(17,20,24,.35);
-  opacity:0;
-  transition:opacity .3s ease;
+  background:rgba(17,20,24,.28);   /* ← 常時うっすら表示 */
+  transition:background .3s ease;
 }
 
 .about-archive-inline a:hover::after{
-  opacity:1;
+  background:rgba(17,20,24,.75);   /* ← ホバーで濃く */
 }
-
 
 /* =========================
    IMAGE FRAME (Global)
