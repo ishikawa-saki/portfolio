@@ -191,57 +191,61 @@ opacity:.6;
   margin:10vh 0 0;
 }
 
-/* ===== ARCHIVE INLINE (REFINED) ===== */
+/* ===== ARCHIVE INLINE (STRONG LABEL + CLEAR LINKS) ===== */
 
 .about-archive-inline{
   margin-top:4vh;
   font-family:var(--font-body);
   font-size:1rem;
-  letter-spacing:.05em;
+  letter-spacing:.04em;          /* ← 少し締めて視認性UP */
   line-height:1.9;
   color:var(--c-text-sub);
 }
 
-/* ARCHIVE をほんの少し強く */
+/* ARCHIVE / 主要実績 を同じ“濃さ”に揃える */
 .archive-label{
   text-transform:uppercase;
   letter-spacing:.14em;
   color:rgba(17,20,24,.85);
-  font-weight:500;
 }
 
-/* 主要実績 */
 .archive-label-ja{
   font-family:var(--font-jp);
   margin-left:8px;
-  font-size:.85em;
+  font-size:.88em;
   letter-spacing:.06em;
-  color:var(--c-text-sub);
+  color:rgba(17,20,24,.85);      /* ← ARCHIVE と同色 */
+  opacity:1;                      /* ← 薄くしない */
 }
 
-/* EN / JP */
+/* EN / JP は弱めない（現状の強さを維持） */
 .about-archive-inline a{
-  margin:0 18px;
+  margin:0 18px;                  /* ← クリックしやすく自然に離す */
   font-size:.95rem;
   letter-spacing:.08em;
   font-weight:500;
-  position:relative;
+  color:rgba(17,20,24,.8);
   text-decoration:none;
-  color:rgba(17,20,24,.85);
+  position:relative;
   padding-bottom:6px;
 }
 
-/* 下線は常時表示 */
+/* “気づかれない”問題は、下線を常時表示で解決 */
 .about-archive-inline a::after{
   content:"";
   position:absolute;
   left:0;
   bottom:0;
-  width:100%;
+  width:70%;                      /* ← 下線を短めにして上品に */
   height:1px;
-  background:rgba(17,20,24,.4);
+  background:rgba(17,20,24,.35);
+  transition:width .25s ease, background .25s ease;
 }
 
+.about-archive-inline a:hover::after{
+  width:100%;
+  background:rgba(17,20,24,.75);
+}
 
 
 
