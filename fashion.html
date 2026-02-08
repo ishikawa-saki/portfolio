@@ -325,54 +325,60 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  width:100%;
-  max-width:1350px;         /* ← NYセクションと同じ最大幅 */
-  margin:12vh auto 8vh;
+  max-width:1100px;                 /* ← NYと同じ */
+  margin:12vh auto 10vh;
   padding:0 var(--container-padding);
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
 
-/* ===== 上段: 3枚の縦写真を横並びで大きく ===== */
-
-.germany-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3列 */
-  gap:24px;               /* 十分な余白 */
+/* 上段：2:3 ×3（大きく見せる＝gapを詰める） */
+.germany-row--top{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;                         /* ← 24pxより詰めて“面”を大きく */
   margin-bottom:6vh;
 }
 
-.germany-grid img {
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 2/3;      /* 縦写真 */
-  display: block;
+.germany-row--top img{
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  display:block;
 }
 
-/* ===== 下段: 横写真 + 動画 ===== */
-
-.germany-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr; /* 左小さめ・右動画大きめ */
-  gap:32px;
-  align-items: start;
+/* 下段：横写真（弱め） + 動画（大きすぎないが優位） */
+.germany-row--bottom{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr; /* ← 動画を少し優位 */
+  gap:28px;
+  align-items:start;
 }
 
-/* 横写真（控えめ） */
-.germany-main img {
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 5/4;
-  opacity: 0.85;           /* 主張を抑える */
-  display: block;
+/* 横写真（存在弱め：少し小さく） */
+.germany-row--bottom img{
+  width:86%;
+  aspect-ratio:5/4;
+  object-fit:cover;
+  display:block;
+  opacity:0.85;
 }
 
-/* 動画（少し大きく・動画主張） */
-.germany-video video {
-  width: 100%;
-  aspect-ratio: 9/16;
-  object-fit: cover;
-  display: block;
+/* 動画（大きすぎない：でも横写真より強い＝列で勝たせる） */
+.germany-row--bottom video{
+  width:92%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+.germany-credit{
+  margin-top:4vh;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.8rem;
+  letter-spacing:.06em;
+  opacity:.7;
+  line-height:1.6;
 }
 
   
@@ -478,6 +484,8 @@ h1{
   
 
 </div>
+  </section>  <!-- ★ これを追加：NYセクションを閉じる -->
+  
 <section class="germany-series">
 
   <h2>
