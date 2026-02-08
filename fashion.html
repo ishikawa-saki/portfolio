@@ -326,64 +326,53 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1100px;                 /* ← NYと同じ */
-  margin:12vh auto 10vh;
-  padding:0 var(--container-padding);
+  max-width:1400px;
+  margin:14vh auto 12vh;
+  padding:0 8vw;
   border-top:1px solid #E2E6ED;
-  padding-top:7vh;
+  padding-top:8vh;
 }
 
-/* 上段：2:3 ×3（大きく見せる＝gapを詰める） */
-.germany-row--top{
+/* ===== 上段：縦写真3枚 ===== */
+
+.germany-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:16px;                         /* ← 24pxより詰めて“面”を大きく */
+  gap:2vw;
   margin-bottom:6vh;
 }
 
-.germany-row--top img{
+.germany-grid img{
   width:100%;
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
 }
 
-/* 下段：横写真 + 極小動画 */
+/* ===== 下段：横写真＋動画 ===== */
 
-.germany-row--bottom{
+.germany-top{
   display:grid;
-  grid-template-columns:1fr auto;   /* ← 動画は自動幅 */
-  gap:28px;
+  grid-template-columns:5fr 4fr;
+  gap:4vw;
   align-items:start;
 }
 
-/* 横写真 */
-.germany-row--bottom img{
+.germany-main img{
   width:100%;
   aspect-ratio:5/4;
   object-fit:cover;
   display:block;
 }
 
-/* 動画を1/4サイズに */
-.germany-row--bottom video{
-  width:40%;            /* ← 今の約1/4 */
+.germany-video video{
+  width:100%;
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
 }
 
 
-.germany-credit{
-  margin-top:4vh;
-  font-family:'Cormorant Garamond',serif;
-  font-size:.8rem;
-  letter-spacing:.06em;
-  opacity:.7;
-  line-height:1.6;
-}
-
-  
 .germany-credit{
   margin-top:4vh;
   font-family:'Cormorant Garamond',serif;
@@ -486,26 +475,32 @@ h1{
   
 
 </div>
-  </section>  <!-- ★ これを追加：NYセクションを閉じる -->
-  
-<section class="germany-series">
+</section> 
+
+  <section class="germany-series">
 
   <h2>
     ICD 100th Anniversary World Congress 2025<br>
     Hair Show – Hamburg, Germany
   </h2>
 
-  <!-- 上段：縦写真3枚の横並び -->
-  <div class="germany-row germany-row--top">
-    <img src="images/fashion/germany_02.jpg" alt="">
-    <img src="images/fashion/red_01.jpg" alt="">
-    <img src="images/fashion/germany_03.jpg" alt="">
+  <div class="germany-top">
+
+    <div class="germany-main">
+      <img src="images/fashion/red_01.jpg
+" alt="">
+    </div>
+
+    <div class="germany-video">
+      <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
+    </div>
+
   </div>
 
-  <!-- 下段：5:4横写真 + 動画 -->
-  <div class="germany-row germany-row--bottom">
+  <div class="germany-grid">
+    <img src="images/fashion/germany_02.jpg" alt="">
+    <img src="images/fashion/germany_03.jpg" alt="">
     <img src="images/fashion/germany_04.jpg" alt="">
-    <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
   </div>
 
   <div class="germany-credit">
@@ -515,8 +510,6 @@ h1{
   </div>
 
 </section>
-
-
 
 <section class="icarus-series">
 
