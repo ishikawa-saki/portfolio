@@ -327,12 +327,11 @@ h1{
 .germany-series{
   width:100%;
   margin:14vh 0 12vh;
-  padding:0 6vw;
+  padding:0 calc(var(--container-padding) - 140px);
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
 
-/* 上段：縦3枚＋動画 */
 .germany-row--top{
   display:grid;
   grid-template-columns:1fr 1fr 1fr 0.7fr;
@@ -354,7 +353,6 @@ h1{
   display:block;
 }
 
-/* 下段：横1枚 */
 .germany-row--bottom{
   width:70%;
 }
@@ -364,10 +362,6 @@ h1{
   aspect-ratio:5/4;
   object-fit:cover;
   display:block;
-}
-
-.germany-row--bottom video{
-  display:none;
 }
 
 
@@ -475,6 +469,7 @@ h1{
 
 </div>
   </section>  <!-- ★ これを追加：NYセクションを閉じる -->
+  </div> 
   
 <section class="germany-series">
 
