@@ -352,12 +352,17 @@ h1{
 }
 
 .germany-video{
-  padding-top:8vh;   /* 動画を下げてアクセント化 */
+  padding-top:0;      /* ← 下げていたのを削除 */
+  display:block;      /* flexをやめる */
 }
 
 .germany-video video{
+  width:65%;          /* ← さらに小さく */
   aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
 }
+
 
 .germany-grid{
   display:grid;
