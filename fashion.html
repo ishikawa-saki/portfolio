@@ -325,52 +325,51 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1250px;          /* ← 横幅戻す */
-  margin:14vh auto 12vh;
-  padding:0 4vw;             /* ← container-padding使わず少し攻める */
+  max-width:1050px;
+  margin:10vh auto 8vh;      /* ← ブロック短く */
+  padding:0 6vw;
   border-top:1px solid #E2E6ED;
-  padding-top:8vh;
+  padding-top:6vh;
 }
 
+/* 上段：横2枚だけ */
 .germany-top{
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;   /* ← さっきOK出した比率維持 */
-  gap:32px;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:28px;
   align-items:start;
-  margin-bottom:5vh;
+  margin-bottom:4vh;
 }
 
 .germany-main img{
-  width:100%;
+  width:85%;                 /* ← メイン縮小 */
   aspect-ratio:3/4;
   object-fit:cover;
   display:block;
 }
 
-.germany-video{
-  display:block;
-}
-
 .germany-video video{
-  width:60%;                 /* ← あなたがOK出したサイズ維持 */
+  width:60%;                 /* ← あなたOKサイズ維持 */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
 }
 
+/* 下段：横並びやめて横2枚だけ */
 .germany-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:4vh;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:3vh;
 }
 
 .germany-grid img{
-  width:100%;
+  width:85%;                 /* ← サブも小さく */
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
 }
+
 
 
 
