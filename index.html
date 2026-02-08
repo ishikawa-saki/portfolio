@@ -140,9 +140,22 @@ max-width:none;
   display:block;
 }
 
+.about-text-en{
+  font-family:var(--font-body);
+  font-size:1.1rem;
+  line-height:1.9;
+  max-width:880px;   /* ← 760 → 880 */
+}
 
-.about-text-en{font-family:var(--font-body);font-size:1.1rem;line-height:1.9;max-width:760px}
-.about-text-ja{margin-top:28px;font-family:var(--font-jp);font-size:.85rem;line-height:2.2;letter-spacing:.08em;color:var(--c-text-sub);max-width:760px}
+.about-text-ja{
+  margin-top:28px;
+  font-family:var(--font-jp);
+  font-size:.85rem;
+  line-height:2.2;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+  max-width:880px;   /* ← 760 → 880 */
+}
 
 #about{
   padding-left:var(--container-padding);
@@ -163,11 +176,10 @@ max-width:none;
 /* ===== Archive inside About ===== */
 
 .about-archive{
-margin-top:3vh;
-padding-top:16px;
-border-top:1px solid rgba(11,13,16,.05);
-max-width:760px;
-margin-top:6vh;
+  margin-top:6vh;
+  padding-top:16px;
+  border-top:1px solid rgba(11,13,16,.05);
+  max-width:880px;   /* ← 760 → 880 に変更 */
 }
 
 
