@@ -121,52 +121,55 @@ opacity:.6;
 
 
   
-.container{padding:0 var(--container-padding);max-width:1920px;margin:0 auto}
-#about{
-margin:0;
-max-width:none;
+/* ===== ABOUT BLOCK (REPLACE WHOLE) ===== */
+
+.container{
+  padding:0 var(--container-padding);
+  max-width:1920px;
+  margin:0 auto;
 }
 
+#about{
+  margin:0;
+  max-width:none;
+  padding-left:var(--container-padding);
+  padding-right:var(--container-padding);
+  position:relative;
+}
 
+/* ラベル：本文フォント寄り＋少しだけ存在感 */
 .section-label{
-  font-family:var(--font-body);   /* ← 本文と同じ */
+  font-family:var(--font-body);
   color:var(--c-text-sub);
   text-transform:uppercase;
   letter-spacing:.14em;
-  font-size:1rem;
+  font-size:1.1rem;     /* ← 1.0 → 1.1 で“弱すぎ”解消 */
   margin-bottom:28px;
-  display:block;
+  display:block;        /* ← これはそのまま残す */
 }
 
-
+/* 本文：幅は広げすぎると“右スカスカ”が逆に目立つので程よく */
 .about-text-en,
 .about-text-ja{
-  max-width:1000px;     /* ← 広げる */
+  max-width:880px;      /* ← 1000 だと空きが増えやすい。まず 880 推奨 */
 }
 
 .about-text-en{
   font-family:var(--font-body);
-  font-size:1.15rem;    /* 少しだけ強く */
+  font-size:1.15rem;
   line-height:1.9;
 }
 
 .about-text-ja{
-  margin-top:32px;
+  margin-top:28px;
   font-family:var(--font-jp);
-  font-size:.88rem;
-  line-height:2.2;
+  font-size:.9rem;      /* ← .88 → .90 で見た目の弱さ解消 */
+  line-height:2.35;     /* ← 2.2 → 2.35 で“押し込め感”を消す */
   letter-spacing:.08em;
   color:var(--c-text-sub);
 }
 
-
-#about{
-  max-width:760px;                 /* 本文幅と揃える */
-  margin:0 0 0 var(--container-padding);  /* 左に固定 */
-  position:relative;
-}
-
-
+/* 下の薄い区切り線 */
 #about::after{
   content:"";
   display:block;
@@ -176,8 +179,6 @@ max-width:none;
   margin:10vh 0 0;
 }
 
-  
-/* ===== Archive inside About ===== */
 
 .about-archive{
   margin-top:6vh;
