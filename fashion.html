@@ -325,44 +325,38 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:950px;
+  max-width:1250px;          /* ← 横幅戻す */
   margin:14vh auto 12vh;
-  padding:0 var(--container-padding);
+  padding:0 4vw;             /* ← container-padding使わず少し攻める */
   border-top:1px solid #E2E6ED;
   padding-top:8vh;
 }
 
 .germany-top{
   display:grid;
-  grid-template-columns:1.25fr 0.75fr;  /* 主従をここで */
+  grid-template-columns:1.2fr 0.8fr;   /* ← さっきOK出した比率維持 */
   gap:32px;
   align-items:start;
   margin-bottom:5vh;
 }
 
-.germany-main img,
-.germany-video video{
-  width:100%;     /* ← 戻す */
+.germany-main img{
+  width:100%;
+  aspect-ratio:3/4;
   object-fit:cover;
   display:block;
 }
 
-.germany-main img{
-  aspect-ratio:3/4;
-}
-
 .germany-video{
-  padding-top:0;      /* ← 下げていたのを削除 */
-  display:block;      /* flexをやめる */
+  display:block;
 }
 
 .germany-video video{
-  width:60%;          /* ← さらに小さく */
+  width:60%;                 /* ← あなたがOK出したサイズ維持 */
   aspect-ratio:9/16;
   object-fit:cover;
   display:block;
 }
-
 
 .germany-grid{
   display:grid;
@@ -372,11 +366,12 @@ h1{
 }
 
 .germany-grid img{
-  width:100%;     /* ← 戻す */
+  width:100%;
   aspect-ratio:2/3;
   object-fit:cover;
   display:block;
 }
+
 
 
 .germany-credit{
