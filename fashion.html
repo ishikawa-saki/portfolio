@@ -332,12 +332,12 @@ h1{
   padding-top:5vh;
 }
 
-/* 1行グリッドで揃える */
+/* 上段：メイン＋動画＋サブを同一行にする */
 .germany-top{
   display:grid;
   grid-template-columns:38% 22% 30%;
   gap:3%;
-  align-items:start;
+  align-items:start;     /* ← ここで上端を揃える */
 }
 
 /* MAIN */
@@ -356,11 +356,12 @@ h1{
   display:block;
 }
 
-/* SUB */
+/* SUB（.germany-grid をこの行の3列目に載せる） */
 .germany-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
+  align-content:start;   /* ← サブ内も上から詰める */
 }
 
 .germany-grid img{
