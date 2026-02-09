@@ -300,13 +300,14 @@ h1{
 
 /* Title */
 .germany-title-en{
-  margin:0 0 1vh;
+  margin:0 0 0.8vh;
   font-family:'Playfair Display',serif;
   font-weight:400;
-  letter-spacing:.06em;   /* ← 狭める（洗練） */
-  font-size:clamp(1.6rem,2.2vw,2rem);
-  line-height:1.25;       /* ← 少し締める */
+  letter-spacing:.05em;    /* ← 洗練 */
+  font-size:clamp(1.35rem,1.9vw,1.6rem); /* ← 小さく */
+  line-height:1.25;
 }
+
 
 
 .germany-title-jp{
@@ -322,10 +323,11 @@ h1{
 /* ===== Layout ===== */
 .germany-layout{
   display:grid;
-  grid-template-columns:1fr 1fr 1fr 0.8fr; /* 動画だけ少し細く */
+  grid-template-columns:1.15fr 1fr 1fr 0.85fr; /* ← mainだけ少し大きく */
   column-gap:26px;
   align-items:start;
 }
+
 
 
 /* ===== MAIN（高さ基準）===== */
@@ -368,12 +370,12 @@ h1{
 }
 
 .germany-credit{
-  margin-top:10px;
+  margin-top:8px;
   font-family:'Cormorant Garamond',serif;
-  font-size:.8rem;
-  letter-spacing:.06em;
+  font-size:.75rem;   /* ← 少し小さく */
+  letter-spacing:.05em;
   opacity:.7;
-  line-height:1.6;
+  line-height:1.5;    /* ← 詰める */
 }
 
 
