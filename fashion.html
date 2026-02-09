@@ -292,10 +292,11 @@ h1{
 .germany-series{
   max-width:none;
   margin:12vh auto 10vh;
-  padding:0 calc(var(--container-padding) - 140px); /* ← ICARUSと完全一致 */
+  padding:0 calc(var(--container-padding) - 70px); /* NYとICARUSの中間 */
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
+
 
 /* Title (NY準拠) */
 .germany-title-en{
@@ -315,24 +316,57 @@ h1{
   color:#6C717A;
 }
 
-.germany-layout{
+  .germany-layout{
   display:grid;
-  grid-template-columns:0.95fr 0.7fr 0.7fr; /* さらに縮小 */
-  column-gap:18px; /* 少し呼吸を作る */
+  grid-template-columns:0.8fr 0.6fr 0.8fr; /* mainをさらに小さく */
+  column-gap:26px;
   align-items:start;
 }
 
-
-/* 高さ基準 */
-.germany-main,
-.germany-substack,
-.germany-videostack{
+/* mainが高さ基準 */
+.germany-main{
   aspect-ratio:2/3;
-  width:92%;              /* ← 全体をやや小さく */
-  overflow:hidden;
+  width:100%;
 }
 
+.germany-main img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
+/* subをmain高さに完全同期 */
+.germany-substack{
+  aspect-ratio:2/3;     /* mainと同じ高さ */
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  row-gap:10px;
+}
+
+.germany-substack img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* videoも高さ同期 */
+.germany-videostack{
+  aspect-ratio:2/3;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.germany-videostack video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+  
 /* Main (2:3) */
 .germany-main img{
   width:100%;
@@ -353,15 +387,6 @@ h1{
   height:100%;
   object-fit:cover;
   display:block;
-}
-
-
-
-.germany-videostack{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-  height:100%;
 }
 
 .germany-videostack video{
