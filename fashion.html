@@ -291,10 +291,11 @@ h1{
 .germany-series{
   max-width:none;
   margin:12vh auto 10vh;
-  padding:0 calc(var(--container-padding) - 140px); /* ← ICARUSと完全一致 */
+  padding:0 calc(var(--container-padding) - 70px); /* 中間値 */
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
+
 
 /* Title (NY準拠) */
 .germany-title-en{
@@ -316,10 +317,11 @@ h1{
 
 .germany-layout{
   display:grid;
-  grid-template-columns:0.95fr 0.7fr 0.7fr; /* さらに縮小 */
-  column-gap:18px; /* 少し呼吸を作る */
+  grid-template-columns:0.85fr 0.75fr 0.75fr; /* mainを一段静かに */
+  column-gap:22px;
   align-items:start;
 }
+
 
 
 /* 高さ基準 */
@@ -342,10 +344,15 @@ h1{
 
 .germany-substack{
   display:grid;
-  grid-template-rows:1fr 1fr; /* 完全に半分ずつ */
-  gap:10px;
+  grid-template-rows:1fr 1fr;
+  gap:0;              /* ← 高さを超えさせない */
   height:100%;
 }
+
+.germany-substack img:first-child{
+  margin-bottom:8px;  /* ← 視覚的な余白だけ作る */
+}
+
 
 .germany-substack img{
   width:100%;
