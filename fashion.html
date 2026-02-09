@@ -315,15 +315,15 @@ h1{
   color:#6C717A;
 }
 
-/* Layout */
+/* ===== Layout ===== */
 .germany-layout{
   display:grid;
-  grid-template-columns:0.8fr 0.55fr 0.8fr; /* main小さめ */
+  grid-template-columns:0.8fr 0.55fr 0.8fr;
   column-gap:28px;
   align-items:start;
 }
 
-/* ===== 高さ基準（mainが基準） ===== */
+/* ===== MAIN（高さ基準）===== */
 .germany-main{
   aspect-ratio:2/3;
   width:100%;
@@ -336,52 +336,49 @@ h1{
   display:block;
 }
 
-/* ===== サブ2枚：高さ同期＋安全設計 ===== */
+/* ===== SUB 2枚（縦2:3固定＋main縦内に収める）===== */
 .germany-substack{
-  aspect-ratio:2/3;       /* mainと完全同期 */
+  height:100%;              /* mainと同じ高さ */
   display:flex;
   flex-direction:column;
-  justify-content:space-between; /* 均等配置 */
-  width:82%;              /* 小さくする */
+  justify-content:space-between;
+  width:82%;
   margin:0 auto;
 }
 
 .germany-substack img{
+  aspect-ratio:2/3;         /* 固定 */
   width:100%;
-  height:calc((100% - 14px) / 2); /* gap考慮して均等分割 */
+  height:auto;
   object-fit:cover;
   display:block;
 }
 
-.germany-substack img:first-child{
-  margin-bottom:14px;
-}
-
-/* ===== Video + Credit（main高さ内に収める） ===== */
+/* ===== VIDEO + CREDIT（main縦内に収める）===== */
 .germany-videostack{
-  aspect-ratio:2/3;  /* mainと同期 */
+  height:100%;              /* mainと同期 */
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:space-between;
 }
 
-/* 動画は固定9:16（変更しない） */
 .germany-videostack video{
+  aspect-ratio:9/16;        /* 固定 */
   width:100%;
-  aspect-ratio:9/16;
+  height:auto;
   object-fit:cover;
   display:block;
 }
 
-/* クレジットは動画下、かつmain縦内に収まる */
 .germany-credit{
-  margin-top:16px;
+  margin-top:0;
   font-family:'Cormorant Garamond',serif;
   font-size:.8rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
 }
+
 
 
 /* Mobile */
