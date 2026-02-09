@@ -326,51 +326,52 @@ h1{
 /* ===== GERMANY ===== */
 
 .germany-series{
-  max-width:1400px;
-  margin:14vh auto 12vh;
-  padding:0 8vw;
+  max-width:1450px;
+  margin:9vh auto 7vh;
+  padding:0 5vw;
   border-top:1px solid #E2E6ED;
-  padding-top:8vh;
+  padding-top:5vh;
 }
 
-/* ===== 上段：縦写真3枚 ===== */
-
-.germany-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:2vw;
-  margin-bottom:6vh;
-}
-
-.germany-grid img{
-  width:100%;
-  aspect-ratio:2/3;
-  object-fit:cover;
-  display:block;
-}
-
-/* ===== 下段：横写真＋動画 ===== */
-
+/* 上段：main video subgroup */
 .germany-top{
-  display:grid;
-  grid-template-columns:5fr 4fr;
-  gap:4vw;
-  align-items:start;
+  display: grid;
+  grid-template-columns: 38% 22% 40%;
+  gap: 3%;
+  align-items: start;
 }
 
+/* main */
 .germany-main img{
-  width:100%;
-  aspect-ratio:5/4;
-  object-fit:cover;
-  display:block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
 }
 
+/* video */
 .germany-video video{
-  width:100%;
-  aspect-ratio:9/16;
-  object-fit:cover;
-  display:block;
+  width: 100%;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  display: block;
 }
+
+/* subgroup = 横並び */
+.germany-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ← 最大3列 */
+  gap: 12px;
+}
+
+/* サブ画像 */
+.germany-grid img{
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+
 
 
 .germany-credit{
