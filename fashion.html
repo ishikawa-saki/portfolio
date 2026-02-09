@@ -289,12 +289,13 @@ h1{
 
 /* ===== GERMANY (FINAL) ===== */
 .germany-series{
-  max-width:1100px;               /* NYと同じ */
+  max-width:1100px;               /* NYと統一 */
   margin:12vh auto 10vh;
-  padding:0 var(--container-padding);  /* NYと完全統一 */
+  padding:0 var(--container-padding);
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
+
 
 
 /* Title */
@@ -321,10 +322,11 @@ h1{
 /* ===== Layout ===== */
 .germany-layout{
   display:grid;
-  grid-template-columns:0.8fr 0.55fr 0.8fr;
-  column-gap:28px;
+  grid-template-columns:1fr 1fr 1fr 0.8fr; /* 動画だけ少し細く */
+  column-gap:26px;
   align-items:start;
 }
+
 
 /* ===== MAIN（高さ基準）===== */
 .germany-main{
@@ -339,49 +341,34 @@ h1{
   display:block;
 }
 
-.germany-substack{
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  width:72%;
-  margin:0 auto;
-  gap:4px; /* ← 間隔をさらに狭く */
+
+.germany-sub{
+  aspect-ratio:2/3;
 }
 
-
-
-
-.germany-substack img{
-  aspect-ratio:2/3;         /* 固定 */
+.germany-sub img{
   width:100%;
-  height:auto;
+  height:100%;
   object-fit:cover;
   display:block;
 }
 
-.germany-videostack{
-  height:100%;                 /* mainと完全同期 */
+
+.germany-video{
   display:flex;
   flex-direction:column;
+  justify-content:flex-start;
 }
 
-
-.germany-videostack video{
-  aspect-ratio:9/16;      /* 固定 */
-  width:75%;              /* ← 少し小さく */
-  margin:0 auto;          /* 中央 */
-  height:auto;
+.germany-video video{
+  aspect-ratio:9/16;
+  width:100%;
   object-fit:cover;
   display:block;
 }
-
-
 
 .germany-credit{
-  width:75%;              /* 動画と同じ幅 */
-  margin:6px auto 0 auto; /* 動画下に揃える */
-  text-align:left;
+  margin-top:10px;
   font-family:'Cormorant Garamond',serif;
   font-size:.8rem;
   letter-spacing:.06em;
@@ -392,34 +379,24 @@ h1{
 
 
 
+
 /* Mobile */
 @media (max-width:768px){
   .germany-layout{
     grid-template-columns:1fr;
-    row-gap:16px;
+    row-gap:20px;
   }
 
   .germany-main,
-  .germany-substack,
-  .germany-videostack{
-    aspect-ratio:auto;
-  }
-
-  .germany-main img{
+  .germany-sub{
     aspect-ratio:2/3;
-    height:auto;
   }
 
-  .germany-substack img{
-    aspect-ratio:2/3;
-    height:auto;
-  }
-
-  .germany-videostack video{
+  .germany-video video{
     aspect-ratio:9/16;
-    height:auto;
   }
 }
+
 </style>
 </head>
 
@@ -517,32 +494,31 @@ h1{
 </p>
 
 
-  <div class="germany-layout">
+ <div class="germany-layout">
 
-    <!-- Main -->
-    <div class="germany-main">
-      <img src="images/fashion/germany_01.jpg" alt="">
-    </div>
-
-    <!-- Sub (03 over 02) -->
-    <div class="germany-substack">
-      <img src="images/fashion/germany_03.jpg" alt="">
-      <img src="images/fashion/germany_02.jpg" alt="">
-    </div>
-
-    <!-- Video + Credit -->
-    <div class="germany-videostack">
-      <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
-
-      <div class="germany-credit">
-        HAIR: HIROAKI KINOSHITA<br>
-        COSTUMES: ISHIKAWA SAKI<br>
-        COSTUME FINISHING: YUKINO IKEDA<br>
-      
-      </div>
-    </div>
-
+  <div class="germany-main">
+    <img src="images/fashion/germany_01.jpg" alt="">
   </div>
+
+  <div class="germany-sub">
+    <img src="images/fashion/germany_03.jpg" alt="">
+  </div>
+
+  <div class="germany-sub">
+    <img src="images/fashion/germany_02.jpg" alt="">
+  </div>
+
+  <div class="germany-video">
+    <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
+    <div class="germany-credit">
+      HAIR: HIROAKI KINOSHITA<br>
+      COSTUMES: ISHIKAWA SAKI<br>
+      COSTUME FINISHING: YUKINO IKEDA
+    </div>
+  </div>
+
+</div>
+
 
 </section>
 
