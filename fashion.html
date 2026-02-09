@@ -316,11 +316,10 @@ h1{
 
 .germany-layout{
   display:grid;
-  grid-template-columns:0.90fr 0.75fr 0.75fr; /* mainをさらに控えめ */
-  column-gap:20px; /* 全体の呼吸を整える */
+  grid-template-columns:0.95fr 0.7fr 0.7fr; /* さらに縮小 */
+  column-gap:18px; /* 少し呼吸を作る */
   align-items:start;
 }
-
 
 
 /* 高さ基準 */
@@ -343,8 +342,8 @@ h1{
 
 .germany-substack{
   display:grid;
-  grid-template-rows: 2fr 3fr; /* メイン比率に合わせて上:下 を微調整 */
-  gap:8px; /* サブ同士の間隔を少し減らす */
+  grid-template-rows:1fr 1fr; /* 完全に半分ずつ */
+  gap:10px;
   height:100%;
 }
 
@@ -357,11 +356,10 @@ h1{
 
 
 
-
 .germany-videostack{
   display:flex;
   flex-direction:column;
-  gap:14px;
+  gap:16px;
   height:100%;
 }
 
@@ -371,10 +369,8 @@ h1{
 
 .germany-credit{
   margin-top:0;
-  text-align:left;
-  font-size:.85rem;
-  opacity:.75;
 }
+
 
 .germany-videostack video{
   aspect-ratio:9/16;  /* 縦長へ戻す */
