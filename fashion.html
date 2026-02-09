@@ -1,8 +1,5 @@
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -292,12 +289,13 @@ h1{
 
 /* ===== GERMANY (FINAL) ===== */
 .germany-series{
-  max-width:none;
+  max-width:1100px;               /* NYと同じ */
   margin:12vh auto 10vh;
-  padding:0 calc(var(--container-padding) - 70px);
+  padding:0 var(--container-padding);  /* NYと完全統一 */
   border-top:1px solid #E2E6ED;
   padding-top:7vh;
 }
+
 
 /* Title */
 .germany-title-en{
@@ -340,13 +338,15 @@ h1{
 
 /* ===== SUB 2枚（縦2:3固定＋main縦内に収める）===== */
 .germany-substack{
-  height:100%;              /* mainと同じ高さ */
+  height:100%;              
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  width:82%;
+  width:72%;                /* ← 小さく */
   margin:0 auto;
+  gap:6px;                  /* ← 間を狭く */
 }
+
 
 .germany-substack img{
   aspect-ratio:2/3;         /* 固定 */
@@ -365,12 +365,14 @@ h1{
 }
 
 .germany-videostack video{
-  aspect-ratio:9/16;        /* 固定 */
-  width:100%;
+  aspect-ratio:9/16;        
+  width:82%;                /* ← 小さく */
+  margin:0 auto;
   height:auto;
   object-fit:cover;
   display:block;
 }
+
 
 .germany-credit{
   margin-top:0;
