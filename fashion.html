@@ -343,8 +343,9 @@ h1{
   justify-content:space-between;
   width:72%;
   margin:0 auto;
-  gap:2px;          /* ← さらに狭く */
+  gap:4px; /* ← 間隔をさらに狭く */
 }
+
 
 
 
@@ -364,23 +365,27 @@ h1{
 
 
 .germany-videostack video{
-  aspect-ratio:9/16;           /* 固定 */
-  width:82%;
-  margin:0 auto;
-  flex:1 1 auto;               /* ← 残り高さを使う */
+  aspect-ratio:9/16;      /* 固定 */
+  width:75%;              /* ← 少し小さく */
+  margin:0 auto;          /* 中央 */
+  height:auto;
   object-fit:cover;
   display:block;
 }
 
 
+
 .germany-credit{
-  margin-top:6px;              /* 最小限余白 */
+  width:75%;              /* 動画と同じ幅 */
+  margin:6px auto 0 auto; /* 動画下に揃える */
+  text-align:left;
   font-family:'Cormorant Garamond',serif;
   font-size:.8rem;
   letter-spacing:.06em;
   opacity:.7;
   line-height:1.6;
 }
+
 
 
 
