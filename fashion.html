@@ -361,11 +361,20 @@ h1{
 /* ===== Layout ===== */
 .germany-layout{
   display:grid;
-  grid-template-columns:1.45fr 1.15fr 1.15fr 1.05fr;
-  column-gap:18px;   /* ← 少し詰める */
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  column-gap:28px;
   align-items:start;
 }
 
+.germany-credit{
+  grid-column:3;      /* 3列目（SUB2の下） */
+  margin-top:12px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.72rem;
+  letter-spacing:.06em;
+  line-height:1.45;
+  opacity:.75;
+}
 
 
 
@@ -566,22 +575,23 @@ h1{
     <img src="images/fashion/germany_03.jpg" alt="">
   </div>
 
-  <div class="germany-sub germany-sub-with-credit">
+  <div class="germany-sub">
     <img src="images/fashion/germany_02.jpg" alt="">
-
-    <div class="germany-credit">
-      JAPAN NATIONAL TEAM<br>
-      HAIR: HIROAKI KINOSHITA<br>
-      COSTUMES: ISHIKAWA SAKI<br>
-      COSTUME FINISHING: YUKINO IKEDA
-    </div>
   </div>
 
   <div class="germany-video">
     <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
   </div>
 
+  <div class="germany-credit">
+    JAPAN NATIONAL TEAM<br>
+    HAIR: HIROAKI KINOSHITA<br>
+    COSTUMES: ISHIKAWA SAKI<br>
+    COSTUME FINISHING: YUKINO IKEDA
+  </div>
+
 </div>
+
 
 
 
