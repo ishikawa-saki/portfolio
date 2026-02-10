@@ -300,13 +300,15 @@ h1{
 
 /* Title */
 .germany-title-en{
-  margin:0 0 1.4vh;      /* ← 少し空ける */
+  margin:0 0 1.8vh; 
   font-family:'Playfair Display',serif;
   font-weight:400;
-  letter-spacing:.07em;  /* ← 機関寄り */
-  font-size:clamp(1.3rem,1.8vw,1.55rem);
-  line-height:1.2;       /* ← タイト */
+  letter-spacing:.08em;        /* 機関寄り */
+  font-size:clamp(1.35rem,1.9vw,1.65rem);
+  line-height:1.4;             /* ← 行間少し広め */
+  text-transform:uppercase;
 }
+
 
 
 
@@ -323,10 +325,11 @@ h1{
 /* ===== Layout ===== */
 .germany-layout{
   display:grid;
-  grid-template-columns:1.25fr 1fr 1fr 0.95fr; 
+  grid-template-columns:1.35fr 1.1fr 1.1fr 1fr; 
   column-gap:24px;
   align-items:start;
 }
+
 
 
 
@@ -372,11 +375,12 @@ h1{
 .germany-credit{
   margin-top:8px;
   font-family:'Cormorant Garamond',serif;
-  font-size:.75rem;
-  letter-spacing:.08em;   /* ← 少し機関寄り */
-  line-height:1.5;
+  font-size:.72rem;          /* ← 折れ防止 */
+  letter-spacing:.06em;
+  line-height:1.45;          /* 少し締める */
   opacity:.75;
 }
+
 
 
 
@@ -486,11 +490,12 @@ h1{
 
 <section class="germany-series">
 
-  <h2 class="germany-title-en">
-    ICD 100TH ANNIVERSARY WORLD CONGRESS 2025<br>
-Official Hair Show – Hamburg, Germany
+<h2 class="germany-title-en">
+  ICD 100TH ANNIVERSARY WORLD CONGRESS 2025<br>
+  Official Hair Show<br>
+  Hamburg, Germany
+</h2>
 
-  </h2>
 
  <p class="germany-title-jp">
   ICD 100周年記念 国際ヘアショー in ドイツ大会<br>
@@ -514,12 +519,13 @@ Official Hair Show – Hamburg, Germany
 
   <div class="germany-video">
     <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
-    <div class="germany-credit">
+<div class="germany-credit">
   JAPAN NATIONAL TEAM<br>
-  HAIR - HIROAKI KINOSHITA<br>
-  COSTUMES - ISHIKAWA SAKI<br>
-  COSTUME FINISHING - YUKINO IKEDA
+  HAIR: HIROAKI KINOSHITA<br>
+  COSTUMES: ISHIKAWA SAKI<br>
+  COSTUME FINISHING: YUKINO IKEDA
 </div>
+
 
   </div>
 
