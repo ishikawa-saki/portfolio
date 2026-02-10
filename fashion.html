@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -411,25 +406,16 @@ h1{
 }
 
 /* ===== GERMANY CREDIT（SUB内配置用 安定版）===== */
-.germany-sub-with-credit{
-  display:flex;
-  flex-direction:column;
-}
-
-.germany-sub-with-credit img{
-  flex-shrink:0;
-}
 
 .germany-credit{
-  margin-top:8px;
+  grid-column:3;       /* 3列目（サブ2の下） */
+  margin-top:10px;
   font-family:'Cormorant Garamond',serif;
   font-size:.72rem;
   letter-spacing:.06em;
   line-height:1.45;
   opacity:.75;
 }
-
-
 
 
 
@@ -567,16 +553,17 @@ h1{
     <img src="images/fashion/germany_03.jpg" alt="">
   </div>
 
-  <div class="germany-sub germany-sub-with-credit">
-    <img src="images/fashion/germany_02.jpg" alt="">
+ <div class="germany-sub">
+  <img src="images/fashion/germany_02.jpg" alt="">
+</div>
 
-    <div class="germany-credit">
-      JAPAN NATIONAL TEAM<br>
-      HAIR: HIROAKI KINOSHITA<br>
-      COSTUMES: ISHIKAWA SAKI<br>
-      COSTUME FINISHING: YUKINO IKEDA
-    </div>
-  </div>
+<div class="germany-credit">
+  JAPAN NATIONAL TEAM<br>
+  HAIR: HIROAKI KINOSHITA<br>
+  COSTUMES: ISHIKAWA SAKI<br>
+  COSTUME FINISHING: YUKINO IKEDA
+</div>
+
 
   <div class="germany-video">
     <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
