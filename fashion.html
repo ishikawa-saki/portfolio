@@ -427,15 +427,24 @@ h1{
 .germany-credit{
   position:absolute;
   left:0;
-  top:100%;          /* 画像の直下に見せる */
-  margin-top:10px;
+  top:100%;
+  margin-top:12px;
   width:100%;
   font-family:'Cormorant Garamond',serif;
-  font-size:.72rem;
+  font-size:.8rem;              /* ← NYと同じサイズ */
   letter-spacing:.06em;
-  line-height:1.45;
-  opacity:.75;
+  line-height:1.6;
+  opacity:.8;
 }
+
+/* 1行目だけ格上げ */
+.germany-credit .team{
+  display:block;
+  font-size:.9rem;
+  letter-spacing:.14em;
+  margin-bottom:.8vh;
+}
+
 
 
 
@@ -574,12 +583,13 @@ h1{
   <div class="germany-sub germany-sub-with-credit">
     <img src="images/fashion/germany_03.jpg" alt="">
 
-    <div class="germany-credit">
-      JAPAN NATIONAL TEAM<br>
-      HAIR: HIROAKI KINOSHITA<br>
-      COSTUMES: ISHIKAWA SAKI<br>
-      COSTUME FINISHING: YUKINO IKEDA
-    </div>
+   <div class="germany-credit">
+  <span class="team">JAPAN NATIONAL TEAM</span>
+  HAIR: HIROAKI KINOSHITA<br>
+  COSTUMES: ISHIKAWA SAKI<br>
+  COSTUME FINISHING: YUKINO IKEDA
+</div>
+
   </div>
 
   <div class="germany-sub">
