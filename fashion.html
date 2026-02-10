@@ -287,9 +287,10 @@ h1{
   }
 }
 
-/* ===== GERMANY (FINAL) ===== */
+/* ===== GERMANY (FINAL CLEAN VERSION) ===== */
+
 .germany-series{
-  max-width:1200px;  /* ← 少しだけ広げる */
+  max-width:1200px;
   margin:12vh auto 10vh;
   padding:0 var(--container-padding);
   border-top:1px solid #E2E6ED;
@@ -297,16 +298,15 @@ h1{
 }
 
 
+/* ===== Title ===== */
 
-
-/* Title */
 .germany-title-en{
   margin:0 0 3vh;
   font-family:'Playfair Display',serif;
   text-transform:uppercase;
 }
 
-/* 1行目：大会名（主役） */
+/* 大会名 */
 .germany-main-title{
   display:block;
   font-size:clamp(1.2rem,1.7vw,1.45rem);
@@ -314,7 +314,7 @@ h1{
   line-height:1.3;
 }
 
-/* 2行目：公式イベント */
+/* Official */
 .germany-sub-title{
   display:block;
   font-size:clamp(1rem,1.3vw,1.1rem);
@@ -323,14 +323,16 @@ h1{
   margin-top:.6vh;
 }
 
-/* 3行目：開催地（さらに小さく） */
+/* Location */
 .germany-location{
   display:block;
-  font-size:.78rem;          /* ← さらに小さく */
+  font-size:.78rem;
   letter-spacing:.08em;
   margin-top:.8vh;
   opacity:.75;
 }
+
+/* 1px line */
 .germany-title-en::after{
   content:"";
   display:block;
@@ -341,13 +343,10 @@ h1{
   opacity:.3;
 }
 
-
-
-
 .germany-title-jp{
-  margin:0 0 2.4vh;   /* ← 少し詰める */
+  margin:0 0 2.4vh;
   font-family:'Noto Serif JP',serif;
-  font-size:.85rem;   /* ← やや小さく */
+  font-size:.85rem;
   line-height:1.8;
   color:#6C717A;
   letter-spacing:.04em;
@@ -355,21 +354,19 @@ h1{
 
 
 /* ===== Layout ===== */
+
 .germany-layout{
   display:grid;
-  grid-template-columns:1.45fr 1.15fr 1.15fr 1.05fr;
-  column-gap:18px;   /* ← 少し詰める */
+  grid-template-columns:1.5fr 1.2fr 1.5fr;  /* main と video を強く */
+  column-gap:20px;
   align-items:start;
 }
 
 
-
-
-
 /* ===== MAIN（高さ基準）===== */
+
 .germany-main{
   aspect-ratio:2/3;
-  width:100%;
 }
 
 .germany-main img{
@@ -379,6 +376,14 @@ h1{
   display:block;
 }
 
+
+/* ===== SUB + CREDIT ===== */
+
+.germany-sub-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
 
 .germany-sub{
   aspect-ratio:2/3;
@@ -391,36 +396,32 @@ h1{
   display:block;
 }
 
-
-.germany-video{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-}
-
-.germany-video video{
-  aspect-ratio:9/16;
-  width:100%;
-  object-fit:cover;
-  display:block;
-}
-
 .germany-credit{
-  margin-top:8px;
+  margin-top:6px;
   font-family:'Cormorant Garamond',serif;
-  font-size:.72rem;          /* ← 折れ防止 */
+  font-size:.7rem;   /* 折れ防止 */
   letter-spacing:.06em;
-  line-height:1.45;          /* 少し締める */
+  line-height:1.45;
   opacity:.75;
 }
 
 
+/* ===== VIDEO（メインと同じ縦長）===== */
+
+.germany-video{
+  aspect-ratio:2/3;   /* ← メインと完全同期 */
+}
+
+.germany-video video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
 
+/* ===== Mobile ===== */
 
-
-
-/* Mobile */
 @media (max-width:768px){
   .germany-layout{
     grid-template-columns:1fr;
@@ -428,14 +429,17 @@ h1{
   }
 
   .germany-main,
-  .germany-sub{
+  .germany-sub,
+  .germany-video{
     aspect-ratio:2/3;
   }
 
   .germany-video video{
     aspect-ratio:9/16;
+    height:auto;
   }
 }
+
 
 </style>
 </head>
@@ -545,32 +549,34 @@ h1{
 
  <div class="germany-layout">
 
+  <!-- MAIN -->
   <div class="germany-main">
     <img src="images/fashion/germany_01.jpg" alt="">
   </div>
 
-  <div class="germany-sub">
-    <img src="images/fashion/germany_03.jpg" alt="">
+  <!-- SUB + CREDIT -->
+  <div class="germany-sub-wrap">
+    <div class="germany-sub">
+      <img src="images/fashion/germany_03.jpg" alt="">
+    </div>
+    <div class="germany-sub">
+      <img src="images/fashion/germany_02.jpg" alt="">
+    </div>
+
+    <div class="germany-credit">
+      JAPAN NATIONAL TEAM<br>
+      HAIR: HIROAKI KINOSHITA<br>
+      COSTUMES: ISHIKAWA SAKI<br>
+      COSTUME FINISHING: YUKINO IKEDA
+    </div>
   </div>
 
-  <div class="germany-sub">
-    <img src="images/fashion/germany_02.jpg" alt="">
-  </div>
-
+  <!-- VIDEO -->
   <div class="germany-video">
     <video src="images/fashion/germany_video.mp4" autoplay muted loop playsinline></video>
-<div class="germany-credit">
-  JAPAN NATIONAL TEAM<br>
-  HAIR: HIROAKI KINOSHITA<br>
-  COSTUMES: ISHIKAWA SAKI<br>
-  COSTUME FINISHING: YUKINO IKEDA
-</div>
-
-
   </div>
 
 </div>
-
 
 </section>
 
