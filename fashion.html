@@ -413,23 +413,28 @@ h1{
 
 /* ===== GERMANY CREDIT（SUB内配置用 安定版）===== */
 .germany-sub-with-credit{
-  display:flex;
-  flex-direction:column;
+  position:relative;
 }
 
 .germany-sub-with-credit img{
-  flex-shrink:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .germany-credit{
-  margin-top:8px;
+  position:absolute;
+  left:0;
+  top:100%;          /* 画像の直下に見せる */
+  margin-top:10px;
+  width:100%;
   font-family:'Cormorant Garamond',serif;
   font-size:.72rem;
   letter-spacing:.06em;
   line-height:1.45;
   opacity:.75;
 }
-
 
 
 
