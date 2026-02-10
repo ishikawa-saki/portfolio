@@ -470,6 +470,67 @@ h1{
   }
 }
 
+
+  /* ===== VIDEO SERIES ===== */
+.video-series{
+  max-width:none;
+  margin:12vh auto 10vh;
+  padding:0 calc(var(--container-padding) - 140px); /* ICARUS準拠 */
+  border-top:1px solid #E2E6ED;
+  padding-top:7vh;
+}
+
+.video-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;
+  letter-spacing:.12em;
+  margin-bottom:1.2vh;
+}
+
+.video-description{
+  font-family:'Noto Serif JP',serif;
+  font-size:.9rem;
+  line-height:1.9;
+  margin-bottom:4vh;
+  color:#6C717A;
+}
+
+/* 5本均一 */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  column-gap:18px;
+}
+
+.video-item video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+}
+
+.video-credit{
+  margin-top:1.2vh;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.75rem;
+  letter-spacing:.06em;
+  line-height:1.6;
+  opacity:.7;
+}
+
+@media (max-width:1200px){
+  .video-grid{
+    grid-template-columns:repeat(3,1fr);
+    row-gap:24px;
+  }
+}
+
+@media (max-width:768px){
+  .video-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
 </style>
 </head>
 
@@ -643,6 +704,61 @@ h1{
   </div>
 
 </section>
+
+  <section class="video-series">
+
+  <h2 class="video-title">Video Art / Creative Direction</h2>
+
+  <p class="video-description">
+    クリエイティブヘアの映像ディレクション。
+  </p>
+
+  <div class="video-grid">
+
+    <div class="video-item">
+      <video src="images/fashion/video01.mp4" autoplay muted loop playsinline></video>
+      <div class="video-credit">
+        HAIR: ○○○○<br>
+        VIDEO DIRECTION: ISHIKAWA SAKI
+      </div>
+    </div>
+
+    <div class="video-item">
+      <video src="images/fashion/video02.mp4" autoplay muted loop playsinline></video>
+      <div class="video-credit">
+        HAIR: ○○○○<br>
+        VIDEO DIRECTION: ISHIKAWA SAKI
+      </div>
+    </div>
+
+    <div class="video-item">
+      <video src="images/fashion/video03.mp4" autoplay muted loop playsinline></video>
+      <div class="video-credit">
+        HAIR: ○○○○<br>
+        VIDEO DIRECTION: ISHIKAWA SAKI
+      </div>
+    </div>
+
+    <div class="video-item">
+      <video src="images/fashion/video04.mp4" autoplay muted loop playsinline></video>
+      <div class="video-credit">
+        HAIR: ○○○○<br>
+        VIDEO DIRECTION: ISHIKAWA SAKI
+      </div>
+    </div>
+
+    <div class="video-item">
+      <video src="images/fashion/video05.mp4" autoplay muted loop playsinline></video>
+      <div class="video-credit">
+        HAIR: ○○○○<br>
+        VIDEO DIRECTION: ISHIKAWA SAKI
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
 
 <div class="back">
   <a href="/index.html">Back to Home</a>
