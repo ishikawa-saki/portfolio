@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -91,19 +91,18 @@ a {
   margin-bottom: 1vh;
 }
 
- .works-header {
+.works-header {
   margin-bottom: 8vh;
 }
 
-
 .works-header p {
   font-family: var(--font-body);
-  font-size: 1.3rem;   /* ← ここを戻す */
+  font-size: 1.3rem;
   color: var(--c-text-sub);
 }
 
 
-/* ===== Works Grid ===== */
+/* ===== Works Grid (base) ===== */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -183,7 +182,7 @@ a {
   transform: translateY(0);
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (unused legacy) ===== */
 .footer {
   padding: 10vh var(--container-padding);
   text-align: center;
@@ -195,7 +194,7 @@ a {
 
 /* ===== 3 + 2 Layout Upgrade ===== */
 
-/* 上段3カラム */
+/* 上段3カラム（主軸3枚：触らない） */
 .works-grid-primary {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -203,37 +202,50 @@ a {
   margin-bottom: 3vw;
 }
 
-/* 下段2カラム */
+/* ★ 新規：RHYTHMIC（1枚 / 左寄せ / 主軸と同サイズ） */
+.works-grid-rg{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3vw;
+  margin-bottom: 3vw;
+}
+.works-grid-rg .works-card{
+  grid-column: 1; /* 左寄せ：FASHION / BEAUTY の下 */
+}
+
+/* 解禁前プレースホルダー（画像なしでも成立） */
+.works-card--placeholder{
+  background: linear-gradient(145deg, rgba(17,20,24,0.12), rgba(17,20,24,0.04));
+}
+
+/* 下段2カラム（EXPANDED / ARCHIVE：現状維持） */
 .works-grid-secondary {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3vw;
 }
 
-/* 下段カードだけ横長に */
+/* 下段カードだけ横長に（現状維持） */
 .works-grid-secondary .works-card {
   aspect-ratio: 3/1;
 }
 
 /* ===== Secondary Styling Adjustment v3 (Lower & Tighter) ===== */
-
 .works-grid-secondary .card-content {
   align-items: flex-end;
   justify-content: flex-end;
   text-align: right;
-  padding: 28px 24px 14px 24px; /* 上を増やして下を削る＝重心を下へ */
+  padding: 28px 24px 14px 24px;
 }
 
-/* タイトル */
 .works-grid-secondary .card-title {
   text-transform: none;
   font-size: 1.35rem;
   letter-spacing: 0.08em;
-  margin-bottom: 2px; /* さらに詰める */
+  margin-bottom: 2px;
   line-height: 1.1;
 }
 
-/* サブカテゴリ */
 .works-grid-secondary .card-category {
   font-size: 0.9rem;
   opacity: 0.9;
@@ -243,21 +255,40 @@ a {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .works-grid {
+  .works-header {
+    margin-bottom: 6vh;
+  }
+
+  /* 主軸3枚 → 縦並び */
+  .works-grid-primary{
+    grid-template-columns: 1fr;
+    gap: 6vw;
+    margin-bottom: 6vw;
+  }
+
+  /* RHYTHMIC 1枚 → 縦並び（左寄せ解除） */
+  .works-grid-rg{
+    grid-template-columns: 1fr;
+    gap: 6vw;
+    margin-bottom: 6vw;
+  }
+  .works-grid-rg .works-card{
+    grid-column: auto;
+  }
+
+  /* EXPANDED / ARCHIVE → 縦並び、横長比率もモバイル用に戻す */
+  .works-grid-secondary{
     grid-template-columns: 1fr;
     gap: 6vw;
   }
-  
-  .works-header {
-    margin-bottom: 6vh;
+  .works-grid-secondary .works-card{
+    aspect-ratio: 3/2;
   }
 
   .works-card {
     aspect-ratio: 3/2;
   }
 }
-
-
 
 /* ================= FOOTER ================= */
 
@@ -284,7 +315,6 @@ a {
   font-size: 0.7rem;
   opacity: 0.5;
 }
-
 </style>
 </head>
 
@@ -302,8 +332,6 @@ a {
   </nav>
 </header>
 
-
-
 <main class="works-page">
 
   <div class="works-header">
@@ -311,55 +339,66 @@ a {
     <p>Visual Explorations & Creative Directions</p>
   </div>
 
-<!-- ===== Primary 3 ===== -->
-<div class="works-grid-primary">
+  <!-- ===== Primary 3 (unchanged) ===== -->
+  <div class="works-grid-primary">
 
-  <a href="fashion.html" class="works-card">
-    <img src="https://lh3.googleusercontent.com/d/12xPS3g8K_YhcrQZfmxJ0QNturZieUtjl" alt="Fashion">
-    <div class="card-content">
-      <h2 class="card-title">FASHION / BEAUTY</h2>
-      <span class="card-category">Editorial / Commercial</span>
-    </div>
-  </a>
+    <a href="fashion.html" class="works-card">
+      <img src="https://lh3.googleusercontent.com/d/12xPS3g8K_YhcrQZfmxJ0QNturZieUtjl" alt="Fashion">
+      <div class="card-content">
+        <h2 class="card-title">FASHION / BEAUTY</h2>
+        <span class="card-category">Editorial / Commercial</span>
+      </div>
+    </a>
 
-<a href="/science.html" class="works-card">
-    <img src="https://lh3.googleusercontent.com/d/16qDfh-na6XqpJftiQHq9hpqgHeMPDVNM" alt="Sci-Fi">
-    <div class="card-content">
-      <h2 class="card-title">SCIENCE FICTION</h2>
-      <span class="card-category">World Design / Concepts</span>
-    </div>
-  </a>
+    <a href="/science.html" class="works-card">
+      <img src="https://lh3.googleusercontent.com/d/16qDfh-na6XqpJftiQHq9hpqgHeMPDVNM" alt="Sci-Fi">
+      <div class="card-content">
+        <h2 class="card-title">SCIENCE FICTION</h2>
+        <span class="card-category">World Design / Concepts</span>
+      </div>
+    </a>
 
-  <a href="/film.html" class="works-card">
-    <img src="https://lh3.googleusercontent.com/d/1an-S8xDYauRVe3JPGR-JxvpBSZzUJaBO" alt="Film">
-    <div class="card-content">
-      <h2 class="card-title">FILM / TV</h2>
-      <span class="card-category">Costume / Visual Art</span>
-    </div>
-  </a>
+    <a href="/film.html" class="works-card">
+      <img src="https://lh3.googleusercontent.com/d/1an-S8xDYauRVe3JPGR-JxvpBSZzUJaBO" alt="Film">
+      <div class="card-content">
+        <h2 class="card-title">FILM / TV</h2>
+        <span class="card-category">Costume / Visual Art</span>
+      </div>
+    </a>
 
-</div>
+  </div>
 
-<!-- ===== Secondary 2 ===== -->
-<div class="works-grid-secondary">
+  <!-- ★ NEW: RHYTHMIC GYMNASTICS (1 card / left aligned / same size as primary) ===== -->
+  <div class="works-grid-rg">
+    <a href="/rhythmic.html" class="works-card works-card--placeholder">
+      <!-- 解禁前：画像なし（プレースホルダー） -->
+      <div class="card-content">
+        <h2 class="card-title">RHYTHMIC GYMNASTICS</h2>
+        <span class="card-category">Competitive Artwear</span>
+      </div>
+    </a>
+  </div>
 
-  <a href="expanded.html" class="works-card">
-    <img src="https://lh3.googleusercontent.com/d/12zEUShjHC6D3bL4RLz44EXKbTHOpXSgL" alt="Expanded">
-    <div class="card-content">
-      <h2 class="card-title">EXPANDED</h2>
-      <span class="card-category">Art / Installation</span>
-    </div>
-  </a>
+  <!-- ===== Secondary 2 (unchanged) ===== -->
+  <div class="works-grid-secondary">
 
-  <a href="archive.html" class="works-card">
-    <img src="https://lh3.googleusercontent.com/d/1wTKjm9-eKUtvmk1ibVcQVh5Gd6AE9SUU" alt="Archive">
-    <div class="card-content">
-      <h2 class="card-title">ARCHIVE</h2>
-      <span class="card-category">Live Art / Illustrations</span>
-    </div>
-  </a>
+    <a href="expanded.html" class="works-card">
+      <img src="https://lh3.googleusercontent.com/d/12zEUShjHC6D3bL4RLz44EXKbTHOpXSgL" alt="Expanded">
+      <div class="card-content">
+        <h2 class="card-title">EXPANDED</h2>
+        <span class="card-category">Art / Installation</span>
+      </div>
+    </a>
 
-</div>
+    <a href="archive.html" class="works-card">
+      <img src="https://lh3.googleusercontent.com/d/1wTKjm9-eKUtvmk1ibVcQVh5Gd6AE9SUU" alt="Archive">
+      <div class="card-content">
+        <h2 class="card-title">ARCHIVE</h2>
+        <span class="card-category">Live Art / Illustrations</span>
+      </div>
+    </a>
+
+  </div>
 
 </main>
 
@@ -377,7 +416,6 @@ a {
   </div>
 
 </footer>
-
 
 </body>
 </html>
