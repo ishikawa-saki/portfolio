@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RHYTHMIC GYMNASTICS | ISHIKAWA SAKI</title>
+
+<meta name="description" content="新体操 競技衣装デザイン — Competitive Artwear. 設計から実装までのケーススタディ。Rhythmic Gymnastics Costume Design by ISHIKAWA SAKI.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.jpg">
+<link rel="shortcut icon" href="favicon.jpg">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== Page Shell (match Works look) ===== */
+.rg-page{
+  padding:12vh var(--container-padding) 12vh;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+.rg-header{
+  margin-bottom:8vh;
+}
+
+.rg-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  font-weight:400;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:1.2vh;
+}
+
+.rg-subtitle{
+  font-family:var(--font-body);
+  font-size:1.15rem;
+  color:var(--c-text-sub);
+  letter-spacing:.04em;
+  line-height:1.7;
+  max-width:920px;
+}
+
+.rg-subtitle small{
+  display:block;
+  margin-top:10px;
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+/* ===== Case List ===== */
+.rg-cases{
+  display:flex;
+  flex-direction:column;
+  gap:12vh;
+}
+
+/* Each case block */
+.rg-case{
+  border-top:1px solid rgba(17,20,24,.08);
+  padding-top:8vh;
+}
+
+/* Case title row */
+.rg-case-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:4vw;
+  margin-bottom:4vh;
+}
+
+.rg-case-title{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.4rem,2.2vw,1.9rem);
+  letter-spacing:.08em;
+  text-transform:none;
+  line-height:1.15;
+}
+
+.rg-case-title small{
+  display:block;
+  margin-top:10px;
+  font-family:var(--font-body);
+  font-size:.9rem;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+.rg-case-meta{
+  text-align:right;
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--c-text-sub);
+  white-space:nowrap;
+}
+
+/* ===== Media Blocks ===== */
+.rg-hero{
+  width:100%;
+  aspect-ratio:3/2;
+  overflow:hidden;
+  background:linear-gradient(145deg, rgba(17,20,24,0.10), rgba(17,20,24,0.03));
+  position:relative;
+}
+
+.rg-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-hero .rg-hero-label{
+  position:absolute;
+  right:18px;
+  bottom:14px;
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:.85rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.9;
+  z-index:2;
+}
+
+.rg-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.35) 100%);
+}
+
+/* Video block */
+.rg-video{
+  margin-top:3vh;
+  width:100%;
+  max-width:560px;
+}
+
+.rg-video video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  display:block;
+  background:rgba(17,20,24,.06);
+}
+
+/* Design -> 3D -> Final */
+.rg-process{
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:2vw;
+}
+
+.rg-process .rg-tile{
+  aspect-ratio:2/3;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+  position:relative;
+}
+
+.rg-process img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-tile-label{
+  position:absolute;
+  left:14px;
+  bottom:12px;
+  font-family:var(--font-body);
+  font-size:.85rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#fff;
+  z-index:2;
+}
+
+.rg-tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.35) 100%);
+}
+
+/* Details grid */
+.rg-details{
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:2vw;
+}
+
+.rg-details .rg-detail{
+  aspect-ratio:2/3;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+}
+
+.rg-details img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Spec + credits */
+.rg-spec{
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4vw;
+  max-width:1000px;
+}
+
+.rg-spec h3{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+
+.rg-spec p, .rg-spec li{
+  font-family:var(--font-jp);
+  font-size:.85rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+.rg-spec ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.rg-spec li{
+  margin-bottom:10px;
+}
+
+/* Inquiry line */
+.rg-inquiry{
+  margin-top:6vh;
+  padding-top:5vh;
+  border-top:1px solid rgba(17,20,24,.08);
+  text-align:left;
+}
+
+.rg-inquiry a{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  position:relative;
+  display:inline-block;
+  padding-bottom:3px;
+}
+
+.rg-inquiry a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:38%;
+  height:1px;
+  background:rgba(11,13,16,.45);
+  transition:width .45s ease;
+}
+
+.rg-inquiry a:hover::after{
+  width:100%;
+  background:rgba(11,13,16,.75);
+}
+
+.rg-inquiry .rg-inquiry-ja{
+  margin-top:10px;
+  font-family:var(--font-jp);
+  font-size:.8rem;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+/* Back link */
+.rg-back{
+  margin-top:10vh;
+  text-align:center;
+}
+
+.rg-back a{
+  font-family:var(--font-body);
+  font-size:.9rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  position:relative;
+  display:inline-block;
+  padding-bottom:3px;
+}
+
+.rg-back a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:38%;
+  height:1px;
+  background:rgba(11,13,16,.35);
+  transition:width .45s ease;
+}
+
+.rg-back a:hover::after{
+  width:100%;
+  background:rgba(11,13,16,.75);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .rg-header{margin-bottom:6vh;}
+  .rg-case{padding-top:6vh;}
+  .rg-case-head{flex-direction:column;align-items:flex-start;gap:14px;}
+  .rg-case-meta{text-align:left;}
+  .rg-hero{aspect-ratio:3/2;}
+  .rg-process{grid-template-columns:1fr;gap:5vw;}
+  .rg-details{grid-template-columns:1fr 1fr;gap:4vw;}
+  .rg-spec{grid-template-columns:1fr;gap:4vh;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="/index.html" class="header-logo">ISHIKAWA SAKI</a>
+
+  <nav class="header-nav">
+    <ul>
+      <li><a href="/works.html">WORKS</a></li>
+      <li><a href="/index.html#about">ABOUT</a></li>
+      <li><a href="https://tally.so/r/vGPVJX" target="_blank">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="rg-page">
+
+  <header class="rg-header">
+    <h1>RHYTHMIC GYMNASTICS</h1>
+    <p class="rg-subtitle">
+      Rhythmic Gymnastics Costume Design — Competitive Artwear.
+      <small>新体操 競技衣装デザイン｜設計から実装までのケーススタディ</small>
+    </p>
+  </header>
+
+  <section class="rg-cases">
+
+    <!-- =========================
+         CASE 01 (EMBARGO SAFE)
+    ========================== -->
+    <article class="rg-case">
+
+      <div class="rg-case-head">
+        <div>
+          <h2 class="rg-case-title">
+            High School Team Costume — 2026 Season
+            <small>Group / Season work (school name to be announced)</small>
+          </h2>
+        </div>
+
+        <div class="rg-case-meta">Case Study 01</div>
+      </div>
+
+      <!-- HERO (placeholder now / replace with <img> later) -->
+      <div class="rg-hero">
+        <!-- 解禁後：下の1行をアンコメントして画像URLを入れる -->
+        <!-- <img src="images/rhythmic/2026/hero.jpg" alt="Rhythmic Gymnastics Costume 2026"> -->
+        <div class="rg-hero-label">Coming soon</div>
+      </div>
+
+      <!-- VIDEO (optional / add when ready) -->
+      <div class="rg-video">
+        <!-- 解禁後：src を差し替え -->
+        <!-- <video src="images/rhythmic/2026/motion.mp4" autoplay muted loop playsinline></video> -->
+      </div>
+
+      <!-- Design -> 3D -> Final (placeholders now) -->
+      <div class="rg-process">
+        <div class="rg-tile">
+          <!-- <img src="images/rhythmic/2026/design.jpg" alt="Design sketch"> -->
+          <div class="rg-tile-label">Design</div>
+        </div>
+
+        <div class="rg-tile">
+          <!-- <img src="images/rhythmic/2026/3d.jpg" alt="3D reconstruction"> -->
+          <div class="rg-tile-label">3D</div>
+        </div>
+
+        <div class="rg-tile">
+          <!-- <img src="images/rhythmic/2026/final.jpg" alt="Final costume"> -->
+          <div class="rg-tile-label">Final</div>
+        </div>
+      </div>
+
+      <!-- Details (placeholders now) -->
+      <div class="rg-details">
+        <!-- 解禁後：img を増やすだけ（4〜6枚推奨） -->
+        <div class="rg-detail"><!-- <img src="images/rhythmic/2026/detail01.jpg" alt=""> --></div>
+        <div class="rg-detail"><!-- <img src="images/rhythmic/2026/detail02.jpg" alt=""> --></div>
