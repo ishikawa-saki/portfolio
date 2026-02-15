@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -18,16 +15,14 @@
 <link rel="shortcut icon" href="favicon.jpg">
 <link rel="stylesheet" href="style.css">
 
-  <!-- Open Graph -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="石川彩希 | ISHIKAWA SAKI – 衣装デザイン / Costume Design">
 <meta property="og:description" content="コンセプトアート・衣装デザイン・ビジュアル設計｜Concept Art, Costume Design & Visual Direction for Film, Beauty & Fashion.">
 <meta property="og:url" content="https://www.ishikawa-saki.com/">
 <meta property="og:image" content="https://www.ishikawa-saki.com/og-main.jpg">
-  
-  <meta property="og:image:width" content="1200">
+<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-
 <meta property="og:site_name" content="石川彩希 | ISHIKAWA SAKI">
 
 <!-- Twitter Card -->
@@ -36,15 +31,11 @@
 <meta name="twitter:description" content="コンセプトアート・衣装デザイン・ビジュアル設計｜Concept Art, Costume Design & Visual Direction.">
 <meta name="twitter:image" content="https://www.ishikawa-saki.com/og-main.jpg">
 
-  
 <style>
-
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--c-base);color:var(--c-text-main);font-family:var(--font-jp);line-height:2;font-weight:300;overflow-x:hidden}
 a{text-decoration:none;color:inherit;transition:.3s}
 a:hover{opacity:.6}
-
-
 
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px var(--container-padding) 0;position:relative}
 .hero-container{display:grid;grid-template-columns:repeat(12,1fr);align-items:end;position:relative;z-index:2}
@@ -54,7 +45,7 @@ a:hover{opacity:.6}
 display:block;
 margin-top:14px;
 font-family:var(--font-jp);
-font-size:1rem;          /* Archiveと同じ基準 */
+font-size:1rem;
 letter-spacing:.12em;
 color:var(--c-text-sub);
 }
@@ -67,10 +58,9 @@ letter-spacing:.12em;
 opacity:.6;
 }
 
-
-
 .hero-copy-en{margin-top:36px;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
 .hero-copy-ja{margin-top:10px;font-family:var(--font-jp);font-size:.8rem;line-height:2.1;letter-spacing:.08em;color:var(--c-text-sub);max-width:520px}
+
 /* ===== HERO MOBILE DEFAULT ===== */
 .hero-visual{
   position:relative;
@@ -86,28 +76,22 @@ opacity:.6;
     position:absolute;
     top:10vh;
     right:5vw;
-    width:50vw;   /* 55 → 50 */
-    height:75vh;  /* 80 → 75 */
+    width:50vw;
+    height:75vh;
   }
 }
-
-
-
 
 .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.95) contrast(1.05)}
 
 /* ===== HERO MOBILE SAFE FIX ===== */
 @media screen and (max-width: 900px){
-
   .hero{
     min-height:auto !important;
     padding:120px var(--container-padding) 0 !important;
   }
-
   .hero-container{
     display:block !important;
   }
-
   .hero-visual{
     position:relative !important;
     top:auto !important;
@@ -116,20 +100,14 @@ opacity:.6;
     height:60vh !important;
     margin-top:40px !important;
   }
-
 }
 
-
-  
-/* ===== ABOUT BLOCK (REPLACE WHOLE) ===== */
-
+/* ===== ABOUT BLOCK ===== */
 .container{
   padding:0 var(--container-padding);
   max-width:1920px;
   margin:0 auto;
 }
-
-  /* ===== ABOUT SPACING ===== */
 
 .section-spacer{
   padding:6vh 0;
@@ -153,13 +131,10 @@ opacity:.6;
   display:block;
 }
 
-
 .about-text-en,
 .about-text-ja{
   max-width:1000px;
 }
-
-
 
 .about-text-en{
   font-family:var(--font-body);
@@ -168,20 +143,16 @@ opacity:.6;
   white-space:nowrap;
 }
 
-
 .about-text-ja{
   margin-top:28px;
   font-family:var(--font-jp);
   font-size:.9rem;
   line-height:2.35;
-  letter-spacing:.04em;   /* ← 少し詰める */
+  letter-spacing:.04em;
   color:var(--c-text-sub);
-  max-width:1000px;       /* ← 広げる */
+  max-width:1000px;
 }
 
-
-
-/* 下の薄い区切り線 */
 #about::after{
   content:"";
   display:block;
@@ -191,168 +162,28 @@ opacity:.6;
   margin:10vh 0 0;
 }
 
-/* ===== ARCHIVE INLINE (REFINED SCALE VERSION) ===== */
-
+/* ===== ARCHIVE INLINE ===== */
 .about-archive-inline{
   margin-top:5vh;
   font-family:var(--font-body);
-  font-size:1.08rem;        /* ← 1rem → 1.08 */
+  font-size:1.08rem;
   letter-spacing:.05em;
   line-height:1.9;
   color:var(--c-text-main);
 }
 
-/* ARCHIVE */
 .archive-label{
   text-transform:uppercase;
   letter-spacing:.18em;
-  font-weight:500;          /* ← 少しだけ芯を出す */
+  font-weight:500;
 }
 
-/* 主要実績 */
 .archive-label-ja{
   font-family:var(--font-jp);
   margin-left:10px;
   font-size:.95em;
   letter-spacing:.08em;
-  color:var(--c-text-main);  /* ← ARCHIVEと同色 */
-}
-
-/* EN / JP */
-.about-archive-inline a{
-  margin:0 18px;
-  font-size:.98rem;          /* ← 少しだけ強く */
-  letter-spacing:.08em;
-  font-weight:500;
   color:var(--c-text-main);
-  text-decoration:none;
-  position:relative;
-  padding-bottom:3px;
-}
-
-.about-archive-inline a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:60%;
-  height:1px;
-  background:rgba(17,20,24,.4);
-  transition:.3s ease;
-}
-
-.about-archive-inline a:hover::after{
-  width:100%;
-}
-
-
-.footer{padding:20vh var(--container-padding) 8vh;background:#1F1F1F;color:#E9ECF1}
-
-
-.footer-heading{
-  font-family:var(--font-body);   /* ヘッダーと統一 */
-  font-weight:400;
-  font-size:2rem;              /* 少し上げる */
-  letter-spacing:.05em;           /* さっきより詰める */
-  text-transform:none;
-}
-
-.contact-ja{
-  display:block;
-  margin-top:18px;       /* ← ここが重要 */
-  font-family:var(--font-jp);
-  font-size:.8rem;
-  letter-spacing:.12em;
-  color:#AEB4BF;
-}
-
-@media(max-width:1024px){
-.hero-container{grid-template-columns:1fr}
-.hero-visual{position:relative;top:5vh;width:100%;height:60vh;right:auto}
-.hero{padding-top:170px}}
-
-
-.footer-contact{
-max-width:760px;
-}
-
-.footer-contact-link{
-display:inline-block;
-color:inherit;
-text-decoration:none;
-transition:opacity .3s ease;
-}
-
-.footer-line{
-width:100%;
-height:1px;
-background:rgba(233,236,241,.25);
-margin:10px 0 18px 0;
-}
-
-.footer-contact-link:hover{
-opacity:.75;}
-
-.works-intro{
-padding:6vh var(--container-padding) 6vh;
-}
-
-.works-block{
-margin-bottom:10vh;
-max-width:1000px;
-}
-
-.works-block a{
-text-decoration:none;
-color:inherit;
-display:block;
-}
-
-.works-image{
-width:100%;
-height:50vh;   /* 70vh → 50vh に縮小 */
-overflow:hidden;
-margin-bottom:24px;
-}
-
-.works-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.works-title{
-font-family:var(--font-display);
-font-size:1.3rem;   /* 大きすぎを修正 */
-letter-spacing:.1em;
-margin-bottom:12px;
-}
-
-.works-sub{
-font-family:var(--font-body);
-font-size:.95rem;
-letter-spacing:.04em;
-opacity:.65;
-max-width:560px;
-}
-
-.works-film{
-margin-top:4vh;   /* さらに控えめ */
-opacity:.85;      /* 少しだけ存在感を下げる */
-}
-
-.works-film .works-image{
-height:38vh;
-}
-
-.works-film .works-title{
-font-size:1.3rem;
-letter-spacing:.12em;
-}
-
-.works-film{
-margin-top:8vh;
-opacity:.8;
 }
 
 .about-archive-inline a{
@@ -371,18 +202,73 @@ opacity:.8;
   bottom:-2px;
   width:100%;
   height:1px;
-  background:rgba(17,20,24,.28);   /* ← 常時うっすら表示 */
+  background:rgba(17,20,24,.28);
   transition:background .3s ease;
 }
 
 .about-archive-inline a:hover::after{
-  background:rgba(17,20,24,.75);   /* ← ホバーで濃く */
+  background:rgba(17,20,24,.75);
+}
+
+/* ===== Footer (Home) ===== */
+.footer{padding:20vh var(--container-padding) 8vh;background:#1F1F1F;color:#E9ECF1}
+
+.footer-heading{
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:2rem;
+  letter-spacing:.05em;
+  text-transform:none;
+}
+
+.contact-ja{
+  display:block;
+  margin-top:18px;
+  font-family:var(--font-jp);
+  font-size:.8rem;
+  letter-spacing:.12em;
+  color:#AEB4BF;
+}
+
+.footer-contact{
+max-width:760px;
+margin-top:4vh;
+}
+
+.footer-contact a{
+  position:relative;
+  display:inline-block;
+  color:inherit;
+  padding-bottom:4px;
+  line-height:1.1;
+}
+
+.footer-contact a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:38%;
+height:1px;
+background:rgba(233,236,241,.5);
+transition:width .35s ease;
+}
+
+.footer-contact a:hover::after{
+width:100%;
+background:rgba(233,236,241,.9);
+}
+
+.footer-copyright{
+  margin-top: 4vh;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  text-align: center;
 }
 
 /* =========================
    IMAGE FRAME (Global)
 ========================= */
-
 .image-frame{
   overflow:hidden;
   background:#E6EAEE;
@@ -397,18 +283,14 @@ opacity:.8;
   display:block;
 }
 
-/* 写真ごとの微調整（必要な画像だけ img に付ける） */
 .top-focus{ object-position:center top; }
 .bottom-focus{ object-position:center bottom; }
 .left-focus{ object-position:left center; }
 .right-focus{ object-position:right center; }
 
 /* =========================
-   FASHION SECTION
+   FASHION / SCI-FI 共通
 ========================= */
-
-/* ===== 共通タイトルスタイル ===== */
-
 .fashion-title,
 .scifi-title{
   font-family:var(--font-display);
@@ -419,8 +301,6 @@ opacity:.8;
   margin-bottom:1.5px;
 }
 
-/* ===== 共通英語本文 ===== */
-
 .fashion-desc-en,
 .scifi-desc-en{
   font-family:var(--font-body);
@@ -429,8 +309,6 @@ opacity:.8;
   color:var(--c-text-main);
   max-width:760px;
 }
-
-/* ===== 共通日本語本文 ===== */
 
 .fashion-desc-ja,
 .scifi-desc-ja{
@@ -443,40 +321,37 @@ opacity:.8;
   max-width:760px;
 }
 
-
+/* ===== FASHION ===== */
 .fashion-section{
   padding:6vh var(--container-padding);
   max-width:1300px;
   margin:0 auto;
 }
 
-/* テキストは通常ブロック */
 .fashion-text{
-  max-width:760px;   /* 本文開始位置を固定 */
+  max-width:760px;
 }
 
-/* 画像ブロックをテキストと同じ左ラインに */
 .fashion-images{
   display:flex;
   align-items:flex-end;
   gap:1.6vw;
-  margin-top:-13.8vh;   /* ← 上に上げる */
+  margin-top:-13.8vh;
 }
 
 .fashion-item{
   width:300px;
-  aspect-ratio:3/4;   /* ← ここ */
+  aspect-ratio:3/4;
   overflow:hidden;
 }
 
 .fashion-main{
   width:540px;
-  aspect-ratio:3/4;   /* ← ここ */
+  aspect-ratio:3/4;
   overflow:hidden;
 }
 
-/* ===== SCIENCE FICTION（Fashionと同構造） ===== */
-
+/* ===== SCIENCE FICTION ===== */
 .scifi-section{
   padding:6vh var(--container-padding);
   max-width:1300px;
@@ -487,30 +362,28 @@ opacity:.8;
   max-width:760px;
 }
 
-/* 画像ブロック：底辺揃え＋ラベルに寄せる */
 .scifi-images{
   display:flex;
   align-items:flex-end;
   gap:1.6vw;
-  margin-top:-13.8vh;   /* ← Fashionと同じ値 */
+  margin-top:-13.8vh;
 }
 
 .scifi-item{
   width:300px;
-  aspect-ratio:3/4;   /* ← ここ */
+  aspect-ratio:3/4;
   overflow:hidden;
 }
 
 .scifi-main{
   width:540px;
-  aspect-ratio:3/4;   /* ← ここ */
+  aspect-ratio:3/4;
   overflow:hidden;
 }
 
 /* ===== FILM / TV ===== */
-
 .film-section{
-padding:6vh var(--container-padding);  /* 少し浅め */
+padding:6vh var(--container-padding);
 }
 
 .film-header{
@@ -522,7 +395,7 @@ text-align:center;
 .film-title{
 font-family:var(--font-display);
 font-weight:400;
-font-size:clamp(1.4rem,2vw,1.7rem);  /* 少し小さく */
+font-size:clamp(1.4rem,2vw,1.7rem);
 letter-spacing:.08em;
 text-transform:uppercase;
 margin-bottom:10px;
@@ -565,29 +438,10 @@ overflow:hidden;
 width:100%;
 height:100%;
 object-fit:cover;
-}
-
-.film-view{
-max-width:1000px;
-margin:3vh auto 0;
-text-align:center;   /* 中央にして主張を下げる */
-}
-
-.film-view a{
-font-family:var(--font-body);
-font-size:.9rem;
-letter-spacing:.2em;
-text-transform:uppercase;
-padding-bottom:3px;
-transition:.3s;
-}
-
-.film-view a:hover{
-border-color:rgba(11,13,16,.6);
+display:block;
 }
 
 /* ===== VIEW ALL 共通 ===== */
-
 .fashion-view,
 .scifi-view,
 .film-view{
@@ -597,7 +451,7 @@ margin:3vh auto 0;
 
 .fashion-view{ text-align:right; }
 .scifi-view{ text-align:right; }
-.film-view{ text-align:center; } /* Filmは控えめ中央 */
+.film-view{ text-align:center; }
 
 .fashion-view a,
 .scifi-view a,
@@ -608,10 +462,9 @@ font-family:var(--font-body);
 font-size:.95rem;
 letter-spacing:.2em;
 text-transform:uppercase;
-padding-bottom:3px;   /* ← 下線との距離を縮める */
+padding-bottom:3px;
 }
 
-/* 通常の短い下線 */
 .fashion-view a::after,
 .scifi-view a::after,
 .film-view a::after{
@@ -619,13 +472,12 @@ content:"";
 position:absolute;
 left:0;
 bottom:0;
-width:38%;               /* ← 全部同じ長さ */
+width:38%;
 height:1px;
 background:rgba(11,13,16,.5);
 transition:width .45s ease;
 }
 
-/* ホバーで伸びる */
 .fashion-view a:hover::after,
 .scifi-view a:hover::after,
 .film-view a:hover::after{
@@ -633,8 +485,98 @@ width:100%;
 background:rgba(11,13,16,.8);
 }
 
-/* ===== Expanded / Archive 横構造 ===== */
+/* ===== NEW: RHYTHMIC GYMNASTICS (Home teaser) ===== */
+.rg-section{
+  padding:6vh var(--container-padding) 3vh;
+  max-width:1100px;
+  margin:0 auto;
+}
 
+.rg-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:6vw;
+}
+
+.rg-text{
+  flex:0 0 420px;
+}
+
+.rg-title{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.3rem,1.8vw,1.5rem);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.rg-desc-en{
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.8;
+  color:var(--c-text-main);
+  max-width:520px;
+}
+
+.rg-desc-ja{
+  margin-top:10px;
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  line-height:1.9;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+  max-width:520px;
+}
+
+.rg-media{
+  flex:1;
+  display:block;
+  min-width:0;
+}
+
+.rg-placeholder{
+  width:100%;
+  aspect-ratio:3 / 1;
+  background:linear-gradient(145deg, rgba(17,20,24,0.10), rgba(17,20,24,0.03));
+  position:relative;
+}
+
+.rg-placeholder::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 100%);
+}
+
+.rg-label{
+  position:absolute;
+  right:18px;
+  bottom:14px;
+  z-index:2;
+  text-align:right;
+  color:#fff;
+}
+
+.rg-label-main{
+  display:block;
+  font-family:var(--font-body);
+  font-size:.9rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.rg-label-sub{
+  display:block;
+  margin-top:6px;
+  font-family:var(--font-body);
+  font-size:.85rem;
+  opacity:.75;
+  letter-spacing:.08em;
+}
+
+/* ===== Expanded / Archive 横構造 ===== */
 .expanded-section{
 padding:6vh var(--container-padding) 3vh;
 max-width:1100px;
@@ -647,12 +589,11 @@ max-width:1100px;
 margin:0 auto;
 }
 
-
 .expanded-row,
 .archive-row{
 display:flex;
 justify-content:space-between;
-align-items:flex-start;  /* ← flex-end をこれに変更 */
+align-items:flex-start;
 gap:6vw;
 }
 
@@ -679,8 +620,6 @@ line-height:1.8;
 color:var(--c-text-sub);
 }
 
-/* 横長画像帯 */
-
 .expanded-media,
 .archive-media{
   flex:1;
@@ -689,16 +628,13 @@ color:var(--c-text-sub);
   min-width:0;
 }
 
-
 .expanded-media img,
 .archive-media img{
 width:100%;
-aspect-ratio:3 / 1;   /* ← 以前より縦を少し増やす */
+aspect-ratio:3 / 1;
 object-fit:cover;
 display:block;
 }
-
-/* VIEW ALL（弱め版） */
 
 .expanded-view,
 .archive-view{
@@ -706,7 +642,6 @@ display:block;
   width:100%;
   text-align:right;
 }
-
 
 .expanded-view a,
 .archive-view a{
@@ -736,83 +671,19 @@ transition:background .3s ease;
 background:rgba(11,13,16,.6);
 }
 
-
-/* ===== Footer Contact Link ===== */
-
-.footer-contact{
-margin-top:4vh;
+/* ===== Responsive (Home sections) ===== */
+@media(max-width:1024px){
+  .hero-container{grid-template-columns:1fr}
+  .hero-visual{position:relative;top:5vh;width:100%;height:60vh;right:auto}
+  .hero{padding-top:170px}
 }
 
-.footer-contact a{
-  position:relative;
-  display:inline-block;
-  color:inherit;
-  padding-bottom:4px;
-  line-height:1.1;   /* ← ここが重要 */
+@media (max-width:900px){
+  .film-grid{grid-template-columns:repeat(2,1fr);gap:4vw}
+  .rg-row,.expanded-row,.archive-row{flex-direction:column;gap:4vh}
+  .rg-text,.expanded-text,.archive-text{flex:0 0 auto}
+  .rg-placeholder,.expanded-media img,.archive-media img{aspect-ratio:3/2}
 }
-
-.footer-contact a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:38%;   /* VIEW ALLと同じ */
-height:1px;
-background:rgba(233,236,241,.5); /* フッター色に合わせる */
-transition:width .35s ease;
-}
-
-.footer-contact a:hover::after{
-width:100%;
-background:rgba(233,236,241,.9);
-}
-
-  .footer-copyright{
-  margin-top: 4vh;
-  font-size: 0.75rem;
-  opacity: 0.5;
-  text-align: center;
-}
-
-  /* ===== SCIENCE PAGE ===== */
-
-.science-hero img{
-  width:100%;
-  max-height:80vh;
-  object-fit:cover;
-  display:block;
-}
-
-.science-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-top:40px;
-}
-
-.science-grid img{
-  width:100%;
-  aspect-ratio:4/5;
-  object-fit:cover;
-  display:block;
-}
-/* ===== SCIENCE TITLE & SPACING ===== */
-
-.science-title{
-  text-align:center;
-  margin:10vh 0 6vh;
-  font-weight:400;
-  letter-spacing:0.12em;
-  font-size:28px;
-}
-
-.science-section{
-  max-width:1100px;
-  margin:0 auto 12vh; /* 下に余白 */
-  padding:0 40px;     /* 横の呼吸 */
-}
-
-
 </style>
 </head>
 
@@ -825,7 +696,6 @@ background:rgba(233,236,241,.9);
 <li><a href="works.html">Works</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="https://tally.so/r/vGPVJX" target="_blank">Contact</a></li>
-
 </ul>
 </nav>
 </header>
@@ -833,41 +703,37 @@ background:rgba(233,236,241,.9);
 <main>
 
 <section class="hero">
-<div class="hero-container">
-<div class="hero-main-copy">
-<h1 class="hero-name">Ishikawa<br>Saki<span class="hero-name-ja">石川 彩希</span></h1>
-</div>
+  <div class="hero-container">
+    <div class="hero-main-copy">
+      <h1 class="hero-name">Ishikawa<br>Saki<span class="hero-name-ja">石川 彩希</span></h1>
+    </div>
 
-<div class="hero-sub-copy">
-<span class="hero-tags">Concept Art / Costume Design / Visual Direction / General Design
+    <div class="hero-sub-copy">
+      <span class="hero-tags">Concept Art / Costume Design / Visual Direction / General Design</span>
+      <div class="hero-copy-en">
+        Designing visual identities through color and form.<br>
+        Leading concept development and visual design from vision to realization.
+      </div>
+      <div class="hero-copy-ja">
+        色彩と造形思想から、視覚的アイデンティティを設計する。<br>
+        コンセプト開発からビジュアルデザインの実現までを一貫して主導する。
+      </div>
+    </div>
+  </div>
 
-</span>
-<div class="hero-copy-en">
-Designing visual identities through color and form.<br>
-Leading concept development and visual design from vision to realization.
-</div>
-<div class="hero-copy-ja">
-色彩と造形思想から、視覚的アイデンティティを設計する。<br>
-コンセプト開発からビジュアルデザインの実現までを一貫して主導する。
-</div>
-</div>
-</div>
-
-<div class="hero-visual">
-<img src="https://lh3.googleusercontent.com/d/1Iz6mxRsc4Cvpdkj8KegxUMbqekg-116d">
-</div>
+  <div class="hero-visual">
+    <img src="https://lh3.googleusercontent.com/d/1Iz6mxRsc4Cvpdkj8KegxUMbqekg-116d" alt="">
+  </div>
 </section>
 
 <section id="about" class="container section-spacer">
   <span class="section-label">About</span>
 
   <div class="about-text-en">
-I am a visual designer working across concept development and visual direction.<br>
-From vision to realization, I deliver cohesive visual design while exploring restraint and disruption, shaping ideas into tangible form.<br>
-Across film, fashion, and beauty, I balance creative integrity with commercial performance.
-</div>
-
-
+    I am a visual designer working across concept development and visual direction.<br>
+    From vision to realization, I deliver cohesive visual design while exploring restraint and disruption, shaping ideas into tangible form.<br>
+    Across film, fashion, and beauty, I balance creative integrity with commercial performance.
+  </div>
 
   <div class="about-text-ja">
     コンセプト設計からビジュアルディレクションまでを横断するビジュアルデザイナー。<br>
@@ -876,20 +742,16 @@ Across film, fashion, and beauty, I balance creative integrity with commercial p
   </div>
 
   <p class="about-archive-inline">
-
-  <span class="archive-label">ARCHIVE</span>
-  <span class="archive-label-ja">主要実績</span>
-  &nbsp;—&nbsp;
-  <a href="https://drive.google.com/file/d/181v2VKMpnIGQhCXCyE5OvWF_nbTcF-WD/preview" target="_blank" rel="noopener">EN</a>
-  /
-  <a href="https://drive.google.com/file/d/1AdKuAcIt6yWa1L2eu5MY-SySG52VwKGy/preview" target="_blank" rel="noopener">JP</a>
-</p>
-
-
+    <span class="archive-label">ARCHIVE</span>
+    <span class="archive-label-ja">主要実績</span>
+    &nbsp;—&nbsp;
+    <a href="https://drive.google.com/file/d/181v2VKMpnIGQhCXCyE5OvWF_nbTcF-WD/preview" target="_blank" rel="noopener">EN</a>
+    /
+    <a href="https://drive.google.com/file/d/1AdKuAcIt6yWa1L2eu5MY-SySG52VwKGy/preview" target="_blank" rel="noopener">JP</a>
+  </p>
 </section>
 
 <section class="fashion-section">
-
   <div class="fashion-layout">
 
     <div class="fashion-text">
@@ -906,93 +768,87 @@ Across film, fashion, and beauty, I balance creative integrity with commercial p
       </div>
     </div>
 
-<div class="fashion-images">
-  <div class="fashion-item image-frame">
-    <img src="https://lh3.googleusercontent.com/d/12xPS3g8K_YhcrQZfmxJ0QNturZieUtjl" alt="Fashion Sub 1">
+    <div class="fashion-images">
+      <div class="fashion-item image-frame">
+        <img src="https://lh3.googleusercontent.com/d/12xPS3g8K_YhcrQZfmxJ0QNturZieUtjl" alt="Fashion Sub 1">
+      </div>
+
+      <div class="fashion-item image-frame">
+        <img src="https://lh3.googleusercontent.com/d/1eksM6pvb94dh1p2cHLOw9VKgeuTkQ41e" alt="Fashion Sub 2">
+      </div>
+
+      <div class="fashion-item image-frame">
+        <img src="https://lh3.googleusercontent.com/d/1azSJ02mWdd2bgSo2Jwcxc0unu3_2cDKE" class="top-focus" alt="Fashion Sub 3">
+      </div>
+
+      <div class="fashion-main image-frame">
+        <img src="https://lh3.googleusercontent.com/d/1x8YT6zeFpe0fab6_qKaHgIhm8gcGcSwb" alt="Fashion Main">
+      </div>
+    </div>
+
+    <div class="fashion-view">
+      <a href="/fashion.html" class="view-all">VIEW ALL</a>
+    </div>
+
   </div>
-
-  <div class="fashion-item image-frame">
-    <img src="https://lh3.googleusercontent.com/d/1eksM6pvb94dh1p2cHLOw9VKgeuTkQ41e" alt="Fashion Sub 2">
-  </div>
-
-  <div class="fashion-item image-frame">
-    <img src="https://lh3.googleusercontent.com/d/1azSJ02mWdd2bgSo2Jwcxc0unu3_2cDKE" class="top-focus" alt="Fashion Sub 3">
-  </div>
-
-<div class="fashion-main image-frame">
-  <img src="https://lh3.googleusercontent.com/d/1x8YT6zeFpe0fab6_qKaHgIhm8gcGcSwb" alt="Fashion Main">
-</div>
-
-  </div>
-
-  <div class="fashion-view">
-   <a href="/fashion.html" class="view-all">VIEW ALL</a>
-  </div>
-
-
 </section>
 
 <section class="scifi-section">
+  <div class="scifi-layout">
 
-<div class="scifi-layout">
+    <div class="scifi-text">
+      <h2 class="scifi-title">SCIENCE FICTION</h2>
 
-  <div class="scifi-text">
-    <h2 class="scifi-title">SCIENCE FICTION</h2>
-
-    <div class="scifi-description">
-      <p class="scifi-desc-en">
-        Concept creation for cinematic universes — creature, costume,<br> 
-        & world design built for film and streaming.
-      </p>
-      <p class="scifi-desc-ja">
-        映像世界のためのコンセプト創出。<br>
-        クリーチャー、衣装、世界観設計を映画・配信作品へ向けて構築する。
-      </p>
+      <div class="scifi-description">
+        <p class="scifi-desc-en">
+          Concept creation for cinematic universes — creature, costume,<br>
+          & world design built for film and streaming.
+        </p>
+        <p class="scifi-desc-ja">
+          映像世界のためのコンセプト創出。<br>
+          クリーチャー、衣装、世界観設計を映画・配信作品へ向けて構築する。
+        </p>
+      </div>
     </div>
-  </div>
 
-<div class="scifi-images">
-  <div class="scifi-item image-frame">
-    <img src="https://lh3.googleusercontent.com/d/1gfvd4hkQvzDTZNVstsZAGBZWu05zYa09" alt="Sci-Fi Sub 1">
-  </div>
+    <div class="scifi-images">
+      <div class="scifi-item image-frame">
+        <img src="https://lh3.googleusercontent.com/d/1gfvd4hkQvzDTZNVstsZAGBZWu05zYa09" alt="Sci-Fi Sub 1">
+      </div>
 
-  <div class="scifi-item image-frame">
-    <img src="https://lh3.googleusercontent.com/d/1JgScsoG0Y-g3ieAWHnXHyHWrm2vVd_mk" alt="Sci-Fi Sub 2">
-  </div>
+      <div class="scifi-item image-frame">
+        <img src="https://lh3.googleusercontent.com/d/1JgScsoG0Y-g3ieAWHnXHyHWrm2vVd_mk" alt="Sci-Fi Sub 2">
+      </div>
 
-  <div class="scifi-item image-frame">
-    <img src="https://lh3.googleusercontent.com/d/1mWN2dBbejetfxwMch4enVGMpa1-6yIRI" alt="Sci-Fi Sub 3">
-  </div>
+      <div class="scifi-item image-frame">
+        <img src="https://lh3.googleusercontent.com/d/1mWN2dBbejetfxwMch4enVGMpa1-6yIRI" alt="Sci-Fi Sub 3">
+      </div>
 
-  <div class="scifi-main image-frame">
-    <img src="https://lh3.googleusercontent.com/d/16qDfh-na6XqpJftiQHq9hpqgHeMPDVNM" class="bottom-focus" alt="Sci-Fi Main">
-  </div>
-</div>
+      <div class="scifi-main image-frame">
+        <img src="https://lh3.googleusercontent.com/d/16qDfh-na6XqpJftiQHq9hpqgHeMPDVNM" class="bottom-focus" alt="Sci-Fi Main">
+      </div>
+    </div>
 
-</div>
-
-  <!-- VIEW ALL -->
-  <div class="scifi-view">
-   <a href="/science.html" class="view-all">VIEW ALL</a>
+    <div class="scifi-view">
+      <a href="/science.html" class="view-all">VIEW ALL</a>
+    </div>
 
   </div>
-
 </section>
 
 <section class="film-section">
+  <div class="film-header">
+    <h2 class="film-title">FILM / TV</h2>
 
-<div class="film-header">
-  <h2 class="film-title">FILM / TV</h2>
-
-  <div class="film-description">
-    <p class="film-desc-en">
-      Selected costume design and visual concept works for film and television.
-    </p>
-    <p class="film-desc-ja">
-      映画・テレビ作品における衣装デザインおよびコンセプトビジュアルワーク。
-    </p>
+    <div class="film-description">
+      <p class="film-desc-en">
+        Selected costume design and visual concept works for film and television.
+      </p>
+      <p class="film-desc-ja">
+        映画・テレビ作品における衣装デザインおよびコンセプトビジュアルワーク。
+      </p>
+    </div>
   </div>
-</div>
 
   <div class="film-grid">
     <div class="film-item">
@@ -1010,16 +866,32 @@ Across film, fashion, and beauty, I balance creative integrity with commercial p
   </div>
 
   <div class="film-view">
-<a href="/film.html" class="view-all">VIEW ALL</a>
-
+    <a href="/film.html" class="view-all">VIEW ALL</a>
   </div>
+</section>
 
+<!-- ★ NEW: RHYTHMIC GYMNASTICS (Home teaser / placeholder OK) -->
+<section class="rg-section">
+  <div class="rg-row">
+    <div class="rg-text">
+      <h2 class="rg-title">RHYTHMIC GYMNASTICS</h2>
+      <p class="rg-desc-en">Competitive costume design — case studies & season works.</p>
+      <p class="rg-desc-ja">競技衣装デザイン。設計から実装までのケーススタディ。</p>
+    </div>
+
+    <a class="rg-media" href="/rhythmic.html">
+      <div class="rg-placeholder image-frame">
+        <div class="rg-label">
+          <span class="rg-label-main">VIEW CASE STUDY</span>
+          <span class="rg-label-sub">Coming soon</span>
+        </div>
+      </div>
+    </a>
+  </div>
 </section>
 
 <section class="expanded-section">
-
   <div class="expanded-row">
-
     <div class="expanded-text">
       <h2 class="expanded-title">EXPANDED WORKS</h2>
       <p class="expanded-desc">
@@ -1028,23 +900,16 @@ Across film, fashion, and beauty, I balance creative integrity with commercial p
     </div>
 
     <div class="expanded-media">
-      <div class="expanded-inner">
       <img src="https://lh3.googleusercontent.com/d/12zEUShjHC6D3bL4RLz44EXKbTHOpXSgL" alt="">
-<div class="expanded-view">
-  <a href="expanded.html">VIEW ALL</a>
-</div>
-
+      <div class="expanded-view">
+        <a href="expanded.html">VIEW ALL</a>
+      </div>
     </div>
- </div>
-
   </div>
-
 </section>
 
 <section class="archive-section">
-
   <div class="archive-row">
-
     <div class="archive-text">
       <h2 class="archive-title">ARCHIVE</h2>
       <p class="archive-desc">
@@ -1053,18 +918,12 @@ Across film, fashion, and beauty, I balance creative integrity with commercial p
     </div>
 
     <div class="archive-media">
-       <div class="archive-inner">
       <img src="https://lh3.googleusercontent.com/d/1wTKjm9-eKUtvmk1ibVcQVh5Gd6AE9SUU" alt="">
-    
-<div class="archive-view">
-  <a href="archive.html">VIEW ALL</a>
-</div>
-
-
+      <div class="archive-view">
+        <a href="archive.html">VIEW ALL</a>
       </div>
-    
+    </div>
   </div>
-
 </section>
 
 </main>
@@ -1080,11 +939,7 @@ Across film, fashion, and beauty, I balance creative integrity with commercial p
   <div class="footer-copyright">
     © 2026 Saki Ishikawa. All Rights Reserved.
   </div>
-
 </footer>
-
 
 </body>
 </html>
-
-<!-- update -->
