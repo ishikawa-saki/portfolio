@@ -41,86 +41,26 @@ a:hover{opacity:.6}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px var(--container-padding) 0;position:relative}
 .hero-container{display:grid;grid-template-columns:repeat(12,1fr);align-items:end;position:relative;z-index:2}
 .hero-main-copy{grid-column:1/10}
-
-/* ===== HERO NAME ===== */
-.hero-name{
-  font-family:var(--font-display);
-  font-weight:400;
-  font-size:clamp(2.6rem,6vw,4.8rem);
-  line-height:1.05;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-}
-
-/* ===== JP NAME + SLOGAN LOCKUP (same row) ===== */
-.hero-lockup{
-  display:flex;
-  align-items:baseline;
-  gap:18px;
-  margin-top:14px;
-  flex-wrap:wrap;
-}
-
+.hero-name{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:.05em;text-transform:uppercase}
 .hero-name-ja{
-  display:inline-block;
-  font-family:var(--font-jp);
-  font-size:1.15rem;
-  letter-spacing:.12em;
-  color:var(--c-text-main);
-  text-transform:none;
+display:block;
+margin-top:14px;
+font-family:var(--font-jp);
+font-size:1rem;
+letter-spacing:.12em;
+color:var(--c-text-sub);
 }
 
-.hero-slogan-inline{
-  display:inline-block;
-  font-family:var(--font-body);
-  font-size:.98rem;
-  line-height:1.6;
-  letter-spacing:.08em;
-  opacity:.78;
-  text-transform:none;
-  white-space:nowrap;
-}
-
-/* ===== HERO SUB COPY (REFINED RHYTHM) ===== */
-.hero-sub-copy{
-  grid-column:1/6;
-  margin-top:34px;           /* ← 40px → 少し締める */
-}
-
+.hero-sub-copy{grid-column:1/6;margin-top:40px}
 .hero-tags{
-  display:block;
-  font-family:var(--font-body);
-  font-size:.92rem;          /* ← 1rem → 少し小さく */
-  letter-spacing:.18em;      /* ← “見出し”感を出す */
-  opacity:.58;
-  line-height:1.35;
-  margin:0 0 14px;           /* ← 下だけ締める（均一にしない） */
+font-family:var(--font-body);
+font-size:1rem;
+letter-spacing:.12em;
+opacity:.6;
 }
 
-/* EN block */
-.hero-copy-en{
-  margin-top:0;              /* ← タグの下は margin で管理 */
-  font-family:var(--font-body);
-  font-size:1.02rem;         /* ← 1.1rem → 少し締めて上品に */
-  line-height:1.75;
-  max-width:520px;
-  opacity:.92;
-}
-.hero-copy-en p{margin:0}
-.hero-copy-en p + p{margin-top:8px}  /* ← 2行の間だけ短く */
-
-/* JP block */
-.hero-copy-ja{
-  margin-top:12px;           /* ← EN→JP の段差だけ付ける */
-  font-family:var(--font-jp);
-  font-size:.82rem;
-  line-height:2.15;
-  letter-spacing:.07em;
-  color:var(--c-text-sub);
-  max-width:520px;
-}
-.hero-copy-ja p{margin:0}
-.hero-copy-ja p + p{margin-top:6px}
+.hero-copy-en{margin-top:36px;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
+.hero-copy-ja{margin-top:10px;font-family:var(--font-jp);font-size:.8rem;line-height:2.1;letter-spacing:.08em;color:var(--c-text-sub);max-width:520px}
 
 /* ===== HERO MOBILE DEFAULT ===== */
 .hero-visual{
@@ -160,19 +100,6 @@ a:hover{opacity:.6}
     width:100% !important;
     height:60vh !important;
     margin-top:40px !important;
-  }
-}
-
-/* ===== LOCKUP MOBILE (stack) ===== */
-@media (max-width: 600px){
-  .hero-lockup{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:6px;
-  }
-  .hero-slogan-inline{
-    white-space:normal;
-    opacity:.82;
   }
 }
 
@@ -779,27 +706,18 @@ background:rgba(11,13,16,.6);
 <section class="hero">
   <div class="hero-container">
     <div class="hero-main-copy">
-      <h1 class="hero-name">
-        Ishikawa<br>
-        Saki
-        <span class="hero-lockup">
-          <span class="hero-name-ja">石川 彩希</span>
-          <span class="hero-slogan-inline">Designing the Visual Language of Cinema.</span>
-        </span>
-      </h1>
+      <h1 class="hero-name">Ishikawa<br>Saki<span class="hero-name-ja">石川 彩希</span></h1>
     </div>
 
     <div class="hero-sub-copy">
       <span class="hero-tags">Concept Art / Costume Design / Visual Direction / General Design</span>
-
       <div class="hero-copy-en">
-        <p>Designing visual identities through color and form.</p>
-        <p>Leading concept development and visual design from vision to realization.</p>
+        Designing visual identities through color and form.<br>
+        Leading concept development and visual design from vision to realization.
       </div>
-
       <div class="hero-copy-ja">
-        <p>色彩と造形思想から、視覚的アイデンティティを設計する。</p>
-        <p>コンセプト開発からビジュアルデザインの実現までを一貫して主導する。</p>
+        色彩と造形思想から、視覚的アイデンティティを設計する。<br>
+        コンセプト開発からビジュアルデザインの実現までを一貫して主導する。
       </div>
     </div>
   </div>
