@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -47,16 +48,16 @@ a:hover{opacity:.6}
   display:flex;
   align-items:baseline;
   gap:16px;
-  margin-top:14px;
+  margin-top:18px; /* ← 英語名前と石川彩希を少しだけ離す（14px -> 18px） */
   flex-wrap:wrap;
 }
 
 .hero-name-ja{
   display:inline-block;
   font-family:var(--font-jp);
-  font-size:1.12rem;          /* 少し大きく */
+  font-size:1.12rem;
   letter-spacing:.12em;
-  color:var(--c-text-main);   /* 英語と同じ色 */
+  color:var(--c-text-main);
   text-transform:none;
 }
 
@@ -71,29 +72,45 @@ a:hover{opacity:.6}
   white-space:nowrap;
 }
 
-/* ===== (案1) 全体を下げて石川彩希から離す ===== */
+/* ===== HERO: BLOCK SEPARATION (A1 + A2) ===== */
 .hero-sub-copy{
-  grid-column:1/6;
-  margin-top:56px;            /* 28px -> 56px（しっかり下げる） */
+  grid-column:1/7;  /* ← 少し幅を広げてタグが折れにくくする（1/6 -> 1/7） */
+  margin-top:64px;
 }
 
-/* ===== (案2) 薄い区切り：タグをラベル化 ===== */
+/* タグを「セクションラベル化」＋薄い区切り */
 .hero-tags{
-  display:block;
-  padding-top:14px;
-  margin:0 0 10px;            /* タグ下の余白は詰める（散らかり防止） */
-  border-top:1px solid rgba(17,20,24,.12);
+  display:inline-block;
   font-family:var(--font-body);
-  font-size:1rem;
+  font-size:1rem;          /* ← 一つ前の大きさに戻す（= 1remのまま固定） */
   letter-spacing:.12em;
-  text-transform:uppercase;
-  opacity:.72;
-  line-height:1.35;
+  opacity:.68;
+
+  margin:0;
+  padding-top:14px;
+  border-top:1px solid rgba(17,20,24,.12);
+
+  white-space:nowrap;      /* ← PCでは折らない */
 }
 
-/* 既存のコピーはそのまま（行間均一化しない） */
-.hero-copy-en{margin-top:0;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
-.hero-copy-ja{margin-top:10px;font-family:var(--font-jp);font-size:.8rem;line-height:2.1;letter-spacing:.08em;color:var(--c-text-sub);max-width:520px}
+/* タグ→英文の距離だけ詰める（均等にはしない） */
+.hero-copy-en{
+  margin-top:18px;
+  font-family:var(--font-body);
+  font-size:1.1rem;
+  line-height:1.8;
+  max-width:520px;
+}
+
+.hero-copy-ja{
+  margin-top:10px;
+  font-family:var(--font-jp);
+  font-size:.8rem;
+  line-height:2.1;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+  max-width:520px;
+}
 
 /* ===== HERO MOBILE DEFAULT ===== */
 .hero-visual{
@@ -134,9 +151,13 @@ a:hover{opacity:.6}
     height:60vh !important;
     margin-top:40px !important;
   }
-  /* モバイルは下げ幅を少し控えめに */
+
   .hero-sub-copy{
     margin-top:44px !important;
+  }
+
+  .hero-tags{
+    white-space:normal; /* ← モバイルでは自然に折り返してOK */
   }
 }
 
@@ -988,3 +1009,4 @@ background:rgba(11,13,16,.6);
 
 </body>
 </html>
+
