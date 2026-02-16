@@ -71,15 +71,28 @@ a:hover{opacity:.6}
   white-space:nowrap;
 }
 
-.hero-sub-copy{grid-column:1/6;margin-top:28px} /* 40px -> 詰める（Concept Art と Designing を近づける） */
-.hero-tags{
-font-family:var(--font-body);
-font-size:1rem;
-letter-spacing:.12em;
-opacity:.6;
+/* ===== (案1) 全体を下げて石川彩希から離す ===== */
+.hero-sub-copy{
+  grid-column:1/6;
+  margin-top:56px;            /* 28px -> 56px（しっかり下げる） */
 }
 
-.hero-copy-en{margin-top:36px;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
+/* ===== (案2) 薄い区切り：タグをラベル化 ===== */
+.hero-tags{
+  display:block;
+  padding-top:14px;
+  margin:0 0 10px;            /* タグ下の余白は詰める（散らかり防止） */
+  border-top:1px solid rgba(17,20,24,.12);
+  font-family:var(--font-body);
+  font-size:1rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.72;
+  line-height:1.35;
+}
+
+/* 既存のコピーはそのまま（行間均一化しない） */
+.hero-copy-en{margin-top:0;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
 .hero-copy-ja{margin-top:10px;font-family:var(--font-jp);font-size:.8rem;line-height:2.1;letter-spacing:.08em;color:var(--c-text-sub);max-width:520px}
 
 /* ===== HERO MOBILE DEFAULT ===== */
@@ -120,6 +133,10 @@ opacity:.6;
     width:100% !important;
     height:60vh !important;
     margin-top:40px !important;
+  }
+  /* モバイルは下げ幅を少し控えめに */
+  .hero-sub-copy{
+    margin-top:44px !important;
   }
 }
 
