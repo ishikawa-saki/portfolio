@@ -40,34 +40,52 @@ a:hover{opacity:.6}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px var(--container-padding) 0;position:relative}
 .hero-container{display:grid;grid-template-columns:repeat(12,1fr);align-items:end;position:relative;z-index:2}
 .hero-main-copy{grid-column:1/10}
-.hero-name{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:.05em;text-transform:uppercase}
 
-/* ===== UPDATED: JP NAME (bigger + same color as EN) ===== */
-.hero-name-ja{
-  display:block;
-  margin-top:14px;
-  font-family:var(--font-jp);
-  font-size:1.15rem;          /* ← 少し大きく */
-  letter-spacing:.12em;
-  color:var(--c-text-main);    /* ← 英語と同じ色 */
+/* ===== HERO NAME ===== */
+.hero-name{
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(2.6rem,6vw,4.8rem);
+  line-height:1.05;
+  letter-spacing:.05em;
+  text-transform:uppercase;
 }
 
-/* ===== NEW: CREATIVE SLOGAN ===== */
-.hero-slogan{
+/* ===== NEW: JP NAME + SLOGAN LOCKUP (same row) ===== */
+.hero-lockup{
+  display:flex;
+  align-items:baseline;
+  gap:18px;
   margin-top:14px;
+  flex-wrap:wrap;
+}
+
+.hero-name-ja{
+  display:inline-block;
+  font-family:var(--font-jp);
+  font-size:1.15rem;          /* ← JP名：少し大きく */
+  letter-spacing:.12em;
+  color:var(--c-text-main);    /* ← 英字と同色 */
+  text-transform:none;
+}
+
+.hero-slogan-inline{
+  display:inline-block;
   font-family:var(--font-body);
-  font-size:1.05rem;
-  line-height:1.8;
-  letter-spacing:.06em;
-  opacity:.85;
+  font-size:.98rem;            /* ← “見出し”ではなく“タグライン”感 */
+  line-height:1.6;
+  letter-spacing:.08em;
+  opacity:.78;
+  text-transform:none;
+  white-space:nowrap;          /* PCでは締まって見える */
 }
 
 .hero-sub-copy{grid-column:1/6;margin-top:40px}
 .hero-tags{
-font-family:var(--font-body);
-font-size:1rem;
-letter-spacing:.12em;
-opacity:.6;
+  font-family:var(--font-body);
+  font-size:1rem;
+  letter-spacing:.12em;
+  opacity:.6;
 }
 
 .hero-copy-en{margin-top:36px;font-family:var(--font-body);font-size:1.1rem;line-height:1.8;max-width:520px}
@@ -111,6 +129,19 @@ opacity:.6;
     width:100% !important;
     height:60vh !important;
     margin-top:40px !important;
+  }
+}
+
+/* ===== LOCKUP MOBILE (stack for clean rhythm) ===== */
+@media (max-width: 600px){
+  .hero-lockup{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+  .hero-slogan-inline{
+    white-space:normal;
+    opacity:.82;
   }
 }
 
@@ -720,11 +751,11 @@ background:rgba(11,13,16,.6);
       <h1 class="hero-name">
         Ishikawa<br>
         Saki
-        <span class="hero-name-ja">石川 彩希</span>
+        <span class="hero-lockup">
+          <span class="hero-name-ja">石川 彩希</span>
+          <span class="hero-slogan-inline">Designing the Visual Language of Cinema.</span>
+        </span>
       </h1>
-
-      <!-- NEW: SLOGAN -->
-      <div class="hero-slogan">Designing the Visual Language of Cinema.</div>
     </div>
 
     <div class="hero-sub-copy">
