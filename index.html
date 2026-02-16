@@ -41,13 +41,25 @@ a:hover{opacity:.6}
 .hero-container{display:grid;grid-template-columns:repeat(12,1fr);align-items:end;position:relative;z-index:2}
 .hero-main-copy{grid-column:1/10}
 .hero-name{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:.05em;text-transform:uppercase}
+
+/* ===== UPDATED: JP NAME (bigger + same color as EN) ===== */
 .hero-name-ja{
-display:block;
-margin-top:14px;
-font-family:var(--font-jp);
-font-size:1rem;
-letter-spacing:.12em;
-color:var(--c-text-sub);
+  display:block;
+  margin-top:14px;
+  font-family:var(--font-jp);
+  font-size:1.15rem;          /* ← 少し大きく */
+  letter-spacing:.12em;
+  color:var(--c-text-main);    /* ← 英語と同じ色 */
+}
+
+/* ===== NEW: CREATIVE SLOGAN ===== */
+.hero-slogan{
+  margin-top:14px;
+  font-family:var(--font-body);
+  font-size:1.05rem;
+  line-height:1.8;
+  letter-spacing:.06em;
+  opacity:.85;
 }
 
 .hero-sub-copy{grid-column:1/6;margin-top:40px}
@@ -705,7 +717,14 @@ background:rgba(11,13,16,.6);
 <section class="hero">
   <div class="hero-container">
     <div class="hero-main-copy">
-      <h1 class="hero-name">Ishikawa<br>Saki<span class="hero-name-ja">石川 彩希</span></h1>
+      <h1 class="hero-name">
+        Ishikawa<br>
+        Saki
+        <span class="hero-name-ja">石川 彩希</span>
+      </h1>
+
+      <!-- NEW: SLOGAN -->
+      <div class="hero-slogan">Designing the Visual Language of Cinema.</div>
     </div>
 
     <div class="hero-sub-copy">
