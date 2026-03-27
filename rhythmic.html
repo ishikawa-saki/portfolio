@@ -77,19 +77,19 @@
 }
 
 .rg-case-title{
-  font-family:var(--font-display);
+  font-family:var(--font-body);
   font-weight:400;
-  font-size:clamp(1.4rem,2.2vw,1.9rem);
-  letter-spacing:.08em;
-  text-transform:none;
-  line-height:1.15;
+  font-size:1.15rem;
+  color:var(--c-text-sub);
+  letter-spacing:.04em;
+  line-height:1.7;
 }
 
 .rg-case-title small{
   display:block;
-  margin-top:10px;
-  font-family:var(--font-body);
-  font-size:.9rem;
+  margin-top:8px;
+  font-family:var(--font-jp);
+  font-size:.82rem;
   letter-spacing:.08em;
   color:var(--c-text-sub);
 }
@@ -114,6 +114,43 @@
 }
 
 .rg-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+  .rg-gallery-main{
+  margin-top:3vh;
+}
+
+.rg-gallery-main .rg-main-image{
+  width:100%;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+}
+
+.rg-gallery-main .rg-main-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-gallery-sub{
+  margin-top:2vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2vw;
+}
+
+.rg-gallery-sub .rg-sub-image{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+}
+
+.rg-gallery-sub .rg-sub-image img{
   width:100%;
   height:100%;
   object-fit:cover;
@@ -332,6 +369,7 @@
   .rg-process{grid-template-columns:1fr;gap:5vw;}
   .rg-details{grid-template-columns:1fr 1fr;gap:4vw;}
   .rg-spec{grid-template-columns:1fr;gap:4vh;}
+    .rg-gallery-sub{ grid-template-columns:1fr;gap:4vw;}
 }
 </style>
 </head>
@@ -379,10 +417,21 @@
       </div>
 
       <!-- HERO (placeholder now / replace with <img> later) -->
-     <div class="rg-hero">
-  <img src="images/rg/minami2.jpg" alt="Rhythmic Gymnastics Costume 2026">
-</div>
+     <div class="rg-gallery-main">
+  <div class="rg-main-image">
+    <img src="images/rg/minami2.jpg" alt="Rhythmic Gymnastics Costume 2026 main look">
+  </div>
 
+  <div class="rg-gallery-sub">
+    <div class="rg-sub-image">
+      <img src="images/rg/minami3.jpg" alt="Rhythmic Gymnastics Costume 2026 sub look 01">
+    </div>
+
+    <div class="rg-sub-image">
+      <img src="images/rg/minami4.jpg" alt="Rhythmic Gymnastics Costume 2026 sub look 02">
+    </div>
+  </div>
+</div>
       <!-- VIDEO (optional / add when ready) -->
       <div class="rg-video">
         <!-- 解禁後：src を差し替え -->
