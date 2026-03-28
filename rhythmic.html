@@ -212,6 +212,18 @@
   display:block;
 }
 
+.rg-process .rg-tile video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* FINALだけ縦長にする */
+.rg-process .rg-tile:nth-child(3){
+  aspect-ratio:9/16;
+}
+
 .rg-tile-label{
   position:absolute;
   left:14px;
