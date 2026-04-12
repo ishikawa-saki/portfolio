@@ -666,62 +666,67 @@ background:rgba(233,236,241,.9);
 
 /* ===== FILM / TV ===== */
 .film-section{
-padding:6vh var(--container-padding);
+  padding:6vh var(--container-padding);
+  max-width:1300px;
+  margin:0 auto;
 }
 
-.film-header{
-max-width:800px;
-margin:0 auto 4vh;
-text-align:center;
+.film-text{
+  max-width:760px;
 }
 
 .film-title{
-font-family:var(--font-display);
-font-weight:400;
-font-size:clamp(1.4rem,2vw,1.7rem);
-letter-spacing:.08em;
-text-transform:uppercase;
-margin-bottom:10px;
-}
-
-.film-description{
-margin-top:10px;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.6rem,2.4vw,2rem);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:1.5px;
 }
 
 .film-desc-en{
-font-family:var(--font-body);
-font-size:1rem;
-line-height:1.8;
-color:var(--c-text-main);
+  font-family:var(--font-body);
+  font-size:1.1rem;
+  line-height:1.6;
+  color:var(--c-text-main);
+  max-width:760px;
 }
 
 .film-desc-ja{
-margin-top:10px;
-font-family:var(--font-jp);
-font-size:.82rem;
-line-height:1.9;
-letter-spacing:.08em;
-color:var(--c-text-sub);
+  margin-top:9px;
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+  max-width:760px;
 }
 
-.film-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:2vw;
-max-width:1000px;
-margin:0 auto;
+.film-images{
+  display:flex;
+  align-items:flex-end;
+  gap:1.6vw;
+  margin-top:-13.8vh;
 }
 
 .film-item{
-aspect-ratio:4/5;
-overflow:hidden;
+  width:300px;
+  aspect-ratio:3/4;
+  overflow:hidden;
 }
 
-.film-item img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+.film-main{
+  width:540px;
+  aspect-ratio:3/4;
+  overflow:hidden;
+}
+
+.film-item img,
+.film-main img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 /* ===== VIEW ALL 共通 ===== */
@@ -967,10 +972,12 @@ background:rgba(11,13,16,.6);
 }
 
 @media (max-width:900px){
-  .film-grid{grid-template-columns:repeat(2,1fr);gap:4vw}
   .rg-row,.expanded-row,.archive-row{flex-direction:column;gap:4vh}
   .rg-text,.expanded-text,.archive-text{flex:0 0 auto}
   .rg-placeholder,.expanded-media img,.archive-media img{aspect-ratio:3/2}
+  .film-images{display:flex;gap:4vw;margin-top:4vh;overflow-x:auto}
+  .film-item{min-width:42vw}
+  .film-main{min-width:58vw}
 }
 </style>
 </head>
