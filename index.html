@@ -269,12 +269,25 @@ a:hover{opacity:.6}
 
 .pickup-toku-main{
   font-family:var(--font-body);
-  font-size:1.52rem;
-  line-height:1.16;
   letter-spacing:.03em;
   color:var(--c-text-main);
-  padding-bottom:1.4vh;
+  padding-bottom:1.5vh;
   border-bottom:1px solid rgba(17,20,24,.14);
+}
+
+/* 上段（仮面ライダー／戦隊） */
+.pickup-toku-main-top{
+  display:block;
+  font-size:1.62rem;
+  line-height:1.18;
+}
+
+/* 下段 */
+.pickup-toku-main-sub{
+  display:block;
+  margin-top:.4vh;
+  font-size:1.32rem;
+  line-height:1.25;
 }
 
 .pickup-toku-work{
@@ -286,7 +299,7 @@ a:hover{opacity:.6}
   color:var(--c-text-sub);
 }
 .pickup-toku-main + .pickup-toku-work{
-  margin-top:2.6vh;
+  margin-top:2.8vh;
 }
 
 /* 作品名だけ強調 */
@@ -1021,8 +1034,8 @@ display:block;
 
 <div class="pickup-text">
 <div class="pickup-toku-main">
-  仮面ライダー／戦隊<br>
-  衣装デザイン・造形コンセプト
+  <span class="pickup-toku-main-top">仮面ライダー／戦隊</span>
+  <span class="pickup-toku-main-sub">衣装デザイン・造形コンセプト</span>
 </div>
 
 <div class="pickup-toku-work"><strong>「機界戦隊ゼンカイジャー」</strong> ステイシー 衣装デザイン</div>
