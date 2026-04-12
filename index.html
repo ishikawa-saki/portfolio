@@ -263,21 +263,16 @@ a:hover{opacity:.6}
 }
 
 .pickup-toku-work{
-  margin-top:1.4vh;
+  margin-top:1.15vh;
   font-family:var(--font-jp);
   font-size:1.08rem;
-  line-height:1.75;
+  line-height:1.9;
   letter-spacing:.05em;
   color:var(--c-text-main);
 }
 
 .pickup-toku-detail{
-  margin-top:.25vh;
-  font-family:var(--font-jp);
-  font-size:.84rem;
-  line-height:2.0;
-  letter-spacing:.08em;
-  color:var(--c-text-sub);
+  display:none;
 }
 
 @media(max-width:900px){
@@ -286,14 +281,13 @@ a:hover{opacity:.6}
     line-height:1.2;
   }
 
-  .pickup-toku-work{
+ .pickup-toku-work{
     font-size:1rem;
-    line-height:1.8;
+    line-height:1.9;
   }
 
   .pickup-toku-detail{
-    font-size:.82rem;
-    line-height:2.0;
+    display:none;
   }
 }
   
@@ -701,28 +695,21 @@ background:rgba(233,236,241,.9);
   color:var(--c-text-sub);
   max-width:760px;
 }
-
+  
 .film-images{
-  display:flex;
-  align-items:flex-end;
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
   gap:1.6vw;
-  margin-top:-13.8vh;
+  margin-top:4vh;
 }
 
 .film-item{
-  width:300px;
+  width:100%;
   aspect-ratio:3/4;
   overflow:hidden;
 }
 
-.film-main{
-  width:540px;
-  aspect-ratio:3/4;
-  overflow:hidden;
-}
-
-.film-item img,
-.film-main img{
+.film-item img{
   width:100%;
   height:100%;
   object-fit:cover;
@@ -929,40 +916,7 @@ object-fit:cover;
 display:block;
 }
 
-.expanded-view,
-.archive-view{
-  margin-top:10px;
-  width:100%;
-  text-align:right;
-}
 
-.expanded-view a,
-.archive-view a{
-position:relative;
-display:inline-block;
-font-family:var(--font-body);
-font-size:.9rem;
-letter-spacing:.2em;
-text-transform:uppercase;
-padding-bottom:3px;
-}
-
-.expanded-view a::after,
-.archive-view a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:1px;
-background:rgba(11,13,16,.3);
-transition:background .3s ease;
-}
-
-.expanded-view a:hover::after,
-.archive-view a:hover::after{
-background:rgba(11,13,16,.6);
-}
 
 /* ===== Responsive (Home sections) ===== */
 @media(max-width:1024px){
@@ -976,8 +930,7 @@ background:rgba(11,13,16,.6);
   .rg-text,.expanded-text,.archive-text{flex:0 0 auto}
   .rg-placeholder,.expanded-media img,.archive-media img{aspect-ratio:3/2}
   .film-images{display:flex;gap:4vw;margin-top:4vh;overflow-x:auto}
-  .film-item{min-width:42vw}
-  .film-main{min-width:58vw}
+.film-item{min-width:42vw}
 }
 </style>
 </head>
@@ -1041,23 +994,14 @@ background:rgba(11,13,16,.6);
         <img src="images/film/stacy_01.jpg" alt="Tokusatsu character design work">
       </a>
 
-     <div class="pickup-text">
+<div class="pickup-text">
   <div class="pickup-toku-main">仮面ライダー／戦隊 特撮衣装デザイン</div>
 
-  <div class="pickup-toku-work">「機界戦隊ゼンカイジャー」</div>
-  <p class="pickup-toku-detail">ステイシー 衣装デザイン</p>
-
-  <div class="pickup-toku-work">「仮面ライダーリバイス」</div>
-  <p class="pickup-toku-detail">デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン</p>
-
-  <div class="pickup-toku-work">「仮面ライダーギーツ」</div>
-  <p class="pickup-toku-detail">創世の女神 造形デザイン</p>
-
-  <div class="pickup-toku-work">「仮面ライダーガッチャード」</div>
-  <p class="pickup-toku-detail">冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン</p>
-
-  <div class="pickup-toku-work">映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」</div>
-  <p class="pickup-toku-detail">冥黒のデスマスク デザイン</p>
+  <div class="pickup-toku-work">「機界戦隊ゼンカイジャー」 ステイシー 衣装デザイン</div>
+  <div class="pickup-toku-work">「仮面ライダーリバイス」 デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン</div>
+  <div class="pickup-toku-work">「仮面ライダーギーツ」 創世の女神 造形デザイン</div>
+  <div class="pickup-toku-work">「仮面ライダーガッチャード」 冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン</div>
+  <div class="pickup-toku-work">映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」 冥黒のデスマスク デザイン</div>
 </div>
     </div>
 
@@ -1174,23 +1118,27 @@ background:rgba(11,13,16,.6);
       </div>
     </div>
 
-    <div class="film-images">
-      <div class="film-item image-frame">
-        <img src="https://lh3.googleusercontent.com/d/1an-S8xDYauRVe3JPGR-JxvpBSZzUJaBO" alt="">
-      </div>
+   <div class="film-images">
+  <div class="film-item image-frame">
+    <img src="https://lh3.googleusercontent.com/d/1an-S8xDYauRVe3JPGR-JxvpBSZzUJaBO" alt="">
+  </div>
 
-      <div class="film-item image-frame">
-        <img src="https://lh3.googleusercontent.com/d/128s9TNQUBnaZ0QrmibFQIZtMcoMBEWfC" alt="">
-      </div>
+  <div class="film-item image-frame">
+    <img src="https://lh3.googleusercontent.com/d/128s9TNQUBnaZ0QrmibFQIZtMcoMBEWfC" alt="">
+  </div>
 
-      <div class="film-item image-frame">
-        <img src="https://lh3.googleusercontent.com/d/1O2SkHKutQYQNyuA_os-J6pGr1nwtIqn8" alt="">
-      </div>
+  <div class="film-item image-frame">
+    <img src="https://lh3.googleusercontent.com/d/1O2SkHKutQYQNyuA_os-J6pGr1nwtIqn8" alt="">
+  </div>
 
-      <div class="film-main image-frame">
-        <img src="https://lh3.googleusercontent.com/d/187p-l_si2mW05sBM4HWIfivEv6lE_W9d" alt="">
-      </div>
-    </div>
+  <div class="film-item image-frame">
+    <img src="https://lh3.googleusercontent.com/d/187p-l_si2mW05sBM4HWIfivEv6lE_W9d" alt="">
+  </div>
+
+  <div class="film-item image-frame">
+    <!-- 後で5枚目を入れる -->
+  </div>
+</div>
 
     <div class="film-view">
       <a href="/film.html" class="view-all">VIEW ALL</a>
@@ -1269,12 +1217,9 @@ background:rgba(11,13,16,.6);
       </p>
     </div>
 
-    <div class="expanded-media">
-      <img src="https://lh3.googleusercontent.com/d/12zEUShjHC6D3bL4RLz44EXKbTHOpXSgL" alt="">
-      <div class="expanded-view">
-        <a href="expanded.html">VIEW ALL</a>
-      </div>
-    </div>
+   <a class="expanded-media" href="expanded.html">
+  <img src="https://lh3.googleusercontent.com/d/12zEUShjHC6D3bL4RLz44EXKbTHOpXSgL" alt="">
+</a>
   </div>
 </section>
 
@@ -1287,12 +1232,9 @@ background:rgba(11,13,16,.6);
       </p>
     </div>
 
-    <div class="archive-media">
-      <img src="https://lh3.googleusercontent.com/d/1wTKjm9-eKUtvmk1ibVcQVh5Gd6AE9SUU" alt="">
-      <div class="archive-view">
-        <a href="archive.html">VIEW ALL</a>
-      </div>
-    </div>
+   <a class="archive-media" href="archive.html">
+  <img src="https://lh3.googleusercontent.com/d/1wTKjm9-eKUtvmk1ibVcQVh5Gd6AE9SUU" alt="">
+</a>
   </div>
 </section>
 
