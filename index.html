@@ -161,6 +161,59 @@ a:hover{opacity:.6}
   }
 }
 
+.pickup-section{
+  padding:10vh var(--container-padding);
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.pickup-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4vw;
+}
+
+.pickup-block{
+  display:flex;
+  flex-direction:column;
+  gap:2vh;
+}
+
+.pickup-image{
+  width:100%;
+  aspect-ratio:1/1;
+  overflow:hidden;
+}
+
+.pickup-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.pickup-title{
+  font-family:var(--font-body);
+  font-size:1.05rem;
+  letter-spacing:.12em;
+}
+
+.pickup-desc{
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+/* スマホ */
+@media(max-width:900px){
+  .pickup-inner{
+    grid-template-columns:1fr;
+    gap:6vh;
+  }
+}
+  
 /* ===== ABOUT BLOCK ===== */
 .container{
   padding:0 var(--container-padding);
@@ -795,6 +848,56 @@ background:rgba(11,13,16,.6);
   <div class="hero-visual">
     <img src="https://lh3.googleusercontent.com/d/1Iz6mxRsc4Cvpdkj8KegxUMbqekg-116d" alt="">
   </div>
+</section>
+
+  <section class="pickup-section">
+
+  <div class="pickup-inner">
+
+    <!-- 左：特撮 -->
+    <div class="pickup-block">
+      <div class="pickup-image">
+        <img src="images/film/stacy_01.jpg" alt="">
+      </div>
+
+      <div class="pickup-text">
+        <h3 class="pickup-title">TOKUSATSU / CHARACTER WORKS</h3>
+
+        <p class="pickup-desc">
+「機界戦隊ゼンカイジャー」ステイシー 衣装デザイン<br>
+「仮面ライダーリバイス」デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン<br>
+「仮面ライダーギーツ」創世の女神 造形デザイン<br>
+「仮面ライダーガッチャード」冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン<br>
+映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」冥黒のデスマスク デザイン
+        </p>
+      </div>
+    </div>
+
+    <!-- 右：新体操 -->
+    <div class="pickup-block">
+      <div class="pickup-image">
+        <img src="images/rg/minami2.jpg" alt="">
+      </div>
+
+      <div class="pickup-text">
+        <h3 class="pickup-title">Design for Victory 🏆</h3>
+
+        <p class="pickup-desc">
+新体操は、「人間が人間を超える」瞬間を見せる競技。<br><br>
+
+特撮衣装の最前線で研ぎ澄ませた、アクションの「動」に順応するデザイン。<br>
+激しい動きの中でも、一瞬たりとも演技の美しさを崩さず<br>
+どの角度からみても気迫で圧倒する勝負の思考を、新体操のフロアへ。<br><br>
+
+身体をただ飾るのではない。<br>
+芸術点の0.1に挑むべく、内なる精神を顕在化させ、精神・身体・衣装を極限まで一体化させる。<br>
+審判を作品世界に引き込み、勝利を掴み取る「意志」を纏うということ。
+        </p>
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
 <section id="about" class="container section-spacer">
