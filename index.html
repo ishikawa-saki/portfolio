@@ -181,6 +181,10 @@ a:hover{opacity:.6}
 .pickup-heading-wrap{
   max-width:none;
   margin:0 0 3.4vh;
+  display:flex;
+  align-items:flex-end;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
 .pickup-banner{
@@ -193,6 +197,16 @@ a:hover{opacity:.6}
   padding:0 0 10px;
   border-bottom:1.5px solid rgba(17,20,24,.28);
   color:var(--c-text-main);
+}
+  .pickup-date{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:.72rem;
+  letter-spacing:.12em;
+  line-height:1.2;
+  color:rgba(17,20,24,.42);
+  transform:translateY(-2px);
+  white-space:nowrap;
 }
 
 .pickup-inner{
@@ -314,6 +328,12 @@ a:hover{opacity:.6}
 }
 
 @media(max-width:900px){
+
+  .pickup-date{
+  font-size:.68rem;
+  letter-spacing:.1em;
+  transform:none;
+}
 .pickup-toku-main{
     font-size:1.18rem;
     line-height:1.2;
@@ -1020,9 +1040,10 @@ display:block;
 </section>
 
 <section class="pickup-section">
-  <div class="pickup-heading-wrap">
-    <span class="pickup-banner">PICK UP</span>
-  </div>
+ <div class="pickup-heading-wrap">
+  <span class="pickup-banner">PICK UP</span>
+  <span class="pickup-date">Updated — 2026.04.12</span>
+</div>
 
   <div class="pickup-inner">
 
