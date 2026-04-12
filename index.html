@@ -161,41 +161,79 @@ a:hover{opacity:.6}
   }
 }
 
+/* ===== PICK UP ===== */
 .pickup-section{
-  padding:10vh var(--container-padding);
-  max-width:1200px;
-  margin:0 auto;
+  padding:6vh var(--container-padding) 8vh;
+  max-width:none;
+  margin:0;
+}
+
+.pickup-heading-wrap{
+  max-width:none;
+  margin:0 0 2.8vh;
+}
+
+.pickup-banner{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-size:.88rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  padding:4px 0 6px;
+  border-bottom:1px solid rgba(17,20,24,.22);
 }
 
 .pickup-inner{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:4vw;
+  gap:3.2vw;
+  align-items:start;
 }
 
 .pickup-block{
   display:flex;
   flex-direction:column;
-  gap:2vh;
+  gap:2.2vh;
+  min-width:0;
 }
 
 .pickup-image{
   width:100%;
-  aspect-ratio:1/1;
   overflow:hidden;
+  background:#E6EAEE;
 }
 
 .pickup-image img{
   width:100%;
   height:100%;
-  object-fit:cover;
   display:block;
+}
+
+/* 特撮は元比率を活かす */
+.pickup-image-tokusatsu{
+  aspect-ratio:auto;
+}
+
+.pickup-image-tokusatsu img{
+  height:auto;
+  object-fit:contain;
+}
+
+/* 新体操は強く見せる */
+.pickup-image-rg{
+  aspect-ratio:1/1;
+}
+
+.pickup-image-rg img{
+  object-fit:cover;
 }
 
 .pickup-title{
   font-family:var(--font-body);
-  font-size:1.05rem;
+  font-size:1rem;
   letter-spacing:.12em;
+  line-height:1.6;
+  color:var(--c-text-main);
 }
 
 .pickup-desc{
@@ -206,11 +244,66 @@ a:hover{opacity:.6}
   color:var(--c-text-sub);
 }
 
-/* スマホ */
+.pickup-rg-main{
+  font-family:var(--font-body);
+  font-size:1.4rem;
+  line-height:1.35;
+  letter-spacing:.04em;
+  color:var(--c-text-main);
+}
+
+.pickup-rg-sub{
+  margin-top:.3vh;
+  font-family:var(--font-jp);
+  font-size:.95rem;
+  line-height:1.9;
+  letter-spacing:.08em;
+  color:var(--c-text-main);
+}
+
+.pickup-rg-lead{
+  margin-top:1.2vh;
+  font-family:var(--font-jp);
+  font-size:1rem;
+  line-height:2.0;
+  letter-spacing:.06em;
+  color:var(--c-text-main);
+}
+
+.pickup-rg-statement{
+  margin-top:.8vh;
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+/* スマホは新体操を上へ */
 @media(max-width:900px){
   .pickup-inner{
     grid-template-columns:1fr;
     gap:6vh;
+  }
+
+  .pickup-block-rg{
+    order:1;
+  }
+
+  .pickup-block-tokusatsu{
+    order:2;
+  }
+
+  .pickup-rg-main{
+    font-size:1.22rem;
+  }
+
+  .pickup-rg-sub{
+    font-size:.9rem;
+  }
+
+  .pickup-rg-lead{
+    font-size:.94rem;
   }
 }
   
@@ -850,14 +943,17 @@ background:rgba(11,13,16,.6);
   </div>
 </section>
 
-  <section class="pickup-section">
+ <section class="pickup-section">
+  <div class="pickup-heading-wrap">
+    <span class="pickup-banner">PICK UP</span>
+  </div>
 
   <div class="pickup-inner">
 
     <!-- 左：特撮 -->
-    <div class="pickup-block">
-      <div class="pickup-image">
-        <img src="images/film/stacy_01.jpg" alt="">
+    <div class="pickup-block pickup-block-tokusatsu">
+      <div class="pickup-image pickup-image-tokusatsu">
+        <img src="images/film/stacy_01.jpg" alt="Tokusatsu character design work">
       </div>
 
       <div class="pickup-text">
@@ -874,17 +970,20 @@ background:rgba(11,13,16,.6);
     </div>
 
     <!-- 右：新体操 -->
-    <div class="pickup-block">
-      <div class="pickup-image">
-        <img src="images/rg/minami2.jpg" alt="">
+    <div class="pickup-block pickup-block-rg">
+      <div class="pickup-image pickup-image-rg">
+        <img src="images/rg/minami2.jpg" alt="Rhythmic Gymnastics winning leotard design">
       </div>
 
       <div class="pickup-text">
-        <h3 class="pickup-title">Design for Victory 🏆</h3>
+        <div class="pickup-rg-main">Design for Victory 🏆</div>
+        <div class="pickup-rg-sub">2026年 新体操団体優勝 レオタードデザイン</div>
 
-        <p class="pickup-desc">
-新体操は、「人間が人間を超える」瞬間を見せる競技。<br><br>
+        <p class="pickup-rg-lead">
+新体操は、「人間が人間を超える」瞬間を見せる競技。
+        </p>
 
+        <p class="pickup-rg-statement">
 特撮衣装の最前線で研ぎ澄ませた、アクションの「動」に順応するデザイン。<br>
 激しい動きの中でも、一瞬たりとも演技の美しさを崩さず<br>
 どの角度からみても気迫で圧倒する勝負の思考を、新体操のフロアへ。<br><br>
@@ -897,7 +996,6 @@ background:rgba(11,13,16,.6);
     </div>
 
   </div>
-
 </section>
 
 <section id="about" class="container section-spacer">
