@@ -183,7 +183,7 @@ a:hover{opacity:.6}
   margin:0 0 3.6vh;
   display:flex;
   align-items:baseline;
-  gap:14px;
+  gap:28px;          /* ← 距離をしっかり空ける */
   flex-wrap:wrap;
 }
 
@@ -198,15 +198,16 @@ a:hover{opacity:.6}
   border-bottom:1.6px solid rgba(17,20,24,.32);
   color:var(--c-text-main);
 }
- .pickup-date{
+.pickup-date{
   display:inline-block;
   font-family:var(--font-body);
-  font-size:1rem;
-  letter-spacing:.12em;
+  font-size:.88rem;
+  letter-spacing:.16em;
   line-height:1;
-  color:var(--c-text-sub);
+  color:rgba(17,20,24,.55); /* ← 少しだけ軽く */
   white-space:nowrap;
-  transform:translateY(-1px);
+  transform:translateY(-2px);
+  margin-left:12px;         /* ← PICK UPからさらに距離 */
 }
 .pickup-inner{
   display:grid;
@@ -1040,7 +1041,7 @@ display:block;
 <section class="pickup-section">
  <div class="pickup-heading-wrap">
   <span class="pickup-banner">PICK UP</span>
-  <span class="pickup-date">(Updated 2026.04.12)</span>
+ <span class="pickup-date">(Updated 2026.04.12)</span>
 </div>
 
   <div class="pickup-inner">
