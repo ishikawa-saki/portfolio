@@ -170,17 +170,19 @@ a:hover{opacity:.6}
 
 .pickup-heading-wrap{
   max-width:none;
-  margin:0 0 2.8vh;
+  margin:0 0 3.4vh;
 }
 
 .pickup-banner{
   display:inline-block;
   font-family:var(--font-body);
-  font-size:.88rem;
-  letter-spacing:.22em;
+  font-size:1.15rem;
+  letter-spacing:.24em;
+  line-height:1.2;
   text-transform:uppercase;
-  padding:4px 0 6px;
-  border-bottom:1px solid rgba(17,20,24,.22);
+  padding:0 0 10px;
+  border-bottom:1.5px solid rgba(17,20,24,.28);
+  color:var(--c-text-main);
 }
 
 .pickup-inner{
@@ -198,6 +200,7 @@ a:hover{opacity:.6}
 }
 
 .pickup-image{
+  display:block;
   width:100%;
   overflow:hidden;
   background:#E6EAEE;
@@ -205,35 +208,53 @@ a:hover{opacity:.6}
 
 .pickup-image img{
   width:100%;
-  height:100%;
   display:block;
+  transition:transform .5s ease, opacity .35s ease;
 }
 
-/* 特撮は元比率を活かす */
+.pickup-image:hover img{
+  transform:scale(1.02);
+}
+
+/* 特撮：縦サイズを右に合わせる */
 .pickup-image-tokusatsu{
-  aspect-ratio:auto;
+  aspect-ratio:4/5;
 }
 
 .pickup-image-tokusatsu img{
-  height:auto;
-  object-fit:contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
 }
 
-/* 新体操は強く見せる */
+/* 新体操：正方形より少し縦長・左右を少し切る */
 .pickup-image-rg{
-  aspect-ratio:1/1;
+  aspect-ratio:4/5;
 }
 
 .pickup-image-rg img{
+  width:100%;
+  height:100%;
   object-fit:cover;
+  object-position:center center;
+  transform:scale(1.08);
+}
+
+.pickup-image-rg:hover img{
+  transform:scale(1.1);
 }
 
 .pickup-title{
   font-family:var(--font-body);
-  font-size:1rem;
-  letter-spacing:.12em;
-  line-height:1.6;
+  line-height:1.45;
   color:var(--c-text-main);
+}
+
+.pickup-title-tokusatsu{
+  font-size:1.2rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
 }
 
 .pickup-desc{
@@ -246,41 +267,49 @@ a:hover{opacity:.6}
 
 .pickup-rg-main{
   font-family:var(--font-body);
-  font-size:1.4rem;
-  line-height:1.35;
-  letter-spacing:.04em;
+  font-size:1.85rem;
+  line-height:1.18;
+  letter-spacing:.03em;
   color:var(--c-text-main);
 }
 
 .pickup-rg-sub{
-  margin-top:.3vh;
+  margin-top:.6vh;
   font-family:var(--font-jp);
-  font-size:.95rem;
-  line-height:1.9;
+  font-size:1.05rem;
+  line-height:1.75;
   letter-spacing:.08em;
   color:var(--c-text-main);
 }
 
 .pickup-rg-lead{
-  margin-top:1.2vh;
+  margin-top:1.8vh;
   font-family:var(--font-jp);
-  font-size:1rem;
-  line-height:2.0;
-  letter-spacing:.06em;
+  font-size:1.16rem;
+  line-height:1.9;
+  letter-spacing:.05em;
   color:var(--c-text-main);
 }
 
 .pickup-rg-statement{
-  margin-top:.8vh;
+  margin-top:1.2vh;
   font-family:var(--font-jp);
-  font-size:.82rem;
-  line-height:2.0;
+  font-size:.84rem;
+  line-height:2.05;
   letter-spacing:.08em;
   color:var(--c-text-sub);
 }
 
-/* スマホは新体操を上へ */
 @media(max-width:900px){
+  .pickup-heading-wrap{
+    margin:0 0 3vh;
+  }
+
+  .pickup-banner{
+    font-size:1rem;
+    letter-spacing:.22em;
+  }
+
   .pickup-inner{
     grid-template-columns:1fr;
     gap:6vh;
@@ -294,16 +323,33 @@ a:hover{opacity:.6}
     order:2;
   }
 
+  .pickup-image-tokusatsu,
+  .pickup-image-rg{
+    aspect-ratio:4/5;
+  }
+
+  .pickup-title-tokusatsu{
+    font-size:1.06rem;
+  }
+
   .pickup-rg-main{
-    font-size:1.22rem;
+    font-size:1.48rem;
+    line-height:1.2;
   }
 
   .pickup-rg-sub{
-    font-size:.9rem;
+    font-size:.98rem;
+    line-height:1.8;
   }
 
   .pickup-rg-lead{
-    font-size:.94rem;
+    font-size:1.03rem;
+    line-height:1.95;
+  }
+
+  .pickup-rg-statement{
+    font-size:.82rem;
+    line-height:2.0;
   }
 }
   
@@ -943,7 +989,7 @@ background:rgba(11,13,16,.6);
   </div>
 </section>
 
- <section class="pickup-section">
+<section class="pickup-section">
   <div class="pickup-heading-wrap">
     <span class="pickup-banner">PICK UP</span>
   </div>
@@ -952,12 +998,12 @@ background:rgba(11,13,16,.6);
 
     <!-- 左：特撮 -->
     <div class="pickup-block pickup-block-tokusatsu">
-      <div class="pickup-image pickup-image-tokusatsu">
+      <a class="pickup-image pickup-image-tokusatsu" href="/film.html">
         <img src="images/film/stacy_01.jpg" alt="Tokusatsu character design work">
-      </div>
+      </a>
 
       <div class="pickup-text">
-        <h3 class="pickup-title">TOKUSATSU / CHARACTER WORKS</h3>
+        <h3 class="pickup-title pickup-title-tokusatsu">TOKUSATSU / CHARACTER WORKS</h3>
 
         <p class="pickup-desc">
 「機界戦隊ゼンカイジャー」ステイシー 衣装デザイン<br>
@@ -971,9 +1017,9 @@ background:rgba(11,13,16,.6);
 
     <!-- 右：新体操 -->
     <div class="pickup-block pickup-block-rg">
-      <div class="pickup-image pickup-image-rg">
+      <a class="pickup-image pickup-image-rg" href="/rhythmic.html">
         <img src="images/rg/minami2.jpg" alt="Rhythmic Gymnastics winning leotard design">
-      </div>
+      </a>
 
       <div class="pickup-text">
         <div class="pickup-rg-main">Design for Victory 🏆</div>
