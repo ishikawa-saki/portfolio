@@ -267,23 +267,25 @@ a:hover{opacity:.6}
 .pickup-toku-main{
   font-family:var(--font-body);
   font-size:1.48rem;
-  line-height:1.25;
-  letter-spacing:.04em;
+  line-height:1.22;
+  letter-spacing:.03em;
   color:var(--c-text-main);
 }
 
-/* ←ここが新体操の「2026年〜」と同じ階層 */
-.pickup-toku-sub{
-  margin-top:.8vh;
-  font-family:var(--font-jp);
-  font-size:1.05rem;
-  line-height:1.8;
-  letter-spacing:.06em;
-  color:var(--c-text-main);
+.pickup-toku-entry{
+  margin-top:1.2vh;
 }
 
 .pickup-toku-work{
-  margin-top:1.15vh;
+  font-family:var(--font-jp);
+  font-size:1.05rem;
+  line-height:1.75;
+  letter-spacing:.08em;
+  color:var(--c-text-main);
+}
+
+.pickup-toku-detail{
+  margin-top:.15vh;
   font-family:var(--font-jp);
   font-size:.84rem;
   line-height:2.05;
@@ -291,22 +293,21 @@ a:hover{opacity:.6}
   color:var(--c-text-sub);
 }
 
-.pickup-toku-detail{
-  display:none;
-}
-
 @media(max-width:900px){
-.pickup-toku-main{
+@media(max-width:900px){
+  .pickup-toku-main{
     font-size:1.18rem;
     line-height:1.22;
   }
 
-.pickup-toku-work{
+  .pickup-toku-work{
+    font-size:.98rem;
+    line-height:1.8;
+  }
+
+  .pickup-toku-detail{
     font-size:.82rem;
     line-height:2.0;
-  }
-  .pickup-toku-detail{
-    display:none;
   }
 }
   
@@ -1014,31 +1015,34 @@ display:block;
       </a>
 
 <div class="pickup-text">
-
   <div class="pickup-toku-main">
     仮面ライダー／戦隊 特撮衣装デザイン
   </div>
 
-  <div class="pickup-toku-sub">
-    「機界戦隊ゼンカイジャー」 ステイシー 衣装デザイン
+  <div class="pickup-toku-entry">
+    <div class="pickup-toku-work">「機界戦隊ゼンカイジャー」</div>
+    <div class="pickup-toku-detail">ステイシー 衣装デザイン</div>
   </div>
 
-  <div class="pickup-toku-sub">
-    「仮面ライダーリバイス」 デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン
+  <div class="pickup-toku-entry">
+    <div class="pickup-toku-work">「仮面ライダーリバイス」</div>
+    <div class="pickup-toku-detail">デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン</div>
   </div>
 
-  <div class="pickup-toku-sub">
-    「仮面ライダーギーツ」 創世の女神 造形デザイン
+  <div class="pickup-toku-entry">
+    <div class="pickup-toku-work">「仮面ライダーギーツ」</div>
+    <div class="pickup-toku-detail">創世の女神 造形デザイン</div>
   </div>
 
-  <div class="pickup-toku-sub">
-    「仮面ライダーガッチャード」 冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン
+  <div class="pickup-toku-entry">
+    <div class="pickup-toku-work">「仮面ライダーガッチャード」</div>
+    <div class="pickup-toku-detail">冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン</div>
   </div>
 
-  <div class="pickup-toku-sub">
-    映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」 冥黒のデスマスク デザイン
+  <div class="pickup-toku-entry">
+    <div class="pickup-toku-work">映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」</div>
+    <div class="pickup-toku-detail">冥黒のデスマスク デザイン</div>
   </div>
-
 </div>
     </div>
 
