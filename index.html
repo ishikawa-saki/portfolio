@@ -245,17 +245,6 @@ a:hover{opacity:.6}
   transform:scale(1.1);
 }
 
-.pickup-title{
-  font-family:var(--font-body);
-  line-height:1.45;
-  color:var(--c-text-main);
-}
-
-.pickup-title-tokusatsu{
-  font-size:1.2rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-}
 
 .pickup-desc{
   font-family:var(--font-jp);
@@ -265,6 +254,49 @@ a:hover{opacity:.6}
   color:var(--c-text-sub);
 }
 
+  .pickup-toku-main{
+  font-family:var(--font-body);
+  font-size:1.85rem;
+  line-height:1.18;
+  letter-spacing:.03em;
+  color:var(--c-text-main);
+}
+
+.pickup-toku-work{
+  margin-top:1.4vh;
+  font-family:var(--font-jp);
+  font-size:1.08rem;
+  line-height:1.75;
+  letter-spacing:.05em;
+  color:var(--c-text-main);
+}
+
+.pickup-toku-detail{
+  margin-top:.25vh;
+  font-family:var(--font-jp);
+  font-size:.84rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+@media(max-width:900px){
+  .pickup-toku-main{
+    font-size:1.48rem;
+    line-height:1.2;
+  }
+
+  .pickup-toku-work{
+    font-size:1rem;
+    line-height:1.8;
+  }
+
+  .pickup-toku-detail{
+    font-size:.82rem;
+    line-height:2.0;
+  }
+}
+  
 .pickup-rg-main{
   font-family:var(--font-body);
   font-size:1.85rem;
@@ -1002,17 +1034,24 @@ background:rgba(11,13,16,.6);
         <img src="images/film/stacy_01.jpg" alt="Tokusatsu character design work">
       </a>
 
-      <div class="pickup-text">
-        <h3 class="pickup-title pickup-title-tokusatsu">TOKUSATSU / CHARACTER WORKS</h3>
+     <div class="pickup-text">
+  <div class="pickup-toku-main">仮面ライダー／戦隊 特撮衣装デザイン</div>
 
-        <p class="pickup-desc">
-「機界戦隊ゼンカイジャー」ステイシー 衣装デザイン<br>
-「仮面ライダーリバイス」デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン<br>
-「仮面ライダーギーツ」創世の女神 造形デザイン<br>
-「仮面ライダーガッチャード」冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン<br>
-映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」冥黒のデスマスク デザイン
-        </p>
-      </div>
+  <div class="pickup-toku-work">「機界戦隊ゼンカイジャー」</div>
+  <p class="pickup-toku-detail">ステイシー 衣装デザイン</p>
+
+  <div class="pickup-toku-work">「仮面ライダーリバイス」</div>
+  <p class="pickup-toku-detail">デッドマンズ（アギレラ、オルテカ、フリオ）衣装デザイン / ギフ立像 造形デザイン</p>
+
+  <div class="pickup-toku-work">「仮面ライダーギーツ」</div>
+  <p class="pickup-toku-detail">創世の女神 造形デザイン</p>
+
+  <div class="pickup-toku-work">「仮面ライダーガッチャード」</div>
+  <p class="pickup-toku-detail">冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン</p>
+
+  <div class="pickup-toku-work">映画「仮面ライダーガッチャード ザ・フューチャー・デイブレイク」</div>
+  <p class="pickup-toku-detail">冥黒のデスマスク デザイン</p>
+</div>
     </div>
 
     <!-- 右：新体操 -->
