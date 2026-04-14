@@ -153,10 +153,29 @@ a {
   text-transform: uppercase;
   transition: transform 0.8s var(--transition-smooth), opacity 0.8s var(--transition-smooth);
 }
- .works-grid-primary .works-card:first-child .card-title{
+  .card-title-film{
   text-transform:none;
-  line-height:1.25;
+  line-height:1.1;
 }
+.works-grid-primary .works-card:first-child:hover .card-title{
+  transform:none;
+}
+.card-title-film-en{
+  display:block;
+  font-family:var(--font-display);
+  font-size:0.82em;
+  letter-spacing:0.08em;
+  margin-bottom:8px;
+}
+
+.card-title-film-ja{
+  display:block;
+  font-family:var(--font-jp);
+  font-size:0.58em;
+  letter-spacing:0.08em;
+  line-height:1.35;
+}
+
 
 .card-category {
   font-family: var(--font-body);
@@ -350,7 +369,10 @@ a {
   <a href="/film.html" class="works-card">
     <img src="https://lh3.googleusercontent.com/d/1an-S8xDYauRVe3JPGR-JxvpBSZzUJaBO" alt="Film">
     <div class="card-content">
-   <h2 class="card-title">TV & MOVIE<br>仮面ライダー／戦隊</h2>
+  <h2 class="card-title card-title-film">
+  <span class="card-title-film-en">TV and MOVIE</span>
+  <span class="card-title-film-ja">仮面ライダー／戦隊</span>
+</h2>
     <span class="card-category">COSTUME DESIGN & SCULPTURAL CONCEPT</span>
     </div>
   </a>
