@@ -147,17 +147,20 @@ a {
 }
 
 .card-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-family: var(--font-jp);
+  font-size: clamp(1.15rem, 1.9vw, 1.65rem);
   letter-spacing: 0.06em;
   text-transform: none;
+  line-height: 1.35;
+  transition: transform 0.8s var(--transition-smooth), opacity 0.8s var(--transition-smooth);
 }
-  .card-title small{
+ .card-title small{
   display:block;
   font-family: var(--font-body);
-  font-size:0.75em;
-  letter-spacing:0.12em;
-  margin-bottom:4px;
+  font-size:0.62em;
+  letter-spacing:0.08em;
+  margin-bottom:6px;
+  line-height:1.1;
 }
 
 .card-category {
