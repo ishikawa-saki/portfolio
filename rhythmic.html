@@ -418,7 +418,58 @@
   letter-spacing:.06em;
   color:var(--c-text-main);
 }
-  
+
+  .rg-hook{
+  margin-top:4.8vh;
+  max-width:980px;
+  padding-top:14px;
+  border-top:1px solid rgba(17,20,24,.12);
+}
+
+.rg-hook-lead{
+  margin:0;
+  font-family:var(--font-jp);
+  font-size:1.18rem;
+  line-height:1.95;
+  letter-spacing:.05em;
+  color:var(--c-text-main);
+}
+
+.rg-hook-body{
+  margin-top:2.1vh;
+  font-family:var(--font-jp);
+  font-size:1rem;
+  line-height:2.18;
+  letter-spacing:.05em;
+  color:var(--c-text-sub);
+}
+
+.rg-hook-core{
+  margin-top:2.1vh;
+  font-family:var(--font-jp);
+  font-size:1rem;
+  line-height:2.18;
+  letter-spacing:.05em;
+  color:var(--c-text-main);
+}
+
+@media (max-width: 900px){
+  .rg-hook{
+    margin-top:4vh;
+    padding-top:12px;
+  }
+
+  .rg-hook-lead{
+    font-size:1.06rem;
+    line-height:1.9;
+  }
+
+  .rg-hook-body,
+  .rg-hook-core{
+    font-size:.92rem;
+    line-height:2.05;
+  }
+}
 /* ===== Responsive ===== */
 @media (max-width: 900px){
   .rg-header{margin-bottom:6vh;}
@@ -490,22 +541,22 @@
 </div>
 
 <!-- NEW STATEMENT（PICK UPと同じ） -->
-<div class="rg-statement">
-  <p class="rg-lead">
+<div class="rg-hook">
+  <p class="rg-hook-lead">
     新体操は、「人間が人間を超える」瞬間を見せる競技。
   </p>
 
-  <p>
+  <div class="rg-hook-body">
     特撮衣装の最前線で研ぎ澄ませた、アクションの「動」に順応するデザイン。<br>
     激しい動きの中でも、一瞬たりとも演技の美しさを崩さず<br>
     どの角度からみても気迫で圧倒する勝負の思考を、新体操のフロアへ。
-  </p>
+  </div>
 
-  <p class="rg-statement-core">
+  <div class="rg-hook-core">
     身体をただ、布で飾るのではない。<br>
     芸術点の0.1に挑む、内にある形なき熱量を目に見える形へと引き出すこと。<br>
     それは、内なる精神を顕在化させた「意志」を纏うということ。
-  </p>
+  </div>
 </div>
 
 <!-- SUB -->
