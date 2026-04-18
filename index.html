@@ -980,15 +980,65 @@ object-fit:cover;
 display:block;
 }
   
+/* ===== section width rebalance ===== */
 .fashion-section,
 .scifi-section,
 .film-section,
 .rg-section,
 .expanded-section,
 .archive-section{
-  max-width:none !important;
-  margin:0 !important;
-  padding:6vh clamp(24px,5vw,80px) !important;
+  width:min(100% - 64px, 1360px);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* FASHION / SCIENCE FICTION は中央バランス補正 */
+.fashion-layout,
+.scifi-layout{
+  width:100%;
+}
+
+.fashion-images,
+.scifi-images{
+  justify-content:center;
+}
+
+/* RHYTHMIC GYMNASTICS 〜 ARCHIVE も同じ左右余白へ */
+.rg-section,
+.expanded-section,
+.archive-section{
+  width:min(100% - 64px, 1360px);
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* PC大画面で少しだけ余白を増やす */
+@media (min-width: 1440px){
+  .fashion-section,
+  .scifi-section,
+  .film-section,
+  .rg-section,
+  .expanded-section,
+  .archive-section{
+    width:min(100% - 96px, 1440px);
+  }
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .fashion-section,
+  .scifi-section,
+  .film-section,
+  .rg-section,
+  .expanded-section,
+  .archive-section{
+    width:calc(100% - 32px);
+  }
+
+  .fashion-images,
+  .scifi-images{
+    justify-content:flex-start;
+  }
 }
 
 
@@ -1058,7 +1108,7 @@ display:block;
 <section class="pickup-section">
  <div class="pickup-heading-wrap">
   <span class="pickup-banner">PICK UP</span>
- <span class="pickup-date">(Updated 2026.04.17)</span>
+ <span class="pickup-date">(Updated 2026.04.18)</span>
 </div>
 
   <div class="pickup-inner">
