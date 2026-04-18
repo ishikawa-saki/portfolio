@@ -979,59 +979,29 @@ aspect-ratio:3 / 1;
 object-fit:cover;
 display:block;
 }
-  
-/* ===== width fix ===== */
+
+  /* ===== unified responsive width ===== */
+.film-section,
 .fashion-section,
 .scifi-section,
-.film-section{
-  width:min(100% - 64px, 1500px);
-  margin-left:auto;
-  margin-right:auto;
-}
-
 .rg-section,
 .expanded-section,
 .archive-section{
-  width:min(100% - 64px, 1100px);
+  max-width:clamp(1100px, 78vw, 1400px);
   margin-left:auto;
   margin-right:auto;
 }
 
-.fashion-images,
-.scifi-images{
-  justify-content:center;
+  .fashion-item,
+.scifi-item{
+  width:clamp(220px, 18vw, 300px);
 }
 
-@media (min-width: 1440px){
-  .fashion-section,
-  .scifi-section,
-  .film-section{
-    width:min(100% - 96px, 1500px);
-  }
-
-  .rg-section,
-  .expanded-section,
-  .archive-section{
-    width:min(100% - 96px, 1100px);
-  }
+.fashion-main,
+.scifi-main{
+  width:clamp(360px, 32vw, 540px);
 }
-
-@media (max-width: 900px){
-  .fashion-section,
-  .scifi-section,
-  .film-section,
-  .rg-section,
-  .expanded-section,
-  .archive-section{
-    width:calc(100% - 32px);
-  }
-
-  .fashion-images,
-  .scifi-images{
-    justify-content:flex-start;
-  }
-}
-
+  
 /* ===== Responsive (Home sections) ===== */
 @media(max-width:1024px){
   .hero-container{grid-template-columns:1fr}
