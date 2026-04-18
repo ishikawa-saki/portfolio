@@ -377,10 +377,7 @@
   max-width:980px;
   text-align:left; /* ← 追加 */
 }
-.rg-lead{
-  font-size:1.05rem;
-  color:var(--c-text-main);
-}
+
 .rg-statement p{
   margin-top:1.4vh;
   font-family:var(--font-jp);
@@ -404,7 +401,16 @@
   .rg-case-lead{
   margin-bottom:1.8vh;
 }
-
+  
+.rg-statement-line{
+  margin-top:2.6vh;
+  margin-bottom:2.6vh;
+  font-family:var(--font-jp);
+  font-size:1rem;
+  line-height:2.05;
+  letter-spacing:.05em;
+  color:var(--c-text-main);
+}
 .rg-case-catch{
   font-family:var(--font-body);
   font-size:clamp(1.6rem,2.2vw,2rem); /* ← ここ拡大 */
@@ -487,13 +493,11 @@
     font-size:1.06rem;
     line-height:1.9;
   }
-
-  .rg-hook-body,
-  .rg-hook-core{
-    font-size:.92rem;
-    line-height:2.05;
-  }
-
+  
+.rg-hook-body{
+  font-size:.92rem;
+  line-height:2.05;
+}
   .rg-hook{
     max-width:100%;
     margin-left:auto;
