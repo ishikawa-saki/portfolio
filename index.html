@@ -980,22 +980,21 @@ object-fit:cover;
 display:block;
 }
   
-/* ===== section width rebalance ===== */
+/* ===== width fix ===== */
 .fashion-section,
 .scifi-section,
-.film-section,
-.rg-section,
-.expanded-section,
-.archive-section{
-  width:min(100% - 64px, 1360px);
+.film-section{
+  width:min(100% - 64px, 1500px);
   margin-left:auto;
   margin-right:auto;
 }
 
-/* FASHION / SCIENCE FICTION は中央バランス補正 */
-.fashion-layout,
-.scifi-layout{
-  width:100%;
+.rg-section,
+.expanded-section,
+.archive-section{
+  width:min(100% - 64px, 1100px);
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .fashion-images,
@@ -1003,28 +1002,20 @@ display:block;
   justify-content:center;
 }
 
-/* RHYTHMIC GYMNASTICS 〜 ARCHIVE も同じ左右余白へ */
-.rg-section,
-.expanded-section,
-.archive-section{
-  width:min(100% - 64px, 1360px);
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* PC大画面で少しだけ余白を増やす */
 @media (min-width: 1440px){
   .fashion-section,
   .scifi-section,
-  .film-section,
+  .film-section{
+    width:min(100% - 96px, 1500px);
+  }
+
   .rg-section,
   .expanded-section,
   .archive-section{
-    width:min(100% - 96px, 1440px);
+    width:min(100% - 96px, 1100px);
   }
 }
 
-/* mobile */
 @media (max-width: 900px){
   .fashion-section,
   .scifi-section,
@@ -1040,7 +1031,6 @@ display:block;
     justify-content:flex-start;
   }
 }
-
 
 /* ===== Responsive (Home sections) ===== */
 @media(max-width:1024px){
