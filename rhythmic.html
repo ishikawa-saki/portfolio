@@ -16,12 +16,56 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+  <style>
+/* ===== HEADER SIZE FIX ===== */
+.header{
+  position: relative;
+  width: 100%;
+  padding: 50px var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.header-logo{
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header-nav ul{
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.header-nav a{
+  font-family: var(--font-body);
+  font-size: .95rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px){
+  .header-logo{
+    font-size: .95rem;
+  }
+
+  .header-nav a{
+    font-size: .86rem;
+  }
+}
+
 /* ===== Page Shell (match Works look) ===== */
 .rg-page{
   padding:12vh var(--container-padding) 12vh;
   max-width:1400px;
   margin:0 auto;
 }
+  
 
 .rg-header{
   margin-bottom:8vh;
