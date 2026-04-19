@@ -980,26 +980,88 @@ object-fit:cover;
 display:block;
 }
 
-  /* ===== unified responsive width ===== */
+/* ===== unified responsive width ===== */
 .film-section,
 .fashion-section,
 .scifi-section,
 .rg-section,
 .expanded-section,
 .archive-section{
-  max-width:clamp(1100px, 78vw, 1400px);
-  margin-left:auto;
-  margin-right:auto;
+  width:100% !important;
+  max-width:min(94vw, 1520px) !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 
-  .fashion-item,
+/* FASHION / SCIENCE FICTION の中身も少し追従 */
+.fashion-images,
+.scifi-images{
+  justify-content:center;
+  gap:clamp(14px, 1.6vw, 24px);
+}
+
+.fashion-item,
 .scifi-item{
-  width:clamp(220px, 18vw, 300px);
+  width:clamp(250px, 19vw, 320px);
 }
 
 .fashion-main,
 .scifi-main{
-  width:clamp(360px, 32vw, 540px);
+  width:clamp(400px, 32vw, 580px);
+}
+
+/* header / footer サイズ補正 */
+.header-logo{
+  font-size:1rem !important;
+  letter-spacing:.08em !important;
+}
+
+.header-nav a{
+  font-size:.95rem !important;
+  letter-spacing:.12em !important;
+}
+
+.footer-heading{
+  font-size:2rem !important;
+}
+
+.contact-ja{
+  font-size:.8rem !important;
+}
+
+.footer-copyright{
+  font-size:.75rem !important;
+}
+
+@media (max-width: 900px){
+  .film-section,
+  .fashion-section,
+  .scifi-section,
+  .rg-section,
+  .expanded-section,
+  .archive-section{
+    max-width:calc(100% - 32px) !important;
+  }
+
+  .fashion-images,
+  .scifi-images{
+    justify-content:flex-start;
+  }
+
+  .fashion-item,
+  .scifi-item,
+  .fashion-main,
+  .scifi-main{
+    width:auto;
+  }
+
+  .header-logo{
+    font-size:.95rem !important;
+  }
+
+  .header-nav a{
+    font-size:.86rem !important;
+  }
 }
   
 /* ===== Responsive (Home sections) ===== */
