@@ -43,22 +43,6 @@ a:hover{opacity:.6}
 .hero-main-copy{grid-column:1/10}
 .hero-name{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:.05em;text-transform:uppercase}
 
-
-  .header{
-  font-size:1rem;
-}
-
-.header-nav a{
-  font-size:.95rem;
-}
-
-.header-logo{
-  font-size:1.05rem;
-}
-
-  .footer{
-  font-size:1rem;
-}
 /* ===== JP NAME + SLOGAN (same row) ===== */
 .hero-lockup{
   display:flex;
@@ -676,6 +660,11 @@ background:rgba(233,236,241,.9);
 }
 
 /* ===== FASHION ===== */
+.fashion-section{
+  padding:6vh var(--container-padding);
+  max-width:1300px;
+  margin:0 auto;
+}
 
 .fashion-text{
   max-width:760px;
@@ -701,6 +690,11 @@ background:rgba(233,236,241,.9);
 }
 
 /* ===== SCIENCE FICTION ===== */
+.scifi-section{
+  padding:6vh var(--container-padding);
+  max-width:1300px;
+  margin:0 auto;
+}
 
 .scifi-text{
   max-width:760px;
@@ -726,6 +720,11 @@ background:rgba(233,236,241,.9);
 }
 
 /* ===== FILM / TV ===== */
+.film-section{
+  padding:6vh var(--container-padding);
+  max-width:1500px;
+  margin:0 auto;
+}
 
 .film-text{
   max-width:760px;
@@ -826,7 +825,11 @@ background:rgba(11,13,16,.8);
 }
 
 /* ===== NEW: RHYTHMIC GYMNASTICS (Home teaser) ===== */
-
+.rg-section{
+  padding:6vh var(--container-padding) 3vh;
+  max-width:1100px;
+  margin:0 auto;
+}
 
 .rg-row{
   display:flex;
@@ -918,6 +921,17 @@ background:rgba(11,13,16,.8);
   display:block;
 }
 /* ===== Expanded / Archive 横構造 ===== */
+.expanded-section{
+padding:6vh var(--container-padding) 3vh;
+max-width:1100px;
+margin:0 auto;
+}
+
+.archive-section{
+padding:0.5vh var(--container-padding) 6vh;
+max-width:1100px;
+margin:0 auto;
+}
 
 .expanded-row,
 .archive-row{
@@ -966,107 +980,26 @@ object-fit:cover;
 display:block;
 }
 
-/* ===== section sizing fix ===== */
+  /* ===== unified responsive width ===== */
 .film-section,
 .fashion-section,
 .scifi-section,
 .rg-section,
 .expanded-section,
 .archive-section{
-  width:min(92vw, 1480px);
-  max-width:none;
+  max-width:clamp(1100px, 78vw, 1400px);
   margin-left:auto;
   margin-right:auto;
 }
 
-/* FASHION / SCIENCE FICTION の中身も画面に追従 */
-.fashion-images,
-.scifi-images{
-  justify-content:center;
-  gap:clamp(14px, 1.6vw, 24px);
-}
-
-.fashion-item,
+  .fashion-item,
 .scifi-item{
-  width:clamp(240px, 20vw, 320px);
+  width:clamp(220px, 18vw, 300px);
 }
 
 .fashion-main,
 .scifi-main{
-  width:clamp(400px, 34vw, 600px);
-}
-
-/* RHYTHMIC〜ARCHIVE も同じ左右感に揃える */
-.rg-section,
-.expanded-section,
-.archive-section{
-  width:min(92vw, 1480px);
-}
-
-/* header / footer size normalize */
-.header-logo{
-  font-size:1rem;
-  letter-spacing:.08em;
-}
-
-.header-nav a{
-  font-size:.92rem;
-  letter-spacing:.12em;
-}
-
-.footer-heading{
-  font-size:2rem;
-}
-
-.contact-ja{
-  font-size:.8rem;
-}
-
-.footer-copyright{
-  font-size:.75rem;
-}
-
-  /* ===== FINAL WIDTH CONTROL ===== */
-.film-section,
-.fashion-section,
-.scifi-section,
-.rg-section,
-.expanded-section,
-.archive-section{
-  width:min(92vw, 1500px);
-  margin-left:auto;
-  margin-right:auto;
-}
-  
-@media (max-width: 900px){
-  .film-section,
-  .fashion-section,
-  .scifi-section,
-  .rg-section,
-  .expanded-section,
-  .archive-section{
-    width:calc(100% - 32px);
-  }
-
-  .fashion-images,
-  .scifi-images{
-    justify-content:flex-start;
-  }
-
-  .fashion-item,
-  .scifi-item,
-  .fashion-main,
-  .scifi-main{
-    width:auto;
-  }
-
-  .header-logo{
-    font-size:.95rem;
-  }
-
-  .header-nav a{
-    font-size:.86rem;
-  }
+  width:clamp(360px, 32vw, 540px);
 }
   
 /* ===== Responsive (Home sections) ===== */
@@ -1135,7 +1068,7 @@ display:block;
 <section class="pickup-section">
  <div class="pickup-heading-wrap">
   <span class="pickup-banner">PICK UP</span>
- <span class="pickup-date">(Updated 2026.04.20)</span>
+ <span class="pickup-date">(Updated 2026.04.18)</span>
 </div>
 
   <div class="pickup-inner">
