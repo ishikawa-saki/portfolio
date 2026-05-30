@@ -263,7 +263,8 @@
   display:block;
 }
 
-/* FINALだけ縦長にする */
+/* 3DとFINALを縦長にする */
+.rg-process .rg-tile:nth-child(2),
 .rg-process .rg-tile:nth-child(3){
   aspect-ratio:9/16;
 }
@@ -689,9 +690,10 @@
     <div class="rg-tile-label">Design</div>
   </div>
 
-  <div class="rg-tile">
-    <div class="rg-tile-label">3D</div>
-  </div>
+ <div class="rg-tile">
+  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
+  <div class="rg-tile-label">3D</div>
+</div>
 
   <div class="rg-tile">
     <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
