@@ -531,7 +531,45 @@
   color:var(--c-text-sub);
   opacity:.7;
 }
-  
+  .rg-next-layout{
+  margin-top:3vh;
+  display:grid;
+  grid-template-columns:3fr 2fr;
+  gap:3vw;
+  align-items:center;
+}
+
+.rg-next-image{
+  overflow:hidden;
+  background:rgba(17,20,24,.04);
+}
+
+.rg-next-image img{
+  width:100%;
+  aspect-ratio:3/2;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-next-copy{
+  font-family:var(--font-body);
+  font-size:1.05rem;
+  line-height:1.8;
+  color:var(--c-text-sub);
+}
+
+@media(max-width:900px){
+
+  .rg-next-layout{
+    grid-template-columns:1fr;
+    gap:2vh;
+  }
+
+  .rg-next-copy{
+    font-size:.95rem;
+  }
+
+}
 @media (max-width: 900px){
   .rg-hook{
     margin-top:4vh;
@@ -722,6 +760,23 @@
 </div>
   
   <div class="rg-next-case">
+
   <div class="rg-next-line"></div>
-  <div class="rg-next-text">Case Study 02 — In Progress</div>
+
+  <div class="rg-next-text">
+    Case Study 02 — In Progress
+  </div>
+
+  <div class="rg-next-layout">
+
+    <div class="rg-next-image">
+      <img src="images/rg/rin1.jpg" alt="In Progress">
+    </div>
+
+    <div class="rg-next-copy">
+      New men's costume project currently in development.
+    </div>
+
+  </div>
+
 </div>
