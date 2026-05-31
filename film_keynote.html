@@ -16,7 +16,7 @@
 <style>
 
 /* =========================
-   BASE (HERO CONSISTENT DARK VARIANT)
+   BASE (HERO完全統一)
 ========================= */
 
 :root{
@@ -24,7 +24,6 @@
   --text:#E9ECF1;
   --text-sub:rgba(233,236,241,.65);
   --border:rgba(233,236,241,.12);
-  --accent:#E9ECF1;
 
   --font-display:'Cormorant Garamond',serif;
   --font-body:'Noto Serif JP',serif;
@@ -45,7 +44,7 @@ body{
 }
 
 /* =========================
-   HEADER (HERO統一構造)
+   HEADER（ヒーロー完全一致）
 ========================= */
 
 .header{
@@ -63,6 +62,7 @@ body{
   letter-spacing:.08em;
   color:var(--text);
   text-decoration:none;
+  text-transform:uppercase; /* ← 全部大文字 */
 }
 
 .header-nav ul{
@@ -79,6 +79,7 @@ body{
   color:var(--text-sub);
   text-decoration:none;
   transition:.25s;
+  text-transform:uppercase; /* ← 全部大文字 */
 }
 
 .header-nav a:hover{
@@ -86,17 +87,17 @@ body{
 }
 
 /* =========================
-   LAYOUT
+   LAYOUT（FILM指定幅固定）
 ========================= */
 
 .container{
-  max-width:1400px;
+  max-width:1500px;   /* ← film.html基準で固定 */
   margin:0 auto;
   padding:10vh 5vw 12vh;
 }
 
 /* =========================
-   TITLE (HERO統一階層)
+   TITLE（ヒーロー一致）
 ========================= */
 
 .page-title{
@@ -106,6 +107,7 @@ body{
   letter-spacing:.06em;
   line-height:1.2;
   margin-bottom:18px;
+  text-transform:uppercase;
 }
 
 .page-subtitle{
@@ -117,7 +119,7 @@ body{
 }
 
 /* =========================
-   KEYNOTE STACK
+   KEY VISUAL
 ========================= */
 
 .keynote-stack{
@@ -126,17 +128,20 @@ body{
   gap:4.5rem;
 }
 
+/* ★ 重要：白い枠線完全削除 */
 .keynote-slide img{
   width:100%;
   height:auto;
   display:block;
+  border:none !important;   /* ← 完全消去 */
+  outline:none;
+  box-shadow:none;
   border-radius:2px;
-  border:1px solid var(--border);
   filter:contrast(1.02) brightness(.98);
 }
 
 /* =========================
-   BACK LINK (HERO統一トーン)
+   BACK LINK
 ========================= */
 
 .back{
@@ -159,7 +164,7 @@ body{
 }
 
 /* =========================
-   FOOTER (HERO完全統一)
+   FOOTER（ヒーロー統一）
 ========================= */
 
 .site-footer{
@@ -172,7 +177,7 @@ body{
 }
 
 /* =========================
-   MOBILE
+   MOBILE（ズレ防止）
 ========================= */
 
 @media (max-width:768px){
@@ -197,13 +202,13 @@ body{
 <body>
 
 <header class="header">
-  <a href="index.html" class="header-logo">ISHIKAWA Saki</a>
+  <a href="index.html" class="header-logo">ISHIKAWA SAKI</a>
 
   <nav class="header-nav">
     <ul>
-      <li><a href="works.html">Works</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="https://tally.so/r/vGPVJX" target="_blank">Contact</a></li>
+      <li><a href="works.html">WORKS</a></li>
+      <li><a href="index.html#about">ABOUT</a></li>
+      <li><a href="https://tally.so/r/vGPVJX" target="_blank">CONTACT</a></li>
     </ul>
   </nav>
 </header>
@@ -229,7 +234,7 @@ Selected costume design and visual concept works for Japanese tokusatsu televisi
 </div>
 
 <div class="back">
-  <a href="index.html">Back to Home</a>
+  <a href="index.html">BACK TO HOME</a>
 </div>
 
 </div>
