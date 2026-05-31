@@ -30,15 +30,12 @@
 
 body{
   margin:0;
-  background:var(--bg);
-  color:var(--text);
+  background:#1F1F1F;   /* ← ヒーローフッターと同じダーク */
+  color:#E9ECF1;
   font-family:'Noto Serif JP',serif;
 }
 
-/* =========================
-   LAYOUT
-========================= */
-
+/* コンテナは少し浮かせる（高級ギャラリー感） */
 .container{
   max-width:1600px;
   margin:0 auto;
@@ -46,88 +43,60 @@ body{
 }
 
 /* =========================
-   HEADER
-========================= */
-
-.header{
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-}
-
-.header-logo{
-  color:var(--text);
-  text-decoration:none;
-}
-
-.header-nav a{
-  color:var(--text-sub);
-  text-decoration:none;
-  transition:.2s;
-}
-
-.header-nav a:hover{
-  color:var(--text);
-}
-
-/* =========================
-   TITLE
+   TEXT COLORS
 ========================= */
 
 .page-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.8rem,3vw,2.35rem);
-  font-weight:400;
-  letter-spacing:.06em;
-  margin-bottom:1rem;
+  color:#E9ECF1;
 }
 
 .page-subtitle{
-  font-size:.95rem;
-  opacity:.7;
-  line-height:1.7;
-  margin-bottom:4rem;
-  color:var(--text-sub);
+  color:rgba(233,236,241,0.65);
 }
 
 /* =========================
-   KEYNOTE STACK
+   IMAGE FRAME（ダーク専用調整）
 ========================= */
-
-.keynote-stack{
-  display:flex;
-  flex-direction:column;
-  gap:4.5rem;
-}
 
 .keynote-slide img{
   width:100%;
   height:auto;
   display:block;
   border-radius:2px;
-  border:1px solid var(--border);
+  border:1px solid rgba(233,236,241,0.12);
+}
+
+/* =========================
+   HEADER（ダーク対応）
+========================= */
+
+.header{
+  background:#1F1F1F;
+  border-bottom:1px solid rgba(233,236,241,0.10);
+}
+
+.header-logo{
+  color:#E9ECF1;
+}
+
+.header-nav a{
+  color:rgba(233,236,241,0.7);
+}
+
+.header-nav a:hover{
+  color:#E9ECF1;
 }
 
 /* =========================
    BACK LINK
 ========================= */
 
-.back{
-  margin-top:6rem;
-  text-align:center;
-  font-family:'Cormorant Garamond',serif;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  font-size:.9rem;
-}
-
 .back a{
-  color:var(--text-sub);
-  text-decoration:none;
-  transition:.2s;
+  color:rgba(233,236,241,0.7);
 }
 
 .back a:hover{
-  color:var(--text);
+  color:#E9ECF1;
 }
 
 /* =========================
@@ -135,12 +104,9 @@ body{
 ========================= */
 
 .site-footer{
-  text-align:center;
-  font-size:.75rem;
-  opacity:.5;
-  padding:6vh 0 4vh;
-  border-top:1px solid var(--border);
-  color:var(--text-sub);
+  background:#1F1F1F;
+  color:rgba(233,236,241,0.6);
+  border-top:1px solid rgba(233,236,241,0.10);
 }
 
 /* =========================
