@@ -77,8 +77,8 @@ body{
 }
 
 .film-section-title{
-  margin-top:5rem;
-  margin-bottom:1.5rem;
+  margin-top:0;
+  margin-bottom:1rem;
 }
 
 .film-section-ja{
@@ -95,6 +95,35 @@ body{
   letter-spacing:.16em;
   text-transform:uppercase;
   color:rgba(17,20,24,.42);
+}
+
+.film-main-header{
+  margin-top:3rem;
+  margin-bottom:3rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(17,20,24,.12);
+}
+
+.film-main-title{
+  display:flex;
+  align-items:baseline;
+  gap:1rem;
+}
+
+.film-main-title .film-section-ja{
+  font-size:1.35rem;
+  letter-spacing:.14em;
+}
+
+.film-main-title .film-section-en{
+  margin-left:0;
+}
+
+  .film-credit-line{
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:28px;
+  align-items:start;
 }
   
 .film-credit-line{
@@ -120,7 +149,7 @@ body{
 }
   
 .film-indent{
-  padding-left:2.2rem;
+  padding-left:0;
 }
 
 .film-indent p{
@@ -229,31 +258,42 @@ Selected works in Japanese tokusatsu television dramas
   <div class="film-block-label">MAIN CREDITS</div>
 </div>
 
-<div class="film-section-title">
-  <span class="film-section-ja">TVシリーズ</span>
-  <span class="film-section-en">TV SERIES</span>
-</div>
+<div class="film-main-header">
 
-<div class="film-work">
-
-  スーパー戦隊シリーズ45作記念作品
-
-  <div class="film-credit-line">
-    『機界戦隊ゼンカイジャー』
-    &nbsp;&nbsp;&nbsp;
-    ステイシー 衣装デザイン
+  <div class="film-main-title">
+    <span class="film-section-ja">MAIN CREDITS</span>
+    <span class="film-section-en">TV SERIES</span>
   </div>
 
 </div>
 
 <div class="film-work">
 
-  仮面ライダー生誕50周年記念作品
+  スーパー戦隊シリーズ45作記念作品
 
  <div class="film-credit-line">
-  『仮面ライダーリバイス』
-  &nbsp;&nbsp;&nbsp;
-  衣装デザイン／デッドマンズ（アギレラ、オルテカ、フリオ）、造形デザイン／ギフ立像
+  <span>『機界戦隊ゼンカイジャー』</span>
+  <span>ステイシー 衣装デザイン</span>
+</div>
+
+<div class="film-credit-line">
+  <span>『仮面ライダーリバイス』</span>
+  <span>衣装デザイン／デッドマンズ（アギレラ、オルテカ、フリオ）</span>
+</div>
+
+<div class="film-credit-line">
+  <span></span>
+  <span>造形デザイン／ギフ立像</span>
+</div>
+
+<div class="film-credit-line">
+  <span>『仮面ライダーギーツ』</span>
+  <span>創世の女神 造形デザイン</span>
+</div>
+
+<div class="film-credit-line">
+  <span>『仮面ライダーガッチャード』</span>
+  <span>冥黒の三姉妹（アトロポス、クロトー、ラケシス）衣装デザイン</span>
 </div>
 
 </div>
@@ -278,7 +318,6 @@ Selected works in Japanese tokusatsu television dramas
 
 </div>
 
-<hr class="film-divider">
 
 <div class="film-side-grid">
 
