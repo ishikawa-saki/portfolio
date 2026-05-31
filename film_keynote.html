@@ -12,101 +12,163 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
 
 <link rel="icon" href="favicon.jpg">
-<link rel="stylesheet" href="style.css">
 
 <style>
 
 /* =========================
-   BASE (DARK HERO FOOTER STYLE)
+   BASE (HERO CONSISTENT DARK VARIANT)
 ========================= */
 
 :root{
-  --bg:#23272E;          /* hero footer想定ダーク */
-  --surface:#2A2F38;
-  --text:#F3F4F6;
-  --text-sub:rgba(243,244,246,.65);
-  --border:rgba(243,244,246,.12);
+  --bg:#1F1F1F;
+  --text:#E9ECF1;
+  --text-sub:rgba(233,236,241,.65);
+  --border:rgba(233,236,241,.12);
+  --accent:#E9ECF1;
+
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Noto Serif JP',serif;
+}
+
+*{
+  box-sizing:border-box;
 }
 
 body{
   margin:0;
-  background:#1F1F1F;   /* ← ヒーローフッターと同じダーク */
-  color:#E9ECF1;
-  font-family:'Noto Serif JP',serif;
-}
-
-/* コンテナは少し浮かせる（高級ギャラリー感） */
-.container{
-  max-width:1600px;
-  margin:0 auto;
-  padding:6vh 5vw 12vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  line-height:2;
+  font-weight:300;
+  overflow-x:hidden;
 }
 
 /* =========================
-   TEXT COLORS
+   HEADER (HERO統一構造)
+========================= */
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:28px 5vw;
+  border-bottom:1px solid var(--border);
+  background:var(--bg);
+}
+
+.header-logo{
+  font-family:var(--font-display);
+  font-size:1rem;
+  letter-spacing:.08em;
+  color:var(--text);
+  text-decoration:none;
+}
+
+.header-nav ul{
+  display:flex;
+  gap:24px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.header-nav a{
+  font-size:.95rem;
+  letter-spacing:.12em;
+  color:var(--text-sub);
+  text-decoration:none;
+  transition:.25s;
+}
+
+.header-nav a:hover{
+  color:var(--text);
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container{
+  max-width:1400px;
+  margin:0 auto;
+  padding:10vh 5vw 12vh;
+}
+
+/* =========================
+   TITLE (HERO統一階層)
 ========================= */
 
 .page-title{
-  color:#E9ECF1;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(2rem,3vw,2.6rem);
+  letter-spacing:.06em;
+  line-height:1.2;
+  margin-bottom:18px;
 }
 
 .page-subtitle{
-  color:rgba(233,236,241,0.65);
+  font-size:.95rem;
+  line-height:1.9;
+  color:var(--text-sub);
+  max-width:720px;
+  margin-bottom:6vh;
 }
 
 /* =========================
-   IMAGE FRAME（ダーク専用調整）
+   KEYNOTE STACK
 ========================= */
+
+.keynote-stack{
+  display:flex;
+  flex-direction:column;
+  gap:4.5rem;
+}
 
 .keynote-slide img{
   width:100%;
   height:auto;
   display:block;
   border-radius:2px;
-  border:1px solid rgba(233,236,241,0.12);
+  border:1px solid var(--border);
+  filter:contrast(1.02) brightness(.98);
 }
 
 /* =========================
-   HEADER（ダーク対応）
+   BACK LINK (HERO統一トーン)
 ========================= */
 
-.header{
-  background:#1F1F1F;
-  border-bottom:1px solid rgba(233,236,241,0.10);
+.back{
+  margin-top:6rem;
+  text-align:center;
+  font-family:var(--font-display);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:.9rem;
 }
-
-.header-logo{
-  color:#E9ECF1;
-}
-
-.header-nav a{
-  color:rgba(233,236,241,0.7);
-}
-
-.header-nav a:hover{
-  color:#E9ECF1;
-}
-
-/* =========================
-   BACK LINK
-========================= */
 
 .back a{
-  color:rgba(233,236,241,0.7);
+  color:var(--text-sub);
+  text-decoration:none;
+  transition:.2s;
 }
 
 .back a:hover{
-  color:#E9ECF1;
+  color:var(--text);
 }
 
 /* =========================
-   FOOTER
+   FOOTER (HERO完全統一)
 ========================= */
 
 .site-footer{
-  background:#1F1F1F;
-  color:rgba(233,236,241,0.6);
-  border-top:1px solid rgba(233,236,241,0.10);
+  text-align:center;
+  font-size:.75rem;
+  opacity:.55;
+  padding:6vh 0 4vh;
+  border-top:1px solid var(--border);
+  color:var(--text-sub);
 }
 
 /* =========================
@@ -115,8 +177,12 @@ body{
 
 @media (max-width:768px){
 
+  .header{
+    padding:22px 4vw;
+  }
+
   .container{
-    padding:5vh 4vw 10vh;
+    padding:8vh 4vw 10vh;
   }
 
   .keynote-stack{
@@ -128,7 +194,7 @@ body{
 </style>
 </head>
 
-<body class="sub-page">
+<body>
 
 <header class="header">
   <a href="index.html" class="header-logo">ISHIKAWA Saki</a>
@@ -142,7 +208,7 @@ body{
   </nav>
 </header>
 
-<section>
+<main>
 
 <div class="container">
 
@@ -151,8 +217,7 @@ TV & MOVIE　仮面ライダー／スーパー戦隊
 </h1>
 
 <p class="page-subtitle">
-Selected works in Japanese tokusatsu television dramas
-(special effects superhero TV series).
+Selected costume design and visual concept works for Japanese tokusatsu television series.
 </p>
 
 <div class="keynote-stack">
@@ -169,7 +234,7 @@ Selected works in Japanese tokusatsu television dramas
 
 </div>
 
-</section>
+</main>
 
 <footer class="site-footer">
 © 2026 Saki Ishikawa. All Rights Reserved.
