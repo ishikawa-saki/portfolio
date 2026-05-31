@@ -17,15 +17,27 @@
 <style>
 
 /* =========================
-   BASE
+   BASE (UPDATED HIGH-CLASS LIGHT ARCHIVE)
 ========================= */
+
+:root{
+  --bg:#E9ECF1;
+  --surface:#E9ECF1;
+  --text:#121419;
+  --text-sub:rgba(18,20,25,.65);
+  --border:rgba(18,20,25,.12);
+}
 
 body{
   margin:0;
-  background:#23272E; /* charcoal archive */
-  color:#F3F4F6;
+  background:var(--bg);
+  color:var(--text);
   font-family:'Noto Serif JP',serif;
 }
+
+/* =========================
+   LAYOUT
+========================= */
 
 .container{
   max-width:1600px;
@@ -34,7 +46,31 @@ body{
 }
 
 /* =========================
-   HEADER TITLE
+   HEADER
+========================= */
+
+.header{
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+}
+
+.header-logo{
+  color:var(--text);
+  text-decoration:none;
+}
+
+.header-nav a{
+  color:var(--text-sub);
+  text-decoration:none;
+  transition:.2s;
+}
+
+.header-nav a:hover{
+  color:var(--text);
+}
+
+/* =========================
+   PAGE TITLE
 ========================= */
 
 .page-title{
@@ -43,13 +79,15 @@ body{
   font-weight:400;
   letter-spacing:.06em;
   margin-bottom:1rem;
+  color:var(--text);
 }
 
 .page-subtitle{
   font-size:.95rem;
-  opacity:.65;
+  opacity:.75;
   line-height:1.7;
   margin-bottom:4rem;
+  color:var(--text-sub);
 }
 
 /* =========================
@@ -62,12 +100,12 @@ body{
   gap:4.5rem;
 }
 
-/* 余白＝高級アーカイブ感 */
 .keynote-slide img{
   width:100%;
   height:auto;
   display:block;
   border-radius:2px;
+  border:1px solid var(--border);
 }
 
 /* =========================
@@ -84,24 +122,27 @@ body{
 }
 
 .back a{
-  color:rgba(255,255,255,.75);
+  color:var(--text-sub);
   text-decoration:none;
   transition:.2s;
 }
 
 .back a:hover{
-  color:#ffffff;
+  color:var(--text);
 }
 
 /* =========================
-   FOOTER
+   FOOTER (MATCH GLOBAL #E9ECF1)
 ========================= */
 
 .site-footer{
   text-align:center;
   font-size:.75rem;
-  opacity:.45;
+  opacity:.55;
   padding:6vh 0 4vh;
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  color:var(--text-sub);
 }
 
 /* =========================
@@ -155,13 +196,6 @@ Selected works in Japanese tokusatsu television dramas
   <div class="keynote-slide">
     <img src="images/images_keynote/film_keynote1.webp" alt="">
   </div>
-
-  <!-- 以降追加 -->
-  <!--
-  <div class="keynote-slide">
-    <img src="images/images_keynote/film_keynote2.webp" alt="">
-  </div>
-  -->
 
 </div>
 
