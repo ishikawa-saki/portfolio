@@ -16,10 +16,14 @@
 
 <style>
 
+/* =========================
+   BASE
+========================= */
+
 body{
   margin:0;
-  background:#F2F5F9;
-  color:#111418;
+  background:#23272E; /* charcoal archive */
+  color:#F3F4F6;
   font-family:'Noto Serif JP',serif;
 }
 
@@ -28,6 +32,10 @@ body{
   margin:0 auto;
   padding:6vh 5vw 12vh;
 }
+
+/* =========================
+   HEADER TITLE
+========================= */
 
 .page-title{
   font-family:'Cormorant Garamond',serif;
@@ -44,21 +52,27 @@ body{
   margin-bottom:4rem;
 }
 
+/* =========================
+   KEYNOTE STACK
+========================= */
+
 .keynote-stack{
   display:flex;
   flex-direction:column;
-  gap:4rem;
+  gap:4.5rem;
 }
 
-.keynote-slide{
-  width:100%;
-}
-
+/* 余白＝高級アーカイブ感 */
 .keynote-slide img{
   width:100%;
   height:auto;
   display:block;
+  border-radius:2px;
 }
+
+/* =========================
+   BACK LINK
+========================= */
 
 .back{
   margin-top:6rem;
@@ -70,16 +84,29 @@ body{
 }
 
 .back a{
-  color:inherit;
+  color:rgba(255,255,255,.75);
   text-decoration:none;
+  transition:.2s;
 }
+
+.back a:hover{
+  color:#ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .site-footer{
   text-align:center;
   font-size:.75rem;
-  opacity:.5;
+  opacity:.45;
   padding:6vh 0 4vh;
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width:768px){
 
@@ -88,7 +115,7 @@ body{
   }
 
   .keynote-stack{
-    gap:2rem;
+    gap:2.5rem;
   }
 
 }
@@ -125,21 +152,16 @@ Selected works in Japanese tokusatsu television dramas
 
 <div class="keynote-stack">
 
-<div class="keynote-slide">
-  <img src="images/images_keynote/film_keynote1.webp" alt="">
-</div>
-
   <div class="keynote-slide">
-    <img src="images/film_keynote/02_movie_spinoff.webp" alt="">
+    <img src="images/images_keynote/film_keynote1.webp" alt="">
   </div>
 
+  <!-- 以降追加 -->
+  <!--
   <div class="keynote-slide">
-    <img src="images/film_keynote/03_gallery.webp" alt="">
+    <img src="images/images_keynote/film_keynote2.webp" alt="">
   </div>
-
-  <div class="keynote-slide">
-    <img src="images/film_keynote/04_gallery.webp" alt="">
-  </div>
+  -->
 
 </div>
 
