@@ -825,8 +825,9 @@
 
 }
 
-  /* =========================
-   DESIGN IMAGES
+
+/* =========================
+   DESIGN IMAGES (BASE)
 ========================= */
 
 .logic-image{
@@ -835,59 +836,55 @@
   background:rgba(17,20,24,.04);
 }
 
+/* 画像共通 */
 .logic-image img{
   width:100%;
   height:auto;
   display:block;
 }
 
-/* 360° Design Logic */
-.logic-image-wide{
-  max-width:1040px;   /* 罫線と同じ幅 */
-}
-
-/* Visual Impact */
-.logic-image-medium{
-  max-width:900px;    /* 罫線より少し短く */
-}
-
-.logic-image video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:2px;
-}
-
-  
 /* =========================
-   VIDEO SIZE FIX（VERTICAL対応）
+   WIDTH SYSTEM (CASE STUDY 02基準)
 ========================= */
 
-/* 基本動画 */
-.logic-image video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:2px;
-  object-fit:cover;
-}
-
-/* ★ストーリー幅を CASE STUDY 02 に揃える */
+/* 基本：全ストーリー統一幅 */
+.logic-image,
 .logic-image-medium,
 .logic-image-wide{
-  max-width:1040px;   /* ← CASE STUDY 02 の画像と同じ基準 */
+  max-width:1040px;
   margin-left:auto;
   margin-right:auto;
 }
 
-/* ★縦動画は比率固定（超重要） */
-.logic-image-medium video,
-.logic-image-wide video{
-  aspect-ratio:9/16;   /* ← 縦長維持 */
+/* =========================
+   VARIATION (必要なら微調整用)
+========================= */
+
+/* 少し小さくしたい系（今は未使用でもOK） */
+.logic-image-medium{
+  max-width:900px;
+}
+
+/* =========================
+   VIDEO (VERTICAL SAFE)
+========================= */
+
+.logic-image video{
   width:100%;
   height:auto;
-  max-height:520px;    /* ← 小さく抑える */
-  object-fit:contain;  /* ← ここがポイント（切らない） */
+  display:block;
+  border-radius:2px;
+  object-fit:contain; /* 画像崩れ防止の基本 */
+  background:rgba(17,20,24,.04);
+}
+
+/* 縦動画だけ比率固定 */
+.logic-image-medium video,
+.logic-image-wide video{
+  width:100%;
+  aspect-ratio:9/16;
+  max-height:520px;
+  object-fit:contain;
   background:rgba(17,20,24,.04);
 }
   
