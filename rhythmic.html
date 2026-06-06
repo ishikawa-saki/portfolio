@@ -858,37 +858,37 @@
   border-radius:2px;
 }
 
-  /* =========================
-   VIDEO SIZE FIX（追加）
+  
+/* =========================
+   VIDEO SIZE FIX（VERTICAL対応）
 ========================= */
 
-/* 全体動画の基本制御 */
+/* 基本動画 */
 .logic-image video{
   width:100%;
   height:auto;
   display:block;
   border-radius:2px;
+  object-fit:cover;
 }
 
-/* Design Evolution / Swarovski 用の中サイズ制御 */
-.logic-image-medium{
-  max-width:720px;
+/* ★ストーリー幅を CASE STUDY 02 に揃える */
+.logic-image-medium,
+.logic-image-wide{
+  max-width:1040px;   /* ← CASE STUDY 02 の画像と同じ基準 */
   margin-left:auto;
   margin-right:auto;
 }
 
-/* 中サイズ動画の暴走防止 */
-.logic-image-medium video{
-  aspect-ratio:16/9;
-  width:100%;
-  max-height:420px;
-  object-fit:cover;
-}
-
-/* wide動画の保険 */
+/* ★縦動画は比率固定（超重要） */
+.logic-image-medium video,
 .logic-image-wide video{
-  max-height:480px;
-  object-fit:cover;
+  aspect-ratio:9/16;   /* ← 縦長維持 */
+  width:100%;
+  height:auto;
+  max-height:520px;    /* ← 小さく抑える */
+  object-fit:contain;  /* ← ここがポイント（切らない） */
+  background:rgba(17,20,24,.04);
 }
   
 </style>
