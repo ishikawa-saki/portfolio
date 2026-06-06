@@ -307,40 +307,58 @@
   display:block;
 }
 
-/* Spec + credits */
-.rg-spec{
-  margin-top:5vh;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:4vw;
-  max-width:1000px;
+/* =========================
+   OFFICIAL CREDITS (CLEAN)
+========================= */
+
+.rg-credits{
+  margin:8vh auto 0;
+  max-width:720px;
+  text-align:center;
 }
 
-.rg-spec h3{
-  font-family:var(--font-body);
-  font-size:.95rem;
-  letter-spacing:.18em;
+.rg-credits-title{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.1rem;
+  letter-spacing:.24em;
   text-transform:uppercase;
-  margin-bottom:16px;
+  margin-bottom:3vh;
+  color:#111418;
 }
 
-.rg-spec p, .rg-spec li{
-  font-family:var(--font-jp);
-  font-size:.85rem;
-  line-height:2.0;
-  letter-spacing:.08em;
-  color:var(--c-text-sub);
+/* container for both columns (stacked layout) */
+.rg-spec{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+  padding:0;
+  margin:0;
 }
 
+/* each column block (ul wrapper) */
 .rg-spec ul{
   list-style:none;
-  padding-left:0;
+  padding:0;
+  margin:0;
 }
 
+/* each line item */
 .rg-spec li{
-  margin-bottom:10px;
+  margin:.6rem 0;
+  font-family:var(--font-body);
+  font-size:.9rem;
+  line-height:1.8;
+  letter-spacing:.08em;
+  color:rgba(17,20,24,.65);
 }
 
+/* label emphasis (optional left label style) */
+.rg-spec li strong{
+  display:inline-block;
+  min-width:160px;
+  font-weight:500;
+  color:#111418;
+}
 /* Inquiry line */
 .rg-inquiry{
   margin-top:6vh;
@@ -416,12 +434,9 @@
 }
 
 .rg-statement{
-
   max-width:980px;
-  margin-top:0;
-  margin-left:0;
-  margin-right:0;
-  text-align:left;
+  margin:0 auto;
+  text-align:center;
 }
 
 .rg-statement p{
@@ -431,6 +446,7 @@
   line-height:2.2;
   letter-spacing:.04em;
   color:var(--c-text-sub);
+  text-align:center;
 }
 
 .rg-statement p:first-child{
@@ -506,7 +522,7 @@
   color:var(--c-text-sub);
 }
 
-/* ↓ 新規追加 */
+
 .rg-hook-final{
   color:var(--c-text-main);
 }
@@ -682,34 +698,28 @@
   color:rgba(17,20,24,.45);
 }
 
-.logic-ja{
-  margin-bottom:2.2rem;
+/* =========================
+   LOGIC TEXT
+========================= */
+
+.logic-ja,
+.logic-en{
+  max-width:1100px;
+  margin:0 auto 2rem;
 }
 
 .logic-ja p{
   margin:0 0 .8rem;
-
   font-size:1rem;
   line-height:1.75;
-
-  max-width:1100px;
 }
 
 .logic-en p{
   margin:0 0 .7rem;
-
   font-size:.95rem;
   line-height:1.65;
-
-  max-width:1100px;
-
   color:rgba(17,20,24,.52);
 }
-
-  .logic-en{
-  margin-bottom:1rem;
-}
-
   
   .logic-contact{
   margin:2.8rem 0 2rem;
@@ -817,10 +827,11 @@
   max-width:900px;    /* 罫線より少し短く */
 }
 
-  .logic-image video{
+.logic-image video{
   width:100%;
   height:auto;
   display:block;
+  border-radius:2px;
 }
   
 </style>
@@ -946,7 +957,10 @@
 </div>
 
 
-<div class="rg-spec">
+<div class="rg-credits">
+  <h3 class="rg-credits-title">Official Credits</h3>
+
+  <div class="rg-spec">
   <div>
     <ul>
       <li>Okayama Minami Gymnastics Academy</li>
@@ -1368,20 +1382,21 @@
 
   <div class="rg-next-layout">
 
-    <div class="rg-next-image">
-      <img src="images/rg/rin1.jpg" alt="In Progress">
-    </div>
+<div class="rg-next-image">
+  <img src="images/rg/rin1.jpg" alt="In Progress">
+</div>
 
-   <div class="rg-next-copy">
+<!-- ここに移動 -->
+<div class="rg-next-en">
+  If I play,<br>
+  I play to win.
+</div>
 
-  <div class="rg-next-en">
-    If I play,<br>
-    I play to win.
-  </div>
+<div class="rg-next-ja">
+  やるからには、勝ちにいく
+</div>
 
-  <div class="rg-next-ja">
-    やるからには、勝ちにいく
-  </div>
+<div class="rg-next-copy">
 
   <div class="rg-next-coming">
     New men's costume project currently in development.
