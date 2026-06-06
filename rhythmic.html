@@ -604,6 +604,80 @@
   .rg-spec{grid-template-columns:1fr;gap:4vh;}
     .rg-gallery-sub{ grid-template-columns:1fr;gap:4vw;}
 }
+
+  /* =========================
+   DESIGN STATEMENT
+========================= */
+
+.design-statement{
+  max-width:1200px;
+  margin:12vh auto;
+  padding:0 var(--container-padding);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8vw;
+}
+
+.statement-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:.82rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(17,20,24,.45);
+  margin-bottom:1rem;
+}
+
+.statement-ja h3,
+.statement-en h3{
+  margin:0;
+  font-weight:400;
+  line-height:1.4;
+}
+
+.statement-ja h3{
+  font-family:'Noto Serif JP',serif;
+  font-size:1.35rem;
+  letter-spacing:.04em;
+}
+
+.statement-en h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;
+  letter-spacing:.04em;
+}
+
+.statement-line{
+  width:100%;
+  height:1px;
+  background:#E2E6ED;
+  margin:1.8rem 0 2rem;
+}
+
+.statement-ja p{
+  font-family:'Noto Serif JP',serif;
+  font-size:.98rem;
+  line-height:2.15;
+  color:#111418;
+  margin-bottom:1.2rem;
+}
+
+.statement-en p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.08rem;
+  line-height:2;
+  color:rgba(17,20,24,.78);
+  margin-bottom:1.2rem;
+}
+
+@media(max-width:768px){
+
+  .design-statement{
+    grid-template-columns:1fr;
+    gap:5vh;
+    margin:8vh auto;
+  }
+
+}
 </style>
 </head>
 
@@ -758,6 +832,81 @@
     </ul>
   </div>
 </div>
+
+
+  <!-- =========================
+     DESIGN STATEMENT
+========================= -->
+
+<section class="design-statement">
+
+  <div class="statement-ja">
+
+    <div class="statement-label">
+      360° Engineering
+    </div>
+
+    <h3>
+      Sacred Axis | 360° Seamless Logic
+    </h3>
+
+    <div class="statement-line"></div>
+
+    <p>
+      360°どこから見ても途切れない、完全なるシームレス設計。
+    </p>
+
+    <p>
+      「太陽神ラーの後光」と「月の光」が交差する側面こそが、
+      このデザインの真髄です。
+    </p>
+
+    <p>
+      ピボットの回転軸を視覚的に強化し、
+      回転の鋭さを極限まで際立たせる。
+    </p>
+
+    <p>
+      回転した瞬間に審判の視線を射抜く、
+      勝つための「動性」がここにあります。
+    </p>
+
+  </div>
+
+  <div class="statement-en">
+
+    <div class="statement-label">
+      360° Engineering
+    </div>
+
+    <h3>
+      Sacred Axis | 360° Seamless Logic
+    </h3>
+
+    <div class="statement-line"></div>
+
+    <p>
+      A flawless, 360-degree seamless design with absolutely no blind spots.
+    </p>
+
+    <p>
+      The true essence of this design lies upon the flanks,
+      where the Halo of the Sun God Ra and a Lunar Eclipse intersect.
+    </p>
+
+    <p>
+      Visually reinforcing the pivot axis to maximize
+      and elevate the sharpness of every rotation.
+    </p>
+
+    <p>
+      Engineered with a competitive dynamic built to capture
+      the judges' gaze the exact fraction of a second the athlete spins.
+    </p>
+
+  </div>
+
+</section>
   
   <div class="rg-next-case">
 
