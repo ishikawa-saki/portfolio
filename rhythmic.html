@@ -696,6 +696,43 @@
   border-color:rgba(17,20,24,.4);
 }
 
+
+ /* =========================
+   DESIGN GALLERY
+========================= */
+
+.logic-gallery-4{
+  margin-top:3.5rem;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.2rem;
+
+  width:100%;
+}
+
+.logic-gallery-item{
+  overflow:hidden;
+  background:rgba(17,20,24,.04);
+}
+
+.logic-gallery-item img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+@media (max-width:900px){
+
+  .logic-gallery-4{
+    grid-template-columns:repeat(2,1fr);
+    gap:.8rem;
+  }
+
+}
+
+  
+
 @media (max-width:768px){
 
   .design-logic{
@@ -801,6 +838,16 @@
 </div>
 
 <!-- ORIGINAL STATEMENT（下へ移動） -->
+<div class="logic-label">
+  Introduction
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  The Origin of My Creativity
+</h3>
+  
 <div class="rg-statement rg-statement-long">
 
   <p class="rg-statement-lead">
@@ -931,6 +978,28 @@
   </p>
 
 </div>
+
+  <div class="logic-gallery-4">
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design1.jpg" alt="">
+  </div>
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design2.jpg" alt="">
+  </div>
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design3.jpg" alt="">
+  </div>
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design4.jpg" alt="">
+  </div>
+
+</div>
+
+  
 
     <div class="logic-label">
   Design Evolution &amp; Geometry
