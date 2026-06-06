@@ -558,7 +558,43 @@
   line-height:1.8;
   color:var(--c-text-sub);
 }
+.rg-next-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 
+.rg-next-en{
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2rem,3vw,2.8rem);
+  font-weight:400;
+  line-height:1.15;
+  letter-spacing:.04em;
+  color:#111418;
+}
+
+.rg-next-ja{
+  margin-top:1rem;
+
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  letter-spacing:.22em;
+
+  color:rgba(17,20,24,.45);
+}
+
+.rg-next-coming{
+  margin-top:2.2rem;
+
+  font-family:var(--font-body);
+  font-size:.82rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+
+  color:rgba(17,20,24,.38);
+}
 @media(max-width:900px){
 
   .rg-next-layout{
@@ -1336,10 +1372,21 @@
       <img src="images/rg/rin1.jpg" alt="In Progress">
     </div>
 
-    <div class="rg-next-copy">
-      New men's costume project currently in development.
-    </div>
+   <div class="rg-next-copy">
 
+  <div class="rg-next-en">
+    If I play,<br>
+    I play to win.
   </div>
+
+  <div class="rg-next-ja">
+    やるからには、勝ちにいく
+  </div>
+
+  <div class="rg-next-coming">
+    New men's costume project currently in development.
+  </div>
+
+
 
 </div>
