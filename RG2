@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RHYTHMIC GYMNASTICS | ISHIKAWA SAKI</title>
+
+<meta name="description" content="新体操 レオタードデザイン — Competitive Artwear. 設計から実装までのケーススタディ。Rhythmic Gymnastics Costume Design by ISHIKAWA SAKI.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.jpg">
+<link rel="shortcut icon" href="favicon.jpg">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* ===== HEADER SIZE FIX ===== */
+.header{
+  position: relative;
+  width: 100%;
+  padding: 50px var(--container-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.header-logo{
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header-nav ul{
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.header-nav a{
+  font-family: var(--font-body);
+  font-size: .95rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px){
+  .header-logo{
+    font-size: .95rem;
+  }
+
+  .header-nav a{
+    font-size: .86rem;
+  }
+}
+
+/* ===== Page Shell (match Works look) ===== */
+.rg-page{
+  padding:6vh var(--container-padding) 12vh;
+  max-width:1400px;
+  margin:0 auto;
+}
+  
+
+.rg-header{
+  margin-bottom:8vh;
+}
+
+.rg-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  font-weight:400;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:1.2vh;
+}
+
+.rg-subtitle{
+  font-family:var(--font-body);
+  font-size:1.15rem;
+  color:var(--c-text-sub);
+  letter-spacing:.04em;
+  line-height:1.7;
+  max-width:920px;
+}
+
+.rg-subtitle small{
+  display:block;
+  margin-top:10px;
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+/* ===== Case List ===== */
+.rg-cases{
+  display:flex;
+  flex-direction:column;
+  gap:12vh;
+}
+
+/* Each case block */
+.rg-case{
+  border-top:1px solid rgba(17,20,24,.08);
+  padding-top:4vh;
+}
+
+/* Case title row */
+.rg-case-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:4vw;
+  margin-bottom:4vh;
+}
+
+.rg-case-title{
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:1.15rem;
+  color:var(--c-text-sub);
+  letter-spacing:.04em;
+  line-height:1.7;
+}
+
+.rg-case-title small{
+  display:block;
+  margin-top:8px;
+  font-family:var(--font-jp);
+  font-size:.82rem;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+.rg-case-meta{
+  text-align:right;
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--c-text-sub);
+  white-space:nowrap;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.intro-label{
+
+  margin-top:7vh;
+  margin-bottom:3vh;
+
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.75rem;
+  font-style:italic;
+  font-weight:500;
+  letter-spacing:.06em;
+
+  color:#111418;
+
+  text-align:left;
+}
+
+  
+/* ===== Media Blocks ===== */
+.rg-hero{
+  width:100%;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:linear-gradient(145deg, rgba(17,20,24,0.10), rgba(17,20,24,0.03));
+  position:relative;
+}
+
+.rg-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+  .rg-gallery-main{
+  margin-top:3vh;
+}
+
+.rg-gallery-main .rg-main-image{
+  width:100%;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+}
+
+.rg-gallery-main .rg-main-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-gallery-sub{
+  margin-top:2vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2vw;
+}
+
+.rg-gallery-sub .rg-sub-image{
+  aspect-ratio:1/1;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+}
+
+.rg-gallery-sub .rg-sub-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-hero .rg-hero-label{
+  position:absolute;
+  right:18px;
+  bottom:14px;
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:.85rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  opacity:.9;
+  z-index:2;
+}
+
+.rg-hero::after{
+  display:none;
+}
+
+
+.rg-process .rg-tile{
+  aspect-ratio:2/3;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+  position:relative;
+}
+
+.rg-process img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-process .rg-tile video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* 3DとFINALを縦長にする */
+.rg-process .rg-tile:nth-child(2),
+.rg-process .rg-tile:nth-child(3){
+  aspect-ratio:9/16;
+}
+
+.rg-tile-label{
+  position:absolute;
+  left:14px;
+  bottom:12px;
+  font-family:var(--font-body);
+  font-size:.85rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#fff;
+  z-index:2;
+}
+
+.rg-tile::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.35) 100%);
+}
+
+/* Details grid */
+.rg-details{
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:2vw;
+}
+
+.rg-details .rg-detail{
+  aspect-ratio:2/3;
+  overflow:hidden;
+  background:rgba(17,20,24,.05);
+}
+
+.rg-details img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Spec + credits */
+.rg-spec{
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4vw;
+  max-width:1000px;
+}
+
+.rg-spec h3{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+
+.rg-spec p, .rg-spec li{
+  font-family:var(--font-jp);
+  font-size:.85rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+.rg-spec ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.rg-spec li{
+  margin-bottom:10px;
+}
+
+/* Inquiry line */
+.rg-inquiry{
+  margin-top:6vh;
+  padding-top:5vh;
+  border-top:1px solid rgba(17,20,24,.08);
+  text-align:left;
+}
+
+.rg-inquiry a{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  position:relative;
+  display:inline-block;
+  padding-bottom:3px;
+}
+
+.rg-inquiry a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:38%;
+  height:1px;
+  background:rgba(11,13,16,.45);
+  transition:width .45s ease;
+}
+
+.rg-inquiry a:hover::after{
+  width:100%;
+  background:rgba(11,13,16,.75);
+}
+
+.rg-inquiry .rg-inquiry-ja{
+  margin-top:10px;
+  font-family:var(--font-jp);
+  font-size:.8rem;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
+/* Back link */
+.rg-back{
+  margin-top:10vh;
+  text-align:center;
+}
+
+.rg-back a{
+  font-family:var(--font-body);
+  font-size:.9rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  position:relative;
+  display:inline-block;
+  padding-bottom:3px;
+}
+
+.rg-back a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:38%;
+  height:1px;
+  background:rgba(11,13,16,.35);
+  transition:width .45s ease;
+}
+
+.rg-back a:hover::after{
+  width:100%;
+  background:rgba(11,13,16,.75);
+}
+
+.rg-statement{
+
+  max-width:980px;
+  margin-top:0;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
+}
+
+.rg-statement p{
+  margin-top:1.6vh;
+  font-family:var(--font-jp);
+  font-size:.92rem;
+  line-height:2.2;
+  letter-spacing:.04em;
+  color:var(--c-text-sub);
+}
+
+.rg-statement p:first-child{
+  margin-top:0;
+}
+
+.rg-statement-core{
+  color:var(--c-text-main);
+  letter-spacing:.04em;
+}
+.rg-statement-lead{
+  text-align:left;
+}
+  .rg-case-lead{
+  margin-bottom:1.8vh;
+}
+  
+.rg-statement-line{
+  margin-top:2.2vh;
+  margin-bottom:1vh;
+  font-family:var(--font-jp);
+  font-size:1rem;
+  line-height:2.05;
+  letter-spacing:.05em;
+  color:var(--c-text-main);
+}
+
+.rg-statement-line + p{
+  margin-top:.8vh;
+}
+.rg-case-catch{
+  font-family:var(--font-body);
+  font-size:clamp(1.6rem,2.2vw,2rem); /* ← ここ拡大 */
+  line-height:1.2;
+  letter-spacing:.02em;
+  color:var(--c-text-main);
+}
+
+.rg-case-catch-ja{
+  margin-top:.6vh;
+  font-family:var(--font-jp);
+  font-size:clamp(1.05rem,1.4vw,1.2rem); /* ← 連動して少し大きく */
+  line-height:1.8;
+  letter-spacing:.06em;
+  color:var(--c-text-main);
+}
+
+.rg-hook{
+  margin-top:5vh;
+  max-width:1040px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+.rg-hook-lead{
+  margin:0;
+  padding-bottom:1.2vh;
+  border-bottom:1px solid rgba(17,20,24,.16);
+  font-family:var(--font-jp);
+  font-size:clamp(1.22rem,1.9vw,1.5rem);
+  line-height:1.9;
+  letter-spacing:.05em;
+  color:var(--c-text-main);
+}
+
+.rg-hook-body{
+  margin-top:2.4vh;
+  font-family:var(--font-jp);
+  font-size:1rem;
+  line-height:2.2;
+  letter-spacing:.05em;
+  color:var(--c-text-sub);
+}
+
+/* ↓ 新規追加 */
+.rg-hook-final{
+  color:var(--c-text-main);
+}
+
+
+  .rg-next-case{
+  margin-top:6vh;
+  max-width:1040px;
+}
+
+.rg-next-line{
+  width:100%;
+  height:1px;
+  background:rgba(17,20,24,.12);
+  margin-bottom:1.4vh;
+}
+
+.rg-next-text{
+  font-family:var(--font-body);
+  font-size:.9rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--c-text-sub);
+  opacity:.7;
+}
+  .rg-next-layout{
+  margin-top:3vh;
+  display:grid;
+  grid-template-columns:3fr 2fr;
+  gap:3vw;
+  align-items:center;
+}
+
+.rg-next-image{
+  overflow:hidden;
+  background:rgba(17,20,24,.04);
+}
+
+.rg-next-image img{
+  width:100%;
+  aspect-ratio:3/2;
+  object-fit:cover;
+  display:block;
+}
+
+.rg-next-copy{
+  font-family:var(--font-body);
+  font-size:1.05rem;
+  line-height:1.8;
+  color:var(--c-text-sub);
+}
+
+@media(max-width:900px){
+
+  .rg-next-layout{
+    grid-template-columns:1fr;
+    gap:2vh;
+  }
+
+  .rg-next-copy{
+    font-size:.95rem;
+  }
+
+}
+@media (max-width: 900px){
+  .rg-hook{
+    margin-top:4vh;
+    padding-top:12px;
+  }
+
+  .rg-hook-lead{
+    font-size:1.06rem;
+    line-height:1.9;
+  }
+  
+.rg-hook-body{
+  font-size:.92rem;
+  line-height:2.05;
+}
+  .rg-hook{
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+}
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .rg-header{margin-bottom:6vh;}
+  .rg-case{padding-top:6vh;}
+  .rg-case-head{flex-direction:column;align-items:flex-start;gap:14px;}
+  .rg-case-meta{text-align:left;}
+  .rg-hero{aspect-ratio:3/2;}
+  .rg-process{grid-template-columns:1fr;gap:5vw;}
+  .rg-details{grid-template-columns:1fr 1fr;gap:4vw;}
+  .rg-spec{grid-template-columns:1fr;gap:4vh;}
+    .rg-gallery-sub{ grid-template-columns:1fr;gap:4vw;}
+}
+
+ /* =========================
+   DESIGN LOGIC
+========================= */
+
+.design-logic{
+  max-width:1200px;
+  margin:5vh auto;
+}
+
+.logic-label{
+  margin-top:4rem;
+  margin-bottom:.9rem;
+
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.75rem;
+  font-weight:500;
+  letter-spacing:.08em;
+
+  color:#111418;
+}
+
+.logic-line{
+  width:100%;
+  height:1px;
+  background:#E2E6ED;
+  margin:0 0 1.4rem;
+}
+
+.logic-title{
+  margin:0 0 2rem;
+
+  font-family:'Cormorant Garamond', serif;
+  font-size:.92rem;
+  font-weight:400;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:rgba(17,20,24,.45);
+}
+
+.logic-ja{
+  margin-bottom:2.2rem;
+}
+
+.logic-ja p{
+  margin:0 0 .8rem;
+
+  font-size:1rem;
+  line-height:1.75;
+
+  max-width:1100px;
+}
+
+.logic-en p{
+  margin:0 0 .7rem;
+
+  font-size:.95rem;
+  line-height:1.65;
+
+  max-width:1100px;
+
+  color:rgba(17,20,24,.52);
+}
+
+  .logic-en{
+  margin-bottom:1rem;
+}
+
+  
+  .logic-contact{
+  margin:2.8rem 0 2rem;
+  text-align:center;
+}
+
+.logic-contact a{
+  display:inline-block;
+  padding:14px 38px;
+
+  border:1px solid rgba(17,20,24,.16);
+
+  font-family:'Cormorant Garamond', serif;
+  font-size:1rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:#111418;
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.logic-contact a:hover{
+  transform:translateY(-1px);
+  border-color:rgba(17,20,24,.4);
+}
+
+
+ /* =========================
+   DESIGN GALLERY
+========================= */
+
+.logic-gallery-4{
+  margin-top:3.5rem;
+
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.2rem;
+
+  width:100%;
+}
+
+.logic-gallery-item{
+  overflow:hidden;
+  background:rgba(17,20,24,.04);
+}
+
+.logic-gallery-item img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+@media (max-width:900px){
+
+  .logic-gallery-4{
+    grid-template-columns:repeat(2,1fr);
+    gap:.8rem;
+  }
+
+}
+
+  
+
+@media (max-width:768px){
+
+  .design-logic{
+    margin:8vh auto;
+  }
+
+  .logic-title{
+    font-size:1.3rem;
+  }
+
+  .logic-ja p{
+    font-size:.95rem;
+  }
+
+}
+
+  /* =========================
+   DESIGN IMAGES
+========================= */
+
+.logic-image{
+  margin:3rem auto 4rem;
+  overflow:hidden;
+  background:rgba(17,20,24,.04);
+}
+
+.logic-image img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* 360° Design Logic */
+.logic-image-wide{
+  max-width:1040px;   /* 罫線と同じ幅 */
+}
+
+/* Visual Impact */
+.logic-image-medium{
+  max-width:900px;    /* 罫線より少し短く */
+}
+
+  .logic-image video{
+  width:100%;
+  height:auto;
+  display:block;
+}
+  
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="/index.html" class="header-logo">ISHIKAWA SAKI</a>
+
+  <nav class="header-nav">
+    <ul>
+      <li><a href="/works.html">WORKS</a></li>
+      <li><a href="/index.html#about">ABOUT</a></li>
+      <li><a href="https://tally.so/r/vGPVJX" target="_blank">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="rg-page">
+
+  <header class="rg-header">
+    <h1>Rhythmic Gymnastics</h1>
+    <p class="rg-subtitle">
+      Leotard design for rhythmic gymnastics competitions and performance teams.
+      <small>新体操 レオタードデザイン｜設計から実装までのケーススタディ</small>
+    </p>
+  </header>
+
+  <section class="rg-cases">
+
+    <!-- =========================
+         CASE 01 (EMBARGO SAFE)
+    ========================== -->
+    <article class="rg-case">
+
+      <div class="rg-case-head">
+        <div>
+<div class="rg-case-lead">
+  <div class="rg-case-catch">Design for Victory 🏆</div>
+  <div class="rg-case-catch-ja">2026年 新体操団体優勝 レオタードデザイン</div>
+</div>
+
+<h2 class="rg-case-title">
+  Top-tier Team: Okayama Minami — 2026 Season
+  <small>岡山県立岡山南高等学校 新体操部 2026 団体衣装</small>
+</h2>
+        </div>
+
+        <div class="rg-case-meta">Case Study 01</div>
+      </div>
+
+      <!-- HERO (placeholder now / replace with <img> later) -->
+<!-- MAIN -->
+<div class="rg-gallery-main">
+  <div class="rg-main-image">
+    <img src="images/rg/minami2.jpg" alt="">
+  </div>
+</div>
+
+<!-- NEW STATEMENT（PICK UPと同じ） -->
+<div class="rg-hook">
+  <p class="rg-hook-lead">
+    新体操は、「人間が人間を超える」瞬間を見せる競技。
+  </p>
+
+  <div class="rg-hook-body">
+    特撮衣装の最前線で研ぎ澄ませた、アクションの「動」に順応するデザイン。<br>
+    激しい動きの中でも、一瞬たりとも演技の美しさを崩さず<br>
+    どの角度からみても気迫で圧倒する勝負の思考を、新体操のフロアへ。
+  </div>
+
+<div class="rg-hook-body">
+  衣装の機能は、単なる装飾ではない。<br>
+  芸術点の0.1に挑む、内にある形なき熱量を目に見える形へと引き出すこと。<br>
+  <span class="rg-hook-final">
+    それは、内なる精神を顕在化させた「意志」を纏うということ。
+  </span>
+</div>
+
+</div>
+
+<!-- SUB -->
+<div class="rg-gallery-sub">
+  <div class="rg-sub-image">
+    <img src="images/rg/minami3.jpg" alt="">
+  </div>
+  <div class="rg-sub-image">
+    <img src="images/rg/minami4.jpg" alt="">
+  </div>
+</div>
+
+<!-- ORIGINAL STATEMENT（下へ移動） -->
+<div class="logic-label intro-label">
+  Introduction
+</div>
+
+<div class="logic-line"></div>
+
+  
+<div class="rg-statement rg-statement-long">
+
+  <p class="rg-statement-lead">
+    私のクリエイティビティの原点は、皮膚に直接描くボディペイントにある。<br>
+    身体との隔たりが「0」の状態で、人間の身体美を最大化させるラインを追求。<br>
+    その「身体に纏う」思考はテキスタイルデザインを経て、現在の「衣装」という形へと結実した。
+  </p>
+
+  <p class="rg-statement-line">
+    アクションの最前線で得た経験を血肉とし、美術解剖に基づいた流線で、あらゆる角度から「動」に順応させる造形的デザイン。
+  </p>
+  <p>
+    私が担うのは、選手の内に秘められた形なき熱量を衣装として引き出し、着る人の意志を可視化してもう一度自分自身に纏わせること。<br>
+    衣装を単なる布ではなく、内側から溢れ出る「息吹」そのものとして描く。<br>
+    そのプロセスを経て、衣装は「外側から被せるもの」を越え、内側から溢れ出た「身体の一部」へと変貌を遂げる。
+  </p>
+
+  <p class="rg-statement-core">
+    内なる精神、身体美、そして衣装が極限まで融合したとき。<br>
+    そこには、0.1点の壁を突き破る「勝利の気迫」が宿る。
+  </p>
+
+</div>
+
+
+<div class="rg-spec">
+  <div>
+    <ul>
+      <li>Okayama Minami Gymnastics Academy</li>
+      <li>Head Coach: Sayuri Hata</li>
+      <li>Costume Design: Ishikawa Saki</li>
+      <li>Costume Maker: Naoko Hakamada</li>
+    </ul>
+  </div>
+
+  <div>
+    <ul>
+      <li>岡山県立岡山南高等学校 新体操部</li>
+      <li>監督：畑 小百合</li>
+      <li>衣装デザイン：石川 彩希</li>
+      <li>衣装制作：袴田 直子</li>
+    </ul>
+  </div>
+</div>
+
+
+ <!-- =========================
+     DESIGN LOGIC
+========================= -->
+
+<section class="design-logic">
+
+    <div class="logic-label">
+  Concept &amp; Bespoke Proof
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  Mythological Radiance | Ghosts of the Nile
+</h3>
+
+<div class="logic-ja">
+  
+  <p>
+    ご依頼テーマ・楽曲：エジプト × ロイヤルブルー “Ghosts of the Nile”
+  </p>
+
+  <p>
+    エジプト神話の神秘をフロアへ召喚するためのデザインラフ。
+  </p>
+
+  <p>
+    スカラベを透過する太陽神ラーの後光と、静謐な月の光。
+  </p>
+
+  <p>
+    オファーされた世界観を深く咀嚼し視覚化する。
+    身体の動きと調和させながら、選手の躍動を神々しく鮮烈な存在へと昇華させます。
+  </p>
+
+</div>
+
+<div class="logic-en">
+
+  <p>
+    Client Request: Egypt × Royal Blue — "Ghosts of the Nile"
+  </p>
+
+  <p>
+    The master blueprint engineered to summon the mysteries of Egyptian mythology onto the competition floor.
+  </p>
+
+  <p>
+    Inspired by the radiant Halo of the Sun God Ra shining through the sacred scarab, contrasted against the quiet glow of lunar light.
+  </p>
+
+  <p>
+    A process of dissecting, interpreting, and materializing the requested world-view into a coherent visual language.
+  </p>
+
+  <p>
+    Harmonized with physical movement to transform the athlete's performance into a divine and vivid spectacle.
+  </p>
+
+</div>
+
+  <div class="logic-gallery-4">
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design1.jpg" alt="">
+  </div>
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design4.jpg" alt="">
+  </div>
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design3.jpg" alt="">
+  </div>
+
+  <div class="logic-gallery-item">
+    <img src="images/rg/minami_design2.jpg" alt="">
+  </div>
+
+</div>
+
+
+
+    <div class="logic-label">
+  Design Evolution &amp; Geometry
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  Concept Logic | Sacred Symmetry
+</h3>
+
+<div class="logic-ja">
+
+  <p>
+    団体戦の一糸乱れぬ演技の神秘性を高める、神聖な対称図案。
+  </p>
+
+  <p>
+    美術解剖学に基づいた流線が 審判目線の遠景からでも選手の四肢をより長く、より鮮明に際立たせます。
+  </p>
+
+  <p>
+    ただ美しいだけではない、すべてのラインと装飾には理由がある。
+  </p>
+
+  <p>
+    審判の視線を一点へ集約し、演技そのものを「勝利」へと導くための必然のデザインです。
+  </p>
+
+</div>
+
+<div class="logic-en">
+
+  <p>
+    Sacred symmetry engineered ...
+  </p>
+
+  ...
+
+  <p>
+    It is a calculated visual system designed to concentrate the judges' attention, guiding the performance itself toward competitive advantage and victory.
+  </p>
+
+</div>
+
+<div class="logic-image logic-image-medium">
+  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
+</div>
+
+  
+
+  <div class="logic-label">
+    360° Design Logic
+  </div>
+
+  <div class="logic-line"></div>
+
+  <h3 class="logic-title">
+    Sacred Axis | 360° Seamless Logic
+  </h3>
+
+  <div class="logic-ja">
+
+    <p>
+      360°どこから見ても途切れない、完全なるシームレス設計。
+    </p>
+
+    <p>
+      「太陽神ラーの後光」と「月の光」が交差する側面こそが、このデザインの真髄です。
+    </p>
+
+    <p>
+      ピボットの回転軸を視覚的に強化し、回転の鋭さを極限まで際立たせる。
+    </p>
+
+    <p>
+      回転した瞬間に審判の視線を射抜く、勝つための「動性」がここにあります。
+    </p>
+
+  </div>
+
+  <div class="logic-en">
+
+    <p>
+      A flawless, 360-degree seamless design with absolutely no blind spots.
+    </p>
+
+    <p>
+      The true essence of this design lies upon the flanks, where the Halo of the Sun God Ra and a Lunar Eclipse intersect.
+    </p>
+
+    <p>
+      Visually reinforcing the pivot axis to maximize and elevate the sharpness of every rotation.
+    </p>
+
+    <p>
+      Engineered with a competitive dynamic built to capture the judges' gaze the exact fraction of a second the athlete spins.
+    </p>
+
+  </div>
+
+  <div class="logic-image logic-image-wide">
+  <img src="images/rg/minami_360.jpg" alt="">
+</div>
+  
+  <div class="logic-label">
+  Visual Impact &amp; Color Logic
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  Kinetic Visibility | Dynamic Color Logic
+</h3>
+
+<div class="logic-ja">
+
+  <p>
+    特撮アクションの最前線で培った「動」への順応と、美術解剖学に基づいた流線型デザイン。
+  </p>
+
+  <p>
+    審判の評価を最大化するために計算された、フロアに沈まない圧倒的な遠景発色。
+  </p>
+
+  <p>
+    衣装の機能は、選手の士気と演技のポテンシャルを極限まで高めること。
+  </p>
+
+  <p>
+    芸術点を確実に「加点」へ導くための、戦術的なデザインツールです。
+  </p>
+
+</div>
+
+<div class="logic-en">
+
+  <p>
+    Adapted from the front lines of action costume design, this silhouette responds dynamically to movement while embracing aerodynamic forms informed by artistic anatomy.
+  </p>
+
+  <p>
+    Engineered to maximize judging visibility through exceptional long-range color projection that never fades into the competition floor.
+  </p>
+
+  <p>
+    The costume functions as more than an aesthetic layer; it is designed to elevate the athlete's confidence and unlock the full potential of the performance.
+  </p>
+
+  <p>
+    A strategic design tool created to generate measurable artistic impact and contribute directly to scoring value.
+  </p>
+
+</div>
+
+<div class="logic-image logic-image-medium">
+  <img src="images/rg/minami_360cg.jpg" alt="">
+</div>
+
+
+  <div class="logic-label">
+  Swarovski Engineering &amp; Craftsmanship
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  Swarovski Engineering | Precision Placement
+</h3>
+
+<div class="logic-ja">
+
+  <p>
+    競技規定を熟知した熟練のオートクチュール技術による、光を支配するスワロフスキー配置。
+  </p>
+
+  <p>
+    フロアに沈まない発色設計と、審判目線の遠景で生じる光の膨張まで計算された 精密なクリスタルワーク。
+  </p>
+
+  <p>
+    一粒ごとの角度と配置を積み重ね、動きの中で最大限の輝きを放つ シャープな乱反射を設計しています。
+  </p>
+
+</div>
+
+<div class="logic-en">
+
+  <p>
+    Color architecture engineered ...
+  </p>
+
+  ...
+
+  <p>
+    Every crystal is positioned with calculated intent, generating sharp reflections that counteract long-distance visual blur and preserve clarity in motion.
+  </p>
+
+</div>
+
+<div class="logic-image logic-image-medium">
+  <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
+</div>
+
+
+  <div class="logic-label">
+  Design for Victory 🏆
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  Top-tier Team: Okayama Minami — 2026 Season
+</h3>
+
+<div class="logic-ja">
+
+  <p>
+    Group Champions | 2026 OHK Cup / Tokyu Cup
+  </p>
+
+  <p>
+    第38回OHK杯・東急杯にて団体優勝、総合2位を獲得。
+  </p>
+
+  <p>
+    全国選抜大会では団体5位入賞を果たした、頂点を目指す選手たちのための意匠です。
+  </p>
+
+</div>
+
+<div class="logic-en">
+
+  <p>
+    Group Champions | 2026 OHK Cup / Tokyu Cup
+  </p>
+
+  <p>
+    Awarded Group Champion at the 38th OHK Cup / Tokyu Cup, achieving 2nd place overall.
+  </p>
+
+  <p>
+    The team also secured 5th place at the National Selection Tournament, competing among Japan's top rhythmic gymnastics programs.
+  </p>
+
+  <p>
+    A design engineered for athletes striving toward the highest level of performance and competitive excellence.
+  </p>
+
+</div>
+
+ 
+  <div class="logic-label">
+  Call to Action &amp; Navigation
+</div>
+
+<div class="logic-line"></div>
+
+<h3 class="logic-title">
+  Engineering Excellence for Your Team
+</h3>
+
+<div class="logic-ja">
+
+  <p>
+    競技衣装デザインのご相談
+  </p>
+
+  <p>
+    プロアスリート・個人選手から、学校・クラブチームまで、それぞれの個性と特性に合わせた包括的なビジュアル戦略をご提案します。
+  </p>
+
+  <p>
+    卓越した耐久性と、フロアを支配する圧倒的な視覚効果をすべての表現者のために。
+  </p>
+
+</div>
+
+<div class="logic-contact">
+  <a href="https://tally.so/r/vGPVJX" target="_blank">
+    CONTACT
+  </a>
+</div>
+
+<div class="logic-en">
+
+  <p>
+    Costume design consultation for competitive athletes, schools, and club teams.
+  </p>
+
+  <p>
+    From professional performers to emerging talent, each project is developed through a tailored visual strategy.
+  </p>
+
+  <p>
+    Engineered for exceptional durability, competitive visibility, and lasting performance impact.
+  </p>
+
+   <p>
+    Bringing together design, movement, and visual storytelling for athletes who aim higher.
+  </p>
+
+</div>
+
+  
+</section>
+
+  
+  
+  <div class="rg-next-case">
+
+  <div class="rg-next-line"></div>
+
+  <div class="rg-next-text">
+    Case Study 02 — In Progress
+  </div>
+
+  <div class="rg-next-layout">
+
+    <div class="rg-next-image">
+      <img src="images/rg/rin1.jpg" alt="In Progress">
+    </div>
+
+    <div class="rg-next-copy">
+      New men's costume project currently in development.
+    </div>
+
+  </div>
+
+</div>
