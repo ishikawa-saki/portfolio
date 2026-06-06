@@ -239,6 +239,29 @@
   display:none;
 }
 
+/* Video block */
+.rg-video{
+  margin-top:3vh;
+  width:100%;
+  max-width:560px;
+}
+
+.rg-video video{
+  width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  display:block;
+  background:rgba(17,20,24,.06);
+}
+
+/* Design -> 3D -> Final */
+.rg-process{
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:2vw;
+}
 
 .rg-process .rg-tile{
   aspect-ratio:2/3;
@@ -307,58 +330,40 @@
   display:block;
 }
 
-/* =========================
-   OFFICIAL CREDITS (CLEAN)
-========================= */
-
-.rg-credits{
-  margin:8vh auto 0;
-  max-width:720px;
-  text-align:center;
-}
-
-.rg-credits-title{
-  font-family:'Cormorant Garamond', serif;
-  font-size:1.1rem;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  margin-bottom:3vh;
-  color:#111418;
-}
-
-/* container for both columns (stacked layout) */
+/* Spec + credits */
 .rg-spec{
-  display:flex;
-  flex-direction:column;
-  gap:2rem;
-  padding:0;
-  margin:0;
+  margin-top:5vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4vw;
+  max-width:1000px;
 }
 
-/* each column block (ul wrapper) */
+.rg-spec h3{
+  font-family:var(--font-body);
+  font-size:.95rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+
+.rg-spec p, .rg-spec li{
+  font-family:var(--font-jp);
+  font-size:.85rem;
+  line-height:2.0;
+  letter-spacing:.08em;
+  color:var(--c-text-sub);
+}
+
 .rg-spec ul{
   list-style:none;
-  padding:0;
-  margin:0;
+  padding-left:0;
 }
 
-/* each line item */
 .rg-spec li{
-  margin:.6rem 0;
-  font-family:var(--font-body);
-  font-size:.9rem;
-  line-height:1.8;
-  letter-spacing:.08em;
-  color:rgba(17,20,24,.65);
+  margin-bottom:10px;
 }
 
-/* label emphasis (optional left label style) */
-.rg-spec li strong{
-  display:inline-block;
-  min-width:160px;
-  font-weight:500;
-  color:#111418;
-}
 /* Inquiry line */
 .rg-inquiry{
   margin-top:6vh;
@@ -434,21 +439,12 @@
 }
 
 .rg-statement{
-  max-width:980px;
-  margin:0 auto;
-  text-align:left;
-}
 
-.rg-statement-lead{
-  text-align:left;
-}
-
-  .rg-statement,
-.design-logic,
-.rg-next-case{
   max-width:980px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-top:0;
+  margin-left:0;
+  margin-right:0;
+  text-align:left;
 }
 
 .rg-statement p{
@@ -458,7 +454,6 @@
   line-height:2.2;
   letter-spacing:.04em;
   color:var(--c-text-sub);
-  text-align:left;
 }
 
 .rg-statement p:first-child{
@@ -508,7 +503,7 @@
 
 .rg-hook{
   margin-top:5vh;
-  max-width:980px;
+  max-width:1040px;
   margin-left:auto;
   margin-right:auto;
   text-align:center;
@@ -534,7 +529,7 @@
   color:var(--c-text-sub);
 }
 
-
+/* ↓ 新規追加 */
 .rg-hook-final{
   color:var(--c-text-main);
 }
@@ -586,55 +581,7 @@
   line-height:1.8;
   color:var(--c-text-sub);
 }
-.rg-next-copy{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  gap:1.2rem;
-}
 
-.rg-next-en{
-  font-family:'Cormorant Garamond', serif;
-  font-size:clamp(2rem,3vw,2.8rem);
-  font-weight:400;
-  line-height:1.2;
-  letter-spacing:.04em;
-  color:#111418;
-
-  text-align:center;
-  white-space:normal;
-  word-break:keep-all;
-}
-
-.rg-next-layout{
-  grid-template-columns:1.4fr 1fr;
-  align-items:center;
-  gap:3vw;
-}
-
-  
-.rg-next-ja{
-  margin-top:1rem;
-
-  font-family:var(--font-jp);
-  font-size:.82rem;
-  letter-spacing:.22em;
-
-  color:rgba(17,20,24,.45);
-}
-
-.rg-next-coming{
-  margin-top:2.2rem;
-
-  font-family:var(--font-body);
-  font-size:.82rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-
-  color:rgba(17,20,24,.38);
-}
 @media(max-width:900px){
 
   .rg-next-layout{
@@ -722,28 +669,34 @@
   color:rgba(17,20,24,.45);
 }
 
-/* =========================
-   LOGIC TEXT
-========================= */
-
-.logic-ja,
-.logic-en{
-  max-width:1100px;
-  margin:0 auto 2rem;
+.logic-ja{
+  margin-bottom:2.2rem;
 }
 
 .logic-ja p{
   margin:0 0 .8rem;
+
   font-size:1rem;
   line-height:1.75;
+
+  max-width:1100px;
 }
 
 .logic-en p{
   margin:0 0 .7rem;
+
   font-size:.95rem;
   line-height:1.65;
+
+  max-width:1100px;
+
   color:rgba(17,20,24,.52);
 }
+
+  .logic-en{
+  margin-bottom:1rem;
+}
+
   
   .logic-contact{
   margin:2.8rem 0 2rem;
@@ -825,9 +778,8 @@
 
 }
 
-
-/* =========================
-   DESIGN IMAGES (BASE)
+  /* =========================
+   DESIGN IMAGES
 ========================= */
 
 .logic-image{
@@ -836,56 +788,20 @@
   background:rgba(17,20,24,.04);
 }
 
-/* 画像共通 */
 .logic-image img{
   width:100%;
   height:auto;
   display:block;
 }
 
-/* =========================
-   WIDTH SYSTEM (CASE STUDY 02基準)
-========================= */
-
-/* 基本：全ストーリー統一幅 */
-.logic-image,
-.logic-image-medium,
+/* 360° Design Logic */
 .logic-image-wide{
-  max-width:1040px;
-  margin-left:auto;
-  margin-right:auto;
+  max-width:1040px;   /* 罫線と同じ幅 */
 }
 
-/* =========================
-   VARIATION (必要なら微調整用)
-========================= */
-
-/* 少し小さくしたい系（今は未使用でもOK） */
+/* Visual Impact */
 .logic-image-medium{
-  max-width:900px;
-}
-
-/* =========================
-   VIDEO (VERTICAL SAFE)
-========================= */
-
-.logic-image video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:2px;
-  object-fit:contain; /* 画像崩れ防止の基本 */
-  background:rgba(17,20,24,.04);
-}
-
-/* 縦動画だけ比率固定 */
-.logic-image-medium video,
-.logic-image-wide video{
-  width:100%;
-  aspect-ratio:9/16;
-  max-height:520px;
-  object-fit:contain;
-  background:rgba(17,20,24,.04);
+  max-width:900px;    /* 罫線より少し短く */
 }
   
 </style>
@@ -966,8 +882,6 @@
   </span>
 </div>
 
-</div>
-
 <!-- SUB -->
 <div class="rg-gallery-sub">
   <div class="rg-sub-image">
@@ -1009,31 +923,48 @@
   </p>
 
 </div>
-<!-- OFFICIAL CREDITS -->
-<div class="rg-credits">
+      <!-- VIDEO (optional / add when ready) -->
+      <div class="rg-video">
+        <!-- 解禁後：src を差し替え -->
+        <!-- <video src="images/rhythmic/2026/motion.mp4" autoplay muted loop playsinline></video> -->
+      </div>
 
-  <h3 class="rg-credits-title">OFFICIAL CREDITS</h3>
+      <!-- Design -> 3D -> Final (placeholders now) -->
+<div class="rg-process">
+  <div class="rg-tile">
+    <div class="rg-tile-label">Design</div>
+  </div>
 
-  <div class="rg-spec">
+ <div class="rg-tile">
+  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
+  <div class="rg-tile-label">3D</div>
+</div>
 
+  <div class="rg-tile">
+    <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
+    <div class="rg-tile-label">Final</div>
+  </div>
+</div>
+
+<div class="rg-spec">
+  <div>
+    <ul>
+      <li>Okayama Minami Gymnastics Academy</li>
+      <li>Head Coach: Sayuri Hata</li>
+      <li>Costume Design: Ishikawa Saki</li>
+      <li>Costume Maker: Naoko Hakamada</li>
+    </ul>
+  </div>
+
+  <div>
     <ul>
       <li>岡山県立岡山南高等学校 新体操部</li>
       <li>監督：畑 小百合</li>
       <li>衣装デザイン：石川 彩希</li>
       <li>衣装制作：袴田 直子</li>
     </ul>
-
-    <ul>
-      <li>Okayama Minami Gymnastics Academy</li>
-      <li>Head Coach: Sayuri Hata</li>
-      <li>Costume Design: Ishikawa Saki</li>
-      <li>Couture Maker: Naoko Hakamada</li>
-    </ul>
-
   </div>
-
 </div>
-
 
 
  <!-- =========================
@@ -1152,10 +1083,20 @@
 <div class="logic-en">
 
   <p>
-    Sacred symmetry engineered ...
+    Sacred symmetry engineered to heighten the visual unity and mystique of perfectly synchronized group performances.
   </p>
 
-  ...
+  <p>
+    Anatomically informed streamlines extend and define the athletes' limbs, maintaining clarity and impact even from the judges' distant perspective.
+  </p>
+
+  <p>
+    Every line, contour, and ornament serves a purpose.
+  </p>
+
+  <p>
+    This is not mere decoration.
+  </p>
 
   <p>
     It is a calculated visual system designed to concentrate the judges' attention, guiding the performance itself toward competitive advantage and victory.
@@ -1163,9 +1104,6 @@
 
 </div>
 
-<div class="logic-image logic-image-medium">
-  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
-</div>
 
   
 
@@ -1307,21 +1245,17 @@
 <div class="logic-en">
 
   <p>
-    A precision-driven color architecture engineered specifically for competitive rhythmic gymnastics performance wear.
+    Color architecture engineered to never fade into the competition floor, executed with master-level couture precision.
   </p>
 
   <p>
-    Each crystal placement is calculated to enhance luminosity under arena lighting, preventing visual flattening at long distance.
+    Strategic Swarovski placement designed to govern the behavior of light while remaining fully compliant with technical competition regulations.
   </p>
 
   <p>
-    Every crystal is positioned with deliberate intent, producing sharp, controlled reflections that maintain clarity even during high-speed motion.
+    Every crystal is positioned with calculated intent, generating sharp reflections that counteract long-distance visual blur and preserve clarity in motion.
   </p>
 
-</div>
-
-<div class="logic-image logic-image-medium">
-  <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
 </div>
 
 
@@ -1437,27 +1371,18 @@
     Case Study 02 — In Progress
   </div>
 
- <div class="rg-next-layout">
+  <div class="rg-next-layout">
 
-  <div class="rg-next-image">
-    <img src="images/rg/rin1.jpg" alt="In Progress">
-  </div>
-
-  <div class="rg-next-copy">
-
-    <div class="rg-next-en">
-      If I play,<br>
-      I play to win.
+    <div class="rg-next-image">
+      <img src="images/rg/rin1.jpg" alt="In Progress">
     </div>
 
-    <div class="rg-next-ja">
-      やるからには、勝ちにいく
-    </div>
-
-    <div class="rg-next-coming">
+    <div class="rg-next-copy">
       New men's costume project currently in development.
     </div>
 
   </div>
 
 </div>
+
+
