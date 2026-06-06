@@ -239,29 +239,6 @@
   display:none;
 }
 
-/* Video block */
-.rg-video{
-  margin-top:3vh;
-  width:100%;
-  max-width:560px;
-}
-
-.rg-video video{
-  width:100%;
-  height:auto;
-  aspect-ratio:auto;
-  object-fit:contain;
-  display:block;
-  background:rgba(17,20,24,.06);
-}
-
-/* Design -> 3D -> Final */
-.rg-process{
-  margin-top:5vh;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:2vw;
-}
 
 .rg-process .rg-tile{
   aspect-ratio:2/3;
@@ -803,6 +780,12 @@
 .logic-image-medium{
   max-width:900px;    /* 罫線より少し短く */
 }
+
+  .logic-image video{
+  width:100%;
+  height:auto;
+  display:block;
+}
   
 </style>
 </head>
@@ -923,28 +906,7 @@
   </p>
 
 </div>
-      <!-- VIDEO (optional / add when ready) -->
-      <div class="rg-video">
-        <!-- 解禁後：src を差し替え -->
-        <!-- <video src="images/rhythmic/2026/motion.mp4" autoplay muted loop playsinline></video> -->
-      </div>
 
-      <!-- Design -> 3D -> Final (placeholders now) -->
-<div class="rg-process">
-  <div class="rg-tile">
-    <div class="rg-tile-label">Design</div>
-  </div>
-
- <div class="rg-tile">
-  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
-  <div class="rg-tile-label">3D</div>
-</div>
-
-  <div class="rg-tile">
-    <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
-    <div class="rg-tile-label">Final</div>
-  </div>
-</div>
 
 <div class="rg-spec">
   <div>
@@ -1102,6 +1064,10 @@
     It is a calculated visual system designed to concentrate the judges' attention, guiding the performance itself toward competitive advantage and victory.
   </p>
 
+  <div class="logic-image logic-image-medium">
+  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
+</div>
+  
 </div>
 
 
@@ -1256,6 +1222,10 @@
     Every crystal is positioned with calculated intent, generating sharp reflections that counteract long-distance visual blur and preserve clarity in motion.
   </p>
 
+  <div class="logic-image logic-image-medium">
+  <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
+</div>
+  
 </div>
 
 
