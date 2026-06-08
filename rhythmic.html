@@ -785,7 +785,7 @@
 .logic-image{
   margin:3rem auto 4rem;
   overflow:hidden;
-  background:transparent;
+  background:rgba(17,20,24,.04);
 }
 
 .logic-image img{
@@ -794,29 +794,14 @@
   display:block;
 }
 
-/* 360°画像 */
+/* 360° Design Logic */
 .logic-image-wide{
-  max-width:1040px;
-  margin-left:auto;
-  margin-right:auto;
+  max-width:1040px;   /* 罫線と同じ幅 */
 }
 
-/* CG画像・動画 */
+/* Visual Impact */
 .logic-image-medium{
-  max-width:900px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* 動画 */
-.logic-image video{
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  background:transparent;
-  border:none;
-  box-shadow:none;
+  max-width:900px;    /* 罫線より少し短く */
 }
   
 </style>
@@ -945,7 +930,21 @@
       </div>
 
       <!-- Design -> 3D -> Final (placeholders now) -->
+<div class="rg-process">
+  <div class="rg-tile">
+    <div class="rg-tile-label">Design</div>
+  </div>
 
+ <div class="rg-tile">
+  <video src="images/rg/minami_v2.mp4" autoplay muted loop playsinline></video>
+  <div class="rg-tile-label">3D</div>
+</div>
+
+  <div class="rg-tile">
+    <video src="images/rg/minami_v1.mp4" autoplay muted loop playsinline></video>
+    <div class="rg-tile-label">Final</div>
+  </div>
+</div>
 
 <div class="rg-spec">
   <div>
@@ -1106,19 +1105,6 @@
 </div>
 
 
-<div class="logic-image logic-image-medium">
-  <video
-    src="images/rg/minami_v2.mp4"
-    autoplay
-    muted
-    loop
-    playsinline>
-  </video>
-</div>
-
-<div class="logic-label">
-  360° Design Logic
-
   
 
   <div class="logic-label">
@@ -1271,15 +1257,7 @@
   </p>
 
 </div>
-<div class="logic-image logic-image-medium">
-  <video
-    src="images/rg/minami_v1.mp4"
-    autoplay
-    muted
-    loop
-    playsinline>
-  </video>
-</div>
+
 
   <div class="logic-label">
   Design for Victory 🏆
