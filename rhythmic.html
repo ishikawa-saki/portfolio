@@ -785,7 +785,7 @@
 .logic-image{
   margin:3rem auto 4rem;
   overflow:hidden;
-  background:rgba(17,20,24,.04);
+  background:transparent;
 }
 
 .logic-image img{
@@ -794,14 +794,29 @@
   display:block;
 }
 
-/* 360° Design Logic */
+/* 360°画像 */
 .logic-image-wide{
-  max-width:1040px;   /* 罫線と同じ幅 */
+  max-width:1040px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* Visual Impact */
+/* CG画像・動画 */
 .logic-image-medium{
-  max-width:900px;    /* 罫線より少し短く */
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* 動画 */
+.logic-image video{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background:transparent;
+  border:none;
+  box-shadow:none;
 }
   
 </style>
